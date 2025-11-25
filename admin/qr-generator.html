@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator - Qbees Training Academy</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <style>
+        .admin-hero {
+            background: linear-gradient(135deg, #273E4B 0%, #1a2b35 100%);
+            padding: 2rem 1rem;
+            text-align: center;
+            color: white;
+            margin-bottom: 2rem;
+        }
+
+        .admin-hero h1 {
+            font-size: 2rem;
+            margin: 0 0 0.5rem 0;
+            color: #DFC790;
+        }
+
+        .admin-hero p {
+            margin: 0;
+            opacity: 0.9;
+        }
+
+        .admin-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 1rem 3rem 1rem;
+        }
+
+        .generator-section {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin-bottom: 2rem;
+        }
+
+        .generator-section h2 {
+            color: #273E4B;
+            margin: 0 0 1.5rem 0;
+        }
+
+        .url-input {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #273E4B;
+            border-radius: 8px;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            font-family: 'Courier New', monospace;
+        }
+
+        .url-input:focus {
+            outline: none;
+            border-color: #DFC790;
+            box-shadow: 0 0 0 3px rgba(223, 199, 144, 0.2);
+        }
+
+        .generate-btn {
+            width: 100%;
+            padding: 1rem 2rem;
+            background: #273E4B;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .generate-btn:hover {
+            background: #354F5E;
+            transform: translateY(-2px);
+        }
+
+        .qr-display {
+            display: none;
+            text-align: center;
+            padding: 2rem;
+            background: #FFF7EB;
+            border-radius: 12px;
+            margin: 2rem 0;
+        }
+
+        .qr-display.show {
+            display: block;
+        }
+
+        .qr-code-container {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            display: inline-block;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+        }
+
+        #qrcode {
+            margin: 0 auto;
+        }
+
+        .qr-download-btn {
+            margin-top: 1rem;
+            padding: 0.75rem 1.5rem;
+            background: #DFC790;
+            color: #273E4B;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .qr-download-btn:hover {
+            background: #E5A511;
+        }
+
+        .presets-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .preset-card {
+            background: #FFF7EB;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 2px solid #DFC790;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .preset-card:hover {
+            background: #DFC790;
+            transform: translateY(-2px);
+        }
+
+        .preset-card h3 {
+            margin: 0 0 0.5rem 0;
+            color: #273E4B;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .preset-card p {
+            margin: 0;
+            font-size: 0.875rem;
+            color: #354F5E;
+        }
+
+        .preset-url {
+            margin-top: 0.5rem;
+            font-family: 'Courier New', monospace;
+            font-size: 0.813rem;
+            color: #666;
+            word-break: break-all;
+        }
+
+        .instructions {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin-bottom: 2rem;
+        }
+
+        .instructions h2 {
+            color: #273E4B;
+            margin: 0 0 1rem 0;
+        }
+
+        .instructions ol {
+            margin: 0;
+            padding-left: 1.5rem;
+        }
+
+        .instructions li {
+            margin: 0.75rem 0;
+            color: #354F5E;
+        }
+
+        .note-box {
+            background: #FFF7EB;
+            border-left: 4px solid #DFC790;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+
+        .note-box strong {
+            color: #273E4B;
+        }
+
+        @media (min-width: 768px) {
+            .presets-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="admin-hero">
+        <h1>📱 QR Code Generator</h1>
+        <p>Create QR codes for easy access to the training platform</p>
+    </div>
+
+    <div class="admin-container">
+        <!-- Quick Presets -->
+        <div class="generator-section">
+            <h2>⚡ Quick Presets</h2>
+            <p style="margin-bottom: 1rem; color: #354F5E;">Click a preset to generate its QR code instantly:</p>
+            <div class="presets-grid">
+                <div class="preset-card" onclick="generatePreset('homepage')">
+                    <h3>🏠 Homepage</h3>
+                    <p>Main training academy dashboard</p>
+                    <div class="preset-url" id="preset-url-homepage"></div>
+                </div>
+
+                <div class="preset-card" onclick="generatePreset('module1')">
+                    <h3>📚 Module 1</h3>
+                    <p>Foundation & First Day Essentials</p>
+                    <div class="preset-url" id="preset-url-module1"></div>
+                </div>
+
+                <div class="preset-card" onclick="generatePreset('checklist')">
+                    <h3>✅ Cleaning Checklist</h3>
+                    <p>Quick reference checklist</p>
+                    <div class="preset-url" id="preset-url-checklist"></div>
+                </div>
+
+                <div class="preset-card" onclick="generatePreset('chemicals')">
+                    <h3>🧪 Chemical Guide</h3>
+                    <p>Safety guide for all chemicals</p>
+                    <div class="preset-url" id="preset-url-chemicals"></div>
+                </div>
+
+                <div class="preset-card" onclick="generatePreset('pricing')">
+                    <h3>💰 Pricing Calculator</h3>
+                    <p>Calculate job rates and time</p>
+                    <div class="preset-url" id="preset-url-pricing"></div>
+                </div>
+
+                <div class="preset-card" onclick="generatePreset('video')">
+                    <h3>🎥 Training Video</h3>
+                    <p>Watch technique demonstrations</p>
+                    <div class="preset-url" id="preset-url-video"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Custom URL Generator -->
+        <div class="generator-section">
+            <h2>🔧 Custom URL Generator</h2>
+            <p style="margin-bottom: 1rem; color: #354F5E;">Generate a QR code for any custom URL:</p>
+
+            <input type="text" id="customUrl" class="url-input" placeholder="https://yourdomain.com/bee-academy/">
+
+            <button class="generate-btn" onclick="generateCustom()">Generate QR Code</button>
+        </div>
+
+        <!-- QR Code Display -->
+        <div class="qr-display" id="qrDisplay">
+            <h3 style="color: #273E4B; margin-bottom: 1rem;">Your QR Code</h3>
+            <div class="qr-code-container">
+                <div id="qrcode"></div>
+            </div>
+            <div style="margin-top: 1rem;">
+                <button class="qr-download-btn" onclick="downloadQR()">📥 Download PNG</button>
+            </div>
+            <p style="margin-top: 1rem; color: #354F5E; font-size: 0.875rem;">
+                Right-click the QR code above to save, or use the download button
+            </p>
+        </div>
+
+        <!-- Instructions -->
+        <div class="instructions">
+            <h2>📋 How to Use QR Codes</h2>
+
+            <div class="note-box">
+                <strong>⚠️ Important:</strong> Before generating QR codes, you must first deploy the training academy to a web server and have a live URL. Replace the placeholder URLs in the presets with your actual domain.
+            </div>
+
+            <h3 style="color: #273E4B; margin: 1.5rem 0 1rem 0;">Deployment Steps:</h3>
+            <ol>
+                <li>Deploy the training academy to your web hosting (see DEPLOYMENT.md)</li>
+                <li>Get your live URL (e.g., https://training.qbees.com.au)</li>
+                <li>Update the preset URLs in this file (line ~300) with your actual domain</li>
+                <li>Generate QR codes for each section</li>
+                <li>Download and print deployment materials</li>
+            </ol>
+
+            <h3 style="color: #273E4B; margin: 1.5rem 0 1rem 0;">Best Practices:</h3>
+            <ol>
+                <li><strong>Test QR codes:</strong> Always scan with a phone before printing</li>
+                <li><strong>Size matters:</strong> Print QR codes at least 2cm x 2cm (larger is better)</li>
+                <li><strong>High contrast:</strong> Black QR on white background works best</li>
+                <li><strong>Include text:</strong> Add a description below the QR code</li>
+                <li><strong>Placement:</strong> Put QR codes in common areas (break room, base, vehicles)</li>
+            </ol>
+
+            <h3 style="color: #273E4B; margin: 1.5rem 0 1rem 0;">Where to Use QR Codes:</h3>
+            <ul style="list-style: none; padding: 0;">
+                <li>✅ Employee onboarding packets</li>
+                <li>✅ Break room bulletin board</li>
+                <li>✅ Cleaning supply base</li>
+                <li>✅ Company vehicles</li>
+                <li>✅ Welcome email to new hires</li>
+                <li>✅ Laminated quick reference cards</li>
+            </ul>
+        </div>
+
+        <div style="text-align: center; margin-top: 2rem;">
+            <a href="deployment-materials.html" style="display: inline-block; padding: 1rem 2rem; background: #DFC790; color: #273E4B; text-decoration: none; border-radius: 8px; font-weight: 600; margin-right: 1rem;">📄 Deployment Materials</a>
+            <a href="../index.html" style="display: inline-block; padding: 1rem 2rem; background: #273E4B; color: white; text-decoration: none; border-radius: 8px; font-weight: 600;">← Back to Academy</a>
+        </div>
+    </div>
+
+    <!-- QR Code Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+    <script>
+        // GitHub Pages URL - Update after deployment
+        const BASE_URL = 'https://Khally01.github.io/bee-academy';
+
+        const presets = {
+            homepage: `${BASE_URL}/index.html`,
+            module1: `${BASE_URL}/modules/module-1.html`,
+            checklist: `${BASE_URL}/resources/cleaning-checklist.html`,
+            chemicals: `${BASE_URL}/resources/chemical-guide.html`,
+            pricing: `${BASE_URL}/resources/pricing.html`,
+            video: `${BASE_URL}/resources/training-video.html`
+        };
+
+        // Display preset URLs
+        Object.keys(presets).forEach(key => {
+            const element = document.getElementById(`preset-url-${key}`);
+            if (element) {
+                element.textContent = presets[key];
+            }
+        });
+
+        let currentQR = null;
+
+        function generatePreset(type) {
+            const url = presets[type];
+            generateQRCode(url);
+        }
+
+        function generateCustom() {
+            const url = document.getElementById('customUrl').value.trim();
+            if (!url) {
+                alert('Please enter a URL');
+                return;
+            }
+            if (!url.startsWith('http://') && !url.startsWith('https://')) {
+                alert('URL must start with http:// or https://');
+                return;
+            }
+            generateQRCode(url);
+        }
+
+        function generateQRCode(url) {
+            // Clear previous QR code
+            const qrcodeElement = document.getElementById('qrcode');
+            qrcodeElement.innerHTML = '';
+
+            // Generate new QR code
+            currentQR = new QRCode(qrcodeElement, {
+                text: url,
+                width: 256,
+                height: 256,
+                colorDark: '#273E4B',
+                colorLight: '#ffffff',
+                correctLevel: QRCode.CorrectLevel.H
+            });
+
+            // Show QR display section
+            document.getElementById('qrDisplay').classList.add('show');
+
+            // Scroll to QR code
+            qrcodeElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        function downloadQR() {
+            const canvas = document.querySelector('#qrcode canvas');
+            if (!canvas) {
+                alert('Please generate a QR code first');
+                return;
+            }
+
+            // Convert canvas to blob and download
+            canvas.toBlob(function(blob) {
+                const url = URL.createObjectURL(blob);
+                const link = document.createElement('a');
+                link.download = 'qbees-qr-code.png';
+                link.href = url;
+                link.click();
+                URL.revokeObjectURL(url);
+            });
+        }
+
+        // Auto-generate homepage QR on load as example
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                if (BASE_URL !== 'https://yourdomain.com/bee-academy') {
+                    generatePreset('homepage');
+                }
+            }, 500);
+        });
+    </script>
+</body>
+</html>

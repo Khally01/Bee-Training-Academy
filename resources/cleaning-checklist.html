@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cleaning Checklist | Bee Training Academy</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐝</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <style>
+        .room-tabs {
+            display: flex;
+            gap: var(--space-xs);
+            overflow-x: auto;
+            margin: var(--space-lg) 0;
+            padding-bottom: var(--space-xs);
+            border-bottom: 2px solid var(--bg-gray);
+        }
+
+        .room-tab {
+            background: var(--bg-white);
+            border: 2px solid var(--bg-gray);
+            padding: var(--space-sm) var(--space-md);
+            border-radius: var(--radius-md) var(--radius-md) 0 0;
+            cursor: pointer;
+            white-space: nowrap;
+            font-weight: 500;
+            transition: all var(--transition-fast);
+        }
+
+        .room-tab.active {
+            background: var(--primary-dark);
+            color: var(--bg-white);
+            border-color: var(--primary-dark);
+        }
+
+        .room-tab:hover {
+            background: var(--primary-gold);
+            border-color: var(--primary-gold);
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.3s;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .checklist-grid {
+            display: grid;
+            gap: var(--space-sm);
+            margin: var(--space-md) 0;
+        }
+
+        .checklist-card {
+            background: var(--bg-white);
+            padding: var(--space-md);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+            border-left: 3px solid var(--success-green);
+        }
+
+        .checklist-card h4 {
+            color: var(--primary-dark);
+            margin-bottom: var(--space-sm);
+            font-size: 1rem;
+        }
+
+        .task-item {
+            padding: var(--space-xs) 0;
+            display: flex;
+            align-items: flex-start;
+            gap: var(--space-sm);
+        }
+
+        .task-item input[type="checkbox"] {
+            margin-top: 4px;
+            flex-shrink: 0;
+        }
+
+        .deep-only {
+            color: var(--warning-orange);
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-left: var(--space-xs);
+        }
+
+        .print-btn {
+            background: var(--primary-dark);
+            color: var(--bg-white);
+            border: none;
+            padding: var(--space-sm) var(--space-lg);
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            cursor: pointer;
+            margin: var(--space-md) 0;
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-xs);
+        }
+
+        .print-btn:hover {
+            background: var(--secondary-blue);
+        }
+
+        @media print {
+            .header, .print-btn, .nav-buttons {
+                display: none;
+            }
+            .room-tabs {
+                display: none;
+            }
+            .tab-content {
+                display: block !important;
+                page-break-before: always;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <a href="../index.html" style="text-decoration: none;">
+                <div class="logo">
+                    <img src="../assets/images/branding/qbees-icon-blue.svg" alt="Qbees" class="logo-icon">
+                    <h1 class="logo-text">Cleaning Checklist</h1>
+                </div>
+            </a>
+            <p class="tagline">Quick Reference for On-the-Job Use</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="module-content">
+            <div class="content-section">
+                <h2>📋 Room-by-Room Cleaning Checklist</h2>
+                <p>Use this interactive checklist on the job to ensure you complete all required tasks.</p>
+                <button class="print-btn" onclick="window.print()">🖨️ Print Checklist</button>
+
+                <!-- Room Tabs -->
+                <div class="room-tabs">
+                    <div class="room-tab active" data-room="bathroom">🚿 Bathroom</div>
+                    <div class="room-tab" data-room="kitchen">🍳 Kitchen</div>
+                    <div class="room-tab" data-room="bedroom">🛏️ Bedroom</div>
+                    <div class="room-tab" data-room="living">🛋️ Living Room</div>
+                    <div class="room-tab" data-room="laundry">🧺 Laundry</div>
+                </div>
+
+                <!-- Bathroom Content -->
+                <div class="tab-content active" id="bathroom">
+                    <h3>🚿 Bathroom Checklist</h3>
+                    <div class="checklist-grid">
+                        <div class="checklist-card">
+                            <h4>Toilet & Fixtures</h4>
+                            <div class="task-item">
+                                <input type="checkbox" id="bath-1">
+                                <label for="bath-1">Clean toilet (bowl, seat, base) with Taski</label>
+                            </div>
+                            <div class="task-item">
+                                <input type="checkbox" id="bath-2">
+                                <label for="bath-2">Clean sink and countertop with Magic cleaner</label>
+                            </div>
+                            <div class="task-item">
+                                <input type="checkbox" id="bath-3">
+                                <label for="bath-3">Clean bathtub/shower with Lencia</label>
+                            </div>
+                            <div class="task-item">
+                                <input type="checkbox" id="bath-4">
+                                <label for="bath-4">Remove mildew inside shower with grout brush</label>
+                            </div>
+                            <div class="task-item">
+                                <input type="checkbox" id="bath-5">
+                                <label for="bath-5">Remove mould from walls/tiles with Lencia</label>
+                            </div>
+                            <div class="task-item">
+                                <input type="checkbox" id="bath-6">
+                                <label for="bath-6">Scrub glass soap-scum <span class="deep-only">DEEP CLEAN ONLY</span></label>
+                            </div>
+                        </div>
+
+                        <div class="checklist-card">
+                            <h4>Mirrors & Glass</h4>
+                            <div class="task-item">
+                                <input type="checkbox" id="bath-7">
+                                <label for="bath-7">Clean all mirrors with glass cloth + Halo cleaner</label>
+                            </div>
+                            <div class="task-item">
+                                <input type="checkbox" id="bath-8">
+                                <label for="bath-8">Clean shower glass doors</label>
+                            </div>
+                        </div>
+
+                        <div class="checklist-card">
+                            <h4>Storage & Organization</h4>
+                            <div class="task-item">
+                                <input type="checkbox" id="bath-9">
+                                <label for="bath-9">Declutter & wipe bathroom cupboards (basic)</label>
+                            </div>
+                            <div class="task-item">
+                                <input type="checkbox" id="bath-10">
+                                <label for="bath-10">Scrub inside cupboards <span class="deep-only">DEEP CLEAN ONLY</span></label>
+                            </div>
+                            <div class="task-item">
+                                <input type="checkbox" id="bath-11">
+                                <label for="bath-11">Replenish toiletries (shampoo, conditioner, body wash, soap)</label>
+                            </div>
+                        </div>
+
+                        <div class="checklist-card">
+                            <h4>Laundry Appliances</h4>
+                            <div class="task-item">
+                                <input type="checkbox" id="bath-12">
+                                <label for="bath-12">Clean washing machine interior</label>
+                            </div>
+                            <div class="task-item">
+                                <input type="checkbox" id="bath-13">
+                                <label for="bath-13">Empty dryer lint tray</label>
+                            </div>
+                        </div>
+
+                        <div class="checklist-card">
+                            <h4>Final Touches</h4>
+                            <div class="task-item">
+                                <input type="checkbox" id="bath-14">
+                                <label for="bath-14">Empty & change bin bag (3 toilet rolls)</label>
+                            </div>
+                            <div class="task-item">
+                                <input type="checkbox" id="bath-15">
+                                <label for="bath-15">Clean exhaust fan <span class="deep-only">DEEP CLEAN ONLY</span></label>
+                            </div>
+                            <div class="task-item">
+                                <input type="checkbox" id="bath-16">
+                                <label for="bath-16">Spot clean walls with magic sponge</label>
+                            </div>
+                            <div class="task-item">
+                                <input type="checkbox" id="bath-17">
+                                <label for="bath-17">Clean skirting boards</label>
+                            </div>
+                            <div class="task-item">
+                                <input type="checkbox" id="bath-18">
+                                <label for="bath-18">Vacuum & mop floor with Ajax</label>
+                            </div>
+                            <div class="task-item">
+                                <input type="checkbox" id="bath-19">
+                                <label for="bath-19">Set up towels (2 bath, 2 hand, 1 mat)</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kitchen Content -->
+                <div class="tab-content" id="kitchen">
+                    <h3>🍳 Kitchen Checklist</h3>
+                    <div class="checklist-grid">
+                        <div class="checklist-card">
+                            <h4>Surfaces & Fixtures</h4>
+                            <div class="task-item">
+                                <input type="checkbox" id="kit-1">
+                                <label for="kit-1">Clean/disinfect sink & countertops with Magic cleaner</label>
+                            </div>
+                            <div class="task-item">
+                                <input type="checkbox" id="kit-2">
+                                <label for="kit-2">Wipe stovetop and backsplash</label>
+                            </div>
+                        </div>
+
+                        <div class="checklist-card">
+                            <h4>Cabinets & Storage</h4>
+                            <div class="task-item">
+                                <input type="checkbox" id="kit-3">
+                                <label for="kit-3">Wipe cupboard exteriors & declutter</label>
+                            </div>
+                            <div class="task-item">
+                                <input type="checkbox" id="kit-4">
+                                <label for="kit-4">Scrub cupboard interiors <span class="deep-only">DEEP CLEAN ONLY</span></label>
+                            </div>
+                        </div>
+
+                        <div class="checklist-card">
+                            <h4>Appliances</h4>
+                            <div class="task-item">
+                                <input type="checkbox" id="kit-5">
+                                <label for="kit-5">Empty refrigerator of guest leftovers</label>
+                            </div>
+                            <div class="task-item">
+                                <input type="checkbox" id="kit-6">
+                                <label for="kit-6">Clean inside oven (check if deep clean needed)</label>
+                            </div>
+                            <div class="task-item">
+                                <input type="checkbox" id="kit-7">
+                                <label for="kit-7">Empty & clean coffee machine</label>
+                            </div>
+                            <div class="task-item">
+                                <input type="checkbox" id="kit-8">
+                                <label for="kit-8">Empty & clean toaster tray</label>
+                            </div>
+                            <div class="task-item">
+                                <input type="checkbox" id="kit-9">
+                                <label for="kit-9">Empty dishwasher & place items away</label>
+                            </div>
+                        </div>
+
+                        <div class="checklist-card">
+                            <h4>Final Touches</h4>
+                            <div class="task-item">
+                                <input type="checkbox" id="kit-10">
+                                <label for="kit-10">Empty & change bin bag (3-6 bags)</label>
+                            </div>
+                            <div class="task-item">
+                                <input type="checkbox" id="kit-11">
+                                <label for="kit-11">Spot clean walls with magic sponge</label>
+                            </div>
+                            <div class="task-item">
+                                <input type="checkbox" id="kit-12">
+                                <label for="kit-12">Wipe skirting boards</label>
+                            </div>
+                            <div class="task-item">
+                                <input type="checkbox" id="kit-13">
+                                <label for="kit-13">Vacuum & mop floor with Ajax</label>
+                            </div>
+                            <div class="task-item">
+                                <input type="checkbox" id="kit-14">
+                                <label for="kit-14">Hang tea towel</label>
+                            </div>
+                            <div class="task-item">
+                                <input type="checkbox" id="kit-15">
+                                <label for="kit-15">Setup kitchen consumables (see checklist)</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bedroom Content -->
+                <div class="tab-content" id="bedroom">
+                    <h3>🛏️ Bedroom Checklist</h3>
+                    <div class="checklist-grid">
+                        <div class="checklist-card">
+                            <h4>Bed & Linens</h4>
+                            <div class="task-item">
+                                <input type="checkbox" id="bed-1">
+                                <label for="bed-1">Change bed linens (flat sheet, doona cover, 4 pillowcases)</label>
+                            </div>
+                            <div class="task-item">
+                                <input type="checkbox" id="bed-2">
+                                <label for="bed-2">Make bed professionally (hospital corners)</label>
+                            </div>
+                            <div class="task-item">
+                                <input type="checkbox" id="bed-3">
+                                <label for="bed-3">Check & vacuum under bed</label>
+                            </div>
+                        </div>
+
+                        <div class="checklist-card">
+                            <h4>Furniture & Surfaces</h4>
+                            <div class="task-item">
+                                <input type="checkbox" id="bed-4">
+                                <label for="bed-4">Dust furniture & decor</label>
+                            </div>
+                            <div class="task-item">
+                                <input type="checkbox" id="bed-5">
+                                <label for="bed-5">Declutter & wipe wardrobes (basic)</label>
+                            </div>
+                            <div class="task-item">
+                                <input type="checkbox" id="bed-6">
+                                <label for="bed-6">Wipe bedside tables</label>
+                            </div>
+                        </div>
+
+                        <div class="checklist-card">
+                            <h4>Final Touches</h4>
+                            <div class="task-item">
+                                <input type="checkbox" id="bed-7">
+                                <label for="bed-7">Spot clean walls with magic sponge</label>
+                            </div>
+                            <div class="task-item">
+                                <input type="checkbox" id="bed-8">
+                                <label for="bed-8">Clean skirting boards</label>
+                            </div>
+                            <div class="task-item">
+                                <input type="checkbox" id="bed-9">
+                                <label for="bed-9">Vacuum & mop floor with Ajax</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Living Room Content -->
+                <div class="tab-content" id="living">
+                    <h3>🛋️ Living Room Checklist</h3>
+                    <div class="checklist-grid">
+                        <div class="checklist-card">
+                            <h4>Furniture & Surfaces</h4>
+                            <div class="task-item">
+                                <input type="checkbox" id="liv-1">
+                                <label for="liv-1">Dust all furniture and surfaces</label>
+                            </div>
+                            <div class="task-item">
+                                <input type="checkbox" id="liv-2">
+                                <label for="liv-2">Clean sofa area and check under sofa</label>
+                            </div>
+                            <div class="task-item">
+                                <input type="checkbox" id="liv-3">
+                                <label for="liv-3">Clean TV area and inside cupboards</label>
+                            </div>
+                            <div class="task-item">
+                                <input type="checkbox" id="liv-4">
+                                <label for="liv-4">Check all remotes (AC, TV, blinds) are present</label>
+                            </div>
+                        </div>
+
+                        <div class="checklist-card">
+                            <h4>Final Touches</h4>
+                            <div class="task-item">
+                                <input type="checkbox" id="liv-5">
+                                <label for="liv-5">Spot clean walls with magic sponge</label>
+                            </div>
+                            <div class="task-item">
+                                <input type="checkbox" id="liv-6">
+                                <label for="liv-6">Clean skirting boards</label>
+                            </div>
+                            <div class="task-item">
+                                <input type="checkbox" id="liv-7">
+                                <label for="liv-7">Vacuum entire room (including under furniture)</label>
+                            </div>
+                            <div class="task-item">
+                                <input type="checkbox" id="liv-8">
+                                <label for="liv-8">Vacuum/mop hard floors with Ajax</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Laundry Content -->
+                <div class="tab-content" id="laundry">
+                    <h3>🧺 Laundry Checklist</h3>
+                    <div class="checklist-grid">
+                        <div class="checklist-card">
+                            <h4>Appliances</h4>
+                            <div class="task-item">
+                                <input type="checkbox" id="lau-1">
+                                <label for="lau-1">Clean inside washing machine</label>
+                            </div>
+                            <div class="task-item">
+                                <input type="checkbox" id="lau-2">
+                                <label for="lau-2">Clean washing machine tray</label>
+                            </div>
+                            <div class="task-item">
+                                <input type="checkbox" id="lau-3">
+                                <label for="lau-3">Empty dryer lint completely</label>
+                            </div>
+                        </div>
+
+                        <div class="checklist-card">
+                            <h4>Surfaces</h4>
+                            <div class="task-item">
+                                <input type="checkbox" id="lau-4">
+                                <label for="lau-4">Clean laundry sink</label>
+                            </div>
+                            <div class="task-item">
+                                <input type="checkbox" id="lau-5">
+                                <label for="lau-5">Wipe countertops</label>
+                            </div>
+                            <div class="task-item">
+                                <input type="checkbox" id="lau-6">
+                                <label for="lau-6">Vacuum & mop floor</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div class="nav-buttons">
+                <a href="../index.html" class="btn-secondary">← Back to Dashboard</a>
+            </div>
+        </div>
+    </main>
+
+    <script src="../assets/js/main.js"></script>
+    <script>
+        // Tab switching
+        const tabs = document.querySelectorAll('.room-tab');
+        const contents = document.querySelectorAll('.tab-content');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove active class from all
+                tabs.forEach(t => t.classList.remove('active'));
+                contents.forEach(c => c.classList.remove('active'));
+
+                // Add active class to clicked tab
+                tab.classList.add('active');
+                const room = tab.getAttribute('data-room');
+                document.getElementById(room).classList.add('active');
+            });
+        });
+
+        // Save checkbox states
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        checkboxes.forEach((checkbox, index) => {
+            // Load saved state
+            const saved = localStorage.getItem(`checklist-${checkbox.id}`);
+            if (saved === 'true') {
+                checkbox.checked = true;
+            }
+
+            // Save on change
+            checkbox.addEventListener('change', function() {
+                localStorage.setItem(`checklist-${checkbox.id}`, this.checked);
+            });
+        });
+    </script>
+</body>
+</html>

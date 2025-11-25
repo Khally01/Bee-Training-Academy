@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - Qbees Training Academy</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <style>
+        .resource-hero {
+            background: linear-gradient(135deg, #273E4B 0%, #1a2b35 100%);
+            padding: 2rem 1rem;
+            text-align: center;
+            color: white;
+            margin-bottom: 2rem;
+        }
+
+        .resource-hero h1 {
+            font-size: 2rem;
+            margin: 0 0 0.5rem 0;
+            color: #DFC790;
+        }
+
+        .resource-hero p {
+            margin: 0;
+            opacity: 0.9;
+            font-size: 1rem;
+        }
+
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 1rem 3rem 1rem;
+        }
+
+        .faq-categories {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .category-filter {
+            padding: 0.6rem 1.2rem;
+            border: 2px solid #273E4B;
+            background: white;
+            color: #273E4B;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .category-filter:hover {
+            background: #FFF7EB;
+        }
+
+        .category-filter.active {
+            background: #273E4B;
+            color: white;
+        }
+
+        .search-box {
+            margin-bottom: 2rem;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #273E4B;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: #DFC790;
+            box-shadow: 0 0 0 3px rgba(223, 199, 144, 0.2);
+        }
+
+        .faq-section {
+            margin-bottom: 1rem;
+        }
+
+        .faq-item {
+            background: white;
+            border: 2px solid #273E4B;
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item.hidden {
+            display: none;
+        }
+
+        .faq-question {
+            padding: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            background: #FFF7EB;
+            transition: background 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: #DFC790;
+        }
+
+        .faq-question h3 {
+            margin: 0;
+            font-size: 1.1rem;
+            color: #273E4B;
+            font-weight: 600;
+        }
+
+        .faq-icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 1000px;
+        }
+
+        .faq-answer-content {
+            padding: 1.5rem;
+            color: #2c3e50;
+            line-height: 1.7;
+        }
+
+        .faq-answer-content ul {
+            margin: 0.5rem 0;
+            padding-left: 1.5rem;
+        }
+
+        .faq-answer-content li {
+            margin: 0.5rem 0;
+        }
+
+        .faq-answer-content strong {
+            color: #273E4B;
+        }
+
+        .category-badge {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            background: #273E4B;
+            color: white;
+            border-radius: 15px;
+            font-size: 0.75rem;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .highlight {
+            background: #DFC790;
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 3rem 1rem;
+            color: #273E4B;
+        }
+
+        .no-results h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .resource-hero h1 {
+                font-size: 1.75rem;
+            }
+
+            .category-filter {
+                font-size: 0.85rem;
+                padding: 0.5rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="resource-hero">
+        <h1>❓ Frequently Asked Questions</h1>
+        <p>Quick answers to common questions</p>
+    </div>
+
+    <div class="faq-container">
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="🔍 Search for questions...">
+        </div>
+
+        <div class="faq-categories">
+            <button class="category-filter active" data-category="all">All Questions</button>
+            <button class="category-filter" data-category="procedures">Procedures</button>
+            <button class="category-filter" data-category="cleaning">Cleaning</button>
+            <button class="category-filter" data-category="chemicals">Chemicals</button>
+            <button class="category-filter" data-category="pricing">Pricing</button>
+            <button class="category-filter" data-category="communication">Communication</button>
+            <button class="category-filter" data-category="photos">Photos</button>
+        </div>
+
+        <div class="faq-section">
+            <!-- PROCEDURES -->
+            <div class="faq-item" data-category="procedures">
+                <div class="faq-question">
+                    <div>
+                        <span class="category-badge">Procedures</span>
+                        <h3>What should I do first when I arrive at a property?</h3>
+                    </div>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p>Follow these steps in order:</p>
+                        <ul>
+                            <li><strong>Check-in via App:</strong> Mark your arrival in the Qbees app</li>
+                            <li><strong>Initial Inspection:</strong> Walk through the property and take before photos</li>
+                            <li><strong>Note Issues:</strong> Document any damage, stains, or problems</li>
+                            <li><strong>Gather Supplies:</strong> Set up your cleaning kit and chemicals</li>
+                            <li><strong>Start Cleaning:</strong> Begin with the most time-consuming room (usually bathroom or kitchen)</li>
+                        </ul>
+                        <p><strong>Pro Tip:</strong> Always take wide-angle photos of each room before you start cleaning!</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item" data-category="procedures">
+                <div class="faq-question">
+                    <div>
+                        <span class="category-badge">Procedures</span>
+                        <h3>What's the difference between Check-in and Check-out cleans?</h3>
+                    </div>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p><strong>Check-in Clean:</strong> Preparing property for arriving guests</p>
+                        <ul>
+                            <li>Coordinate ETA with guest</li>
+                            <li>Full deep clean of all areas</li>
+                            <li>Fresh linen setup (sometimes done by linen team)</li>
+                            <li>Consumables restocked</li>
+                            <li>Welcome setup (kitchen essentials visible)</li>
+                        </ul>
+                        <p><strong>Check-out Clean:</strong> Cleaning after guests depart</p>
+                        <ul>
+                            <li>Strip all used linen and towels</li>
+                            <li>Remove all rubbish and check bins</li>
+                            <li>Full property clean and inspection</li>
+                            <li>Note any damages or missing items</li>
+                            <li>Take comprehensive photos</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item" data-category="procedures">
+                <div class="faq-question">
+                    <div>
+                        <span class="category-badge">Procedures</span>
+                        <h3>What is an Initial Clean and how is it different?</h3>
+                    </div>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p>An <strong>Initial Clean</strong> is for properties that haven't been professionally cleaned before or need extra attention. Key differences:</p>
+                        <ul>
+                            <li><strong>Extra time allocated:</strong> +50% more time than standard clean</li>
+                            <li><strong>Deep cleaning focus:</strong> Behind appliances, inside cupboards, baseboards</li>
+                            <li><strong>Higher standards:</strong> Bring property up to Qbees quality level</li>
+                            <li><strong>Extensive photos:</strong> Document before/after condition</li>
+                            <li><strong>Premium rate:</strong> Charged at 1.5x standard rate</li>
+                        </ul>
+                        <p>Think of it as establishing a baseline of cleanliness that future cleans will maintain.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CLEANING -->
+            <div class="faq-item" data-category="cleaning">
+                <div class="faq-question">
+                    <div>
+                        <span class="category-badge">Cleaning</span>
+                        <h3>What order should I clean rooms in?</h3>
+                    </div>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p><strong>Recommended cleaning order:</strong></p>
+                        <ol>
+                            <li><strong>Bathroom:</strong> Most time-consuming, allows chemicals to work while you clean other areas</li>
+                            <li><strong>Kitchen:</strong> Second most intensive area</li>
+                            <li><strong>Bedrooms:</strong> Change linen, dust, vacuum</li>
+                            <li><strong>Living Areas:</strong> Dust, wipe, vacuum</li>
+                            <li><strong>Laundry:</strong> Usually quick to clean</li>
+                            <li><strong>Final touches:</strong> Floors, entry areas, final inspection</li>
+                        </ol>
+                        <p><strong>Pro Tip:</strong> Spray bathroom surfaces with cleaner first, then move to another room while chemicals break down soap scum and grime!</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item" data-category="cleaning">
+                <div class="faq-question">
+                    <div>
+                        <span class="category-badge">Cleaning</span>
+                        <h3>How do I know if I need to do a Deep Clean vs Normal Clean?</h3>
+                    </div>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p><strong>Normal Clean (Standard):</strong></p>
+                        <ul>
+                            <li>Visible surfaces only</li>
+                            <li>Regular maintenance level</li>
+                            <li>Allocated time is base rate</li>
+                        </ul>
+                        <p><strong>Deep Clean (When specified):</strong></p>
+                        <ul>
+                            <li>Inside cupboards and drawers</li>
+                            <li>Behind and under appliances</li>
+                            <li>Baseboards and window sills</li>
+                            <li>Light fixtures and ceiling fans</li>
+                            <li>Grout scrubbing</li>
+                            <li>+50% time allocated</li>
+                        </ul>
+                        <p>The job type will be specified in your assignment. When in doubt, check with your property manager!</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item" data-category="cleaning">
+                <div class="faq-question">
+                    <div>
+                        <span class="category-badge">Cleaning</span>
+                        <h3>What are the most common cleaning mistakes to avoid?</h3>
+                    </div>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p><strong>Top mistakes and how to avoid them:</strong></p>
+                        <ul>
+                            <li><strong>Skipping pre-spray:</strong> Always spray surfaces and let chemicals work before wiping</li>
+                            <li><strong>Using wrong chemicals:</strong> Follow the chemical guide - wrong products damage surfaces</li>
+                            <li><strong>Forgetting touch points:</strong> Light switches, door handles, remotes - these are critical!</li>
+                            <li><strong>Missing inside/outside:</strong> Both sides of shower doors, fridge doors, mirrors</li>
+                            <li><strong>Rushing photos:</strong> Poor photos mean you have to come back</li>
+                            <li><strong>Not checking all rooms:</strong> Always do final walk-through before checkout</li>
+                            <li><strong>Leaving streaks:</strong> Buff glass and mirrors with dry cloth after cleaning</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CHEMICALS -->
+            <div class="faq-item" data-category="chemicals">
+                <div class="faq-question">
+                    <div>
+                        <span class="category-badge">Chemicals</span>
+                        <h3>Which chemical should I use for each area?</h3>
+                    </div>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p><strong>Quick reference guide:</strong></p>
+                        <ul>
+                            <li><strong>Lencia (Blue):</strong> Bathrooms, showers, mould, tiles</li>
+                            <li><strong>Taski (Yellow):</strong> General surfaces, bench tops, tables</li>
+                            <li><strong>Halo (Green):</strong> Glass, mirrors, windows</li>
+                            <li><strong>Magic (Pink):</strong> Kitchens, ovens, stovetops, grease</li>
+                            <li><strong>Shelley (White):</strong> Stainless steel appliances, taps</li>
+                            <li><strong>Ajax (Red):</strong> Tough stains, toilets, heavy-duty cleaning</li>
+                        </ul>
+                        <p><strong>Safety Reminder:</strong> Lencia, Magic, and Ajax MUST be diluted with water. Always read labels before use!</p>
+                        <p>For full details, see the <a href="chemical-guide.html">Chemical Guide</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item" data-category="chemicals">
+                <div class="faq-question">
+                    <div>
+                        <span class="category-badge">Chemicals</span>
+                        <h3>What's the microfibre cloth color system?</h3>
+                    </div>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p>Microfibre cloths are color-coded to prevent cross-contamination:</p>
+                        <ul>
+                            <li><strong>Blue:</strong> Bathrooms (showers, tubs, sinks)</li>
+                            <li><strong>Yellow:</strong> General surfaces (dusting, benchtops)</li>
+                            <li><strong>Green:</strong> Glass and mirrors</li>
+                            <li><strong>Red:</strong> Kitchens (stovetops, ovens, grease)</li>
+                            <li><strong>White:</strong> Stainless steel and polishing</li>
+                        </ul>
+                        <p><strong>Critical Rule:</strong> Never mix bathroom and kitchen cloths! This prevents spreading bacteria and ensures hygiene standards.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item" data-category="chemicals">
+                <div class="faq-question">
+                    <div>
+                        <span class="category-badge">Chemicals</span>
+                        <h3>How do I dilute chemicals safely?</h3>
+                    </div>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p><strong>Dilution Guidelines:</strong></p>
+                        <ul>
+                            <li><strong>Lencia:</strong> 1 part Lencia : 3 parts water (25% solution)</li>
+                            <li><strong>Magic:</strong> 1 part Magic : 10 parts water (10% solution)</li>
+                            <li><strong>Ajax:</strong> Follow bottle instructions, usually light sprinkle in water</li>
+                        </ul>
+                        <p><strong>Safety Steps:</strong></p>
+                        <ol>
+                            <li>Always add chemical to water (never water to chemical)</li>
+                            <li>Use spray bottles with clear labels</li>
+                            <li>Test on small area first if unsure</li>
+                            <li>Never mix different chemicals together</li>
+                            <li>Wear gloves when handling concentrated chemicals</li>
+                        </ol>
+                        <p><strong>Warning:</strong> Undiluted chemicals can damage surfaces and are unsafe to use directly!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRICING -->
+            <div class="faq-item" data-category="pricing">
+                <div class="faq-question">
+                    <div>
+                        <span class="category-badge">Pricing</span>
+                        <h3>How is cleaning time calculated?</h3>
+                    </div>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p>Base time is calculated by property configuration:</p>
+                        <ul>
+                            <li><strong>1 bed, 1 bath apartment:</strong> 2.0 hours</li>
+                            <li><strong>2 bed, 2 bath apartment:</strong> 3.0 hours</li>
+                            <li><strong>3 bed, 2 bath house:</strong> 4.0 hours</li>
+                        </ul>
+                        <p><strong>Time adjustments:</strong></p>
+                        <ul>
+                            <li>+0.5 hours per extra bedroom</li>
+                            <li>+0.25 hours per extra bathroom</li>
+                            <li>+1.5x for Deep Clean or Initial Clean</li>
+                            <li>Houses get +0.25 hours vs apartments</li>
+                        </ul>
+                        <p>Use the <a href="pricing.html">Pricing Calculator</a> for exact time allocations.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item" data-category="pricing">
+                <div class="faq-question">
+                    <div>
+                        <span class="category-badge">Pricing</span>
+                        <h3>What are the rates for public holidays?</h3>
+                    </div>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p><strong>Public Holiday Rates:</strong></p>
+                        <ul>
+                            <li>Standard hourly rate: $30.00/hour</li>
+                            <li>Public holiday rate: <strong>$45.00/hour (1.5x)</strong></li>
+                        </ul>
+                        <p><strong>Example:</strong></p>
+                        <p>A 2 bed, 1 bath apartment normally takes 2.5 hours at $75.00 total.</p>
+                        <p>On a public holiday: 2.5 hours × $45.00 = <strong>$112.50</strong></p>
+                        <p>This applies to all nationally recognized Australian public holidays.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item" data-category="pricing">
+                <div class="faq-question">
+                    <div>
+                        <span class="category-badge">Pricing</span>
+                        <h3>What are additional fees for?</h3>
+                    </div>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p><strong>Common additional charges:</strong></p>
+                        <ul>
+                            <li><strong>Waiting Time ($15):</strong> When you arrive but property isn't accessible</li>
+                            <li><strong>Key Exchange ($15):</strong> Special trips to collect/return keys</li>
+                            <li><strong>Extra Bed Made ($5):</strong> Per additional bed made (beyond base count)</li>
+                            <li><strong>Excessive Mess:</strong> Quote required - significantly over normal cleaning</li>
+                            <li><strong>Pet Hair Removal:</strong> Quote required - heavy pet hair situations</li>
+                        </ul>
+                        <p><strong>Important:</strong> Always photograph and document situations requiring additional charges before proceeding with extra work.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- COMMUNICATION -->
+            <div class="faq-item" data-category="communication">
+                <div class="faq-question">
+                    <div>
+                        <span class="category-badge">Communication</span>
+                        <h3>How do I communicate with guests for check-ins?</h3>
+                    </div>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p><strong>Template Message for Guest ETA:</strong></p>
+                        <div style="background: #FFF7EB; padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+                            <p style="margin: 0.5rem 0;"><em>Hi [Guest Name], it's [Your Name] from Qbees! 🐝</em></p>
+                            <p style="margin: 0.5rem 0;"><em>Could you kindly confirm your ETA for [Property Address]? This helps us ensure a smooth key handover.</em></p>
+                            <p style="margin: 0.5rem 0;"><em>Please reply with your arrival time. For updates, text me directly: [Your Phone Number].</em></p>
+                            <p style="margin: 0.5rem 0;"><em>Thank you! 🙌</em></p>
+                        </div>
+                        <p><strong>Communication Tips:</strong></p>
+                        <ul>
+                            <li>Always be polite and professional</li>
+                            <li>Send ETA request 2-3 hours before expected arrival</li>
+                            <li>Confirm meeting location for key handover</li>
+                            <li>Have property manager on standby for issues</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item" data-category="communication">
+                <div class="faq-question">
+                    <div>
+                        <span class="category-badge">Communication</span>
+                        <h3>What should I report to the property manager?</h3>
+                    </div>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p><strong>Always report:</strong></p>
+                        <ul>
+                            <li><strong>Damage:</strong> Any broken items, stains, or property damage</li>
+                            <li><strong>Maintenance Issues:</strong> Faulty appliances, leaks, electrical problems</li>
+                            <li><strong>Missing Items:</strong> Towels, consumables, furniture, keys</li>
+                            <li><strong>Cleanliness Issues:</strong> If property requires more than allocated time</li>
+                            <li><strong>Access Problems:</strong> Key issues, lockbox problems, can't enter</li>
+                            <li><strong>Guest Concerns:</strong> Early arrivals, complaints, special requests</li>
+                            <li><strong>Safety Hazards:</strong> Broken glass, exposed wires, gas smells</li>
+                        </ul>
+                        <p><strong>Reporting Method:</strong></p>
+                        <ul>
+                            <li>Take clear photos of the issue</li>
+                            <li>Send via Qbees app immediately</li>
+                            <li>Include brief description</li>
+                            <li>For urgent issues, call property manager directly</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PHOTOS -->
+            <div class="faq-item" data-category="photos">
+                <div class="faq-question">
+                    <div>
+                        <span class="category-badge">Photos</span>
+                        <h3>What photos are required for every clean?</h3>
+                    </div>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p><strong>Mandatory photos for all cleans:</strong></p>
+                        <ul>
+                            <li><strong>Wide-angle room shots:</strong> All rooms before and after</li>
+                            <li><strong>Bathroom:</strong> Shower, sink, toilet, cupboards</li>
+                            <li><strong>Kitchen:</strong> Benchtop, stovetop, sink, inside fridge</li>
+                            <li><strong>Bedrooms:</strong> Made beds, inside wardrobes</li>
+                            <li><strong>Living area:</strong> Overall view, dining table</li>
+                            <li><strong>Consumables:</strong> Setup shot of toiletries and kitchen items</li>
+                        </ul>
+                        <p><strong>Photo Quality Tips:</strong></p>
+                        <ul>
+                            <li>Use landscape orientation (horizontal)</li>
+                            <li>Ensure good lighting - open curtains if needed</li>
+                            <li>Hold phone steady - no blurry photos</li>
+                            <li>Show the full area - not just close-ups</li>
+                            <li>Take photos from corners to show more space</li>
+                        </ul>
+                        <p>See <a href="../modules/module-4.html">Module 4</a> for complete photo documentation guide.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item" data-category="photos">
+                <div class="faq-question">
+                    <div>
+                        <span class="category-badge">Photos</span>
+                        <h3>Why are my photos being rejected?</h3>
+                    </div>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p><strong>Common reasons for photo rejection:</strong></p>
+                        <ul>
+                            <li><strong>Too dark:</strong> Open curtains and turn on lights</li>
+                            <li><strong>Blurry:</strong> Hold phone steady, clean camera lens</li>
+                            <li><strong>Too close:</strong> Step back to show full area</li>
+                            <li><strong>Wrong angle:</strong> Portrait instead of landscape</li>
+                            <li><strong>Missing areas:</strong> Didn't capture what was requested</li>
+                            <li><strong>Cluttered:</strong> Your cleaning supplies in the shot</li>
+                            <li><strong>Poor composition:</strong> Important areas cut off</li>
+                        </ul>
+                        <p><strong>How to take perfect photos:</strong></p>
+                        <ol>
+                            <li>Review the photo checklist in Module 4</li>
+                            <li>Take photos from room corners for wide angles</li>
+                            <li>Check each photo before moving to next room</li>
+                            <li>Retake immediately if quality is poor</li>
+                            <li>Remove personal items from frame (cleaning caddy, vacuum)</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GENERAL -->
+            <div class="faq-item" data-category="procedures">
+                <div class="faq-question">
+                    <div>
+                        <span class="category-badge">Procedures</span>
+                        <h3>What should I do if I can't finish in the allocated time?</h3>
+                    </div>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p><strong>First, assess why:</strong></p>
+                        <ul>
+                            <li>Is the property significantly messier than expected?</li>
+                            <li>Are there unexpected issues (heavy stains, extra rooms)?</li>
+                            <li>Did you need to wait for access?</li>
+                        </ul>
+                        <p><strong>Then take action:</strong></p>
+                        <ol>
+                            <li><strong>Document with photos:</strong> Show the extra work required</li>
+                            <li><strong>Contact property manager:</strong> Explain situation and estimated extra time</li>
+                            <li><strong>Get approval:</strong> Wait for confirmation before continuing</li>
+                            <li><strong>Complete the work:</strong> Once approved, finish to standard</li>
+                            <li><strong>Note in app:</strong> Record actual time and reason for variance</li>
+                        </ol>
+                        <p><strong>Prevention Tips:</strong></p>
+                        <ul>
+                            <li>Work efficiently - follow cleaning order in Module 2</li>
+                            <li>Don't spend too long on one area</li>
+                            <li>Use pre-spray technique to save time</li>
+                            <li>Practice makes you faster - timing improves with experience</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item" data-category="procedures">
+                <div class="faq-question">
+                    <div>
+                        <span class="category-badge">Procedures</span>
+                        <h3>What do I do if I find damaged or broken items?</h3>
+                    </div>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p><strong>Immediate Actions:</strong></p>
+                        <ol>
+                            <li><strong>Stop and document:</strong> Take multiple clear photos of damage</li>
+                            <li><strong>Note details:</strong> What's damaged, where, how bad</li>
+                            <li><strong>Check your before photos:</strong> Was it there when you arrived?</li>
+                            <li><strong>Report via app:</strong> Send photos and description to property manager</li>
+                            <li><strong>Don't attempt repairs:</strong> Unless specifically instructed</li>
+                        </ol>
+                        <p><strong>Important:</strong> This is why before photos are critical! They protect you from false damage claims.</p>
+                        <p><strong>For Safety Hazards:</strong></p>
+                        <ul>
+                            <li>Broken glass: Clean up carefully, document, report</li>
+                            <li>Water leaks: Turn off water if possible, report immediately</li>
+                            <li>Electrical issues: Don't touch, call property manager</li>
+                            <li>Gas smells: Evacuate, call emergency services first, then property manager</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item" data-category="procedures">
+                <div class="faq-question">
+                    <div>
+                        <span class="category-badge">Procedures</span>
+                        <h3>How do I handle rejected linen?</h3>
+                    </div>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p><strong>What qualifies as rejected linen:</strong></p>
+                        <ul>
+                            <li>Tears or holes</li>
+                            <li>Permanent stains</li>
+                            <li>Bleach marks or discoloration</li>
+                            <li>Worn fabric (thin, see-through)</li>
+                            <li>Damaged zippers or buttons</li>
+                        </ul>
+                        <p><strong>Rejection Process:</strong></p>
+                        <ol>
+                            <li><strong>Identify:</strong> Check all linen as you strip beds</li>
+                            <li><strong>Photograph:</strong> Take clear photo of damage with item laid flat</li>
+                            <li><strong>Bag separately:</strong> Put in different bag from regular dirty linen</li>
+                            <li><strong>Label:</strong> Mark bag "REJECTED LINEN - [Property Name]"</li>
+                            <li><strong>Report:</strong> Upload photo to app with description</li>
+                            <li><strong>Return:</strong> Follow linen team instructions for pickup</li>
+                        </ol>
+                        <p><strong>Never:</strong> Throw away rejected linen without documentation and approval!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="no-results" id="noResults" style="display: none;">
+            <h3>No questions found</h3>
+            <p>Try adjusting your search or filter</p>
+        </div>
+
+        <div style="margin-top: 3rem; padding: 2rem; background: #FFF7EB; border-radius: 12px; border: 2px solid #DFC790; text-align: center;">
+            <h3 style="color: #273E4B; margin-bottom: 1rem;">Still have questions?</h3>
+            <p style="margin-bottom: 1rem; color: #2c3e50;">Contact your property manager or review the training modules for detailed information.</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="../modules/module-1.html" style="text-decoration: none; color: #273E4B; font-weight: 600;">📚 Training Modules</a>
+                <a href="cleaning-checklist.html" style="text-decoration: none; color: #273E4B; font-weight: 600;">✅ Cleaning Checklist</a>
+                <a href="chemical-guide.html" style="text-decoration: none; color: #273E4B; font-weight: 600;">🧪 Chemical Guide</a>
+                <a href="pricing.html" style="text-decoration: none; color: #273E4B; font-weight: 600;">💰 Pricing Reference</a>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 2rem; padding: 1rem;">
+            <a href="../index.html" style="display: inline-block; padding: 1rem 2rem; background: #273E4B; color: white; text-decoration: none; border-radius: 12px; font-weight: 600;">← Back to Dashboard</a>
+        </div>
+    </div>
+
+    <script>
+        // FAQ Accordion functionality
+        const faqItems = document.querySelectorAll('.faq-item');
+        const searchInput = document.getElementById('searchInput');
+        const categoryFilters = document.querySelectorAll('.category-filter');
+        const noResults = document.getElementById('noResults');
+
+        // Toggle FAQ items
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                const wasActive = item.classList.contains('active');
+
+                // Close all items
+                faqItems.forEach(i => i.classList.remove('active'));
+
+                // Open clicked item if it wasn't already open
+                if (!wasActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // Search functionality
+        searchInput.addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+            filterFAQs();
+        });
+
+        // Category filter functionality
+        categoryFilters.forEach(filter => {
+            filter.addEventListener('click', () => {
+                categoryFilters.forEach(f => f.classList.remove('active'));
+                filter.classList.add('active');
+                filterFAQs();
+            });
+        });
+
+        function filterFAQs() {
+            const searchTerm = searchInput.value.toLowerCase();
+            const activeCategory = document.querySelector('.category-filter.active').getAttribute('data-category');
+            let visibleCount = 0;
+
+            faqItems.forEach(item => {
+                const question = item.querySelector('h3').textContent.toLowerCase();
+                const answer = item.querySelector('.faq-answer-content').textContent.toLowerCase();
+                const category = item.getAttribute('data-category');
+
+                const matchesSearch = searchTerm === '' || question.includes(searchTerm) || answer.includes(searchTerm);
+                const matchesCategory = activeCategory === 'all' || category === activeCategory;
+
+                if (matchesSearch && matchesCategory) {
+                    item.classList.remove('hidden');
+                    visibleCount++;
+                } else {
+                    item.classList.add('hidden');
+                    item.classList.remove('active');
+                }
+            });
+
+            // Show/hide no results message
+            if (visibleCount === 0) {
+                noResults.style.display = 'block';
+            } else {
+                noResults.style.display = 'none';
+            }
+        }
+
+        // Open first FAQ item by default
+        if (faqItems.length > 0) {
+            faqItems[0].classList.add('active');
+        }
+    </script>
+</body>
+</html>

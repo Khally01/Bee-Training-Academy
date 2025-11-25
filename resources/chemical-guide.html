@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chemical Guide | Bee Training Academy</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐝</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <style>
+        .chemical-card {
+            background: var(--bg-white);
+            padding: var(--space-lg);
+            border-radius: var(--radius-lg);
+            margin-bottom: var(--space-lg);
+            box-shadow: var(--shadow-md);
+            border-left: 6px solid var(--primary-gold);
+        }
+
+        .chemical-header {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+            margin-bottom: var(--space-md);
+            padding-bottom: var(--space-md);
+            border-bottom: 2px solid var(--bg-gray);
+        }
+
+        .chemical-icon {
+            font-size: 3rem;
+            flex-shrink: 0;
+        }
+
+        .chemical-info h3 {
+            color: var(--primary-dark);
+            margin-bottom: var(--space-xs);
+        }
+
+        .chemical-brand {
+            color: var(--text-medium);
+            font-size: 0.9rem;
+        }
+
+        .usage-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--space-md);
+            margin: var(--space-md) 0;
+        }
+
+        .usage-box {
+            background: var(--bg-light);
+            padding: var(--space-md);
+            border-radius: var(--radius-md);
+            border-left: 3px solid var(--success-green);
+        }
+
+        .usage-box h4 {
+            color: var(--primary-dark);
+            margin-bottom: var(--space-sm);
+            font-size: 0.9rem;
+        }
+
+        .usage-box ul {
+            margin: 0;
+            padding-left: var(--space-md);
+            font-size: 0.875rem;
+        }
+
+        .warning-box {
+            background: #FFF3CD;
+            border: 2px solid var(--warning-orange);
+            padding: var(--space-md);
+            border-radius: var(--radius-md);
+            margin: var(--space-md) 0;
+        }
+
+        .warning-box h4 {
+            color: var(--warning-orange);
+            margin-bottom: var(--space-sm);
+        }
+
+        .dilution-badge {
+            background: var(--error-red);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: var(--radius-sm);
+            font-size: 0.875rem;
+            font-weight: 600;
+            display: inline-block;
+            margin: var(--space-xs) 0;
+        }
+
+        .tools-section {
+            background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%);
+            padding: var(--space-lg);
+            border-radius: var(--radius-lg);
+            margin: var(--space-lg) 0;
+        }
+
+        .color-guide {
+            display: flex;
+            gap: var(--space-md);
+            flex-wrap: wrap;
+            margin: var(--space-md) 0;
+        }
+
+        .color-box {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            background: var(--bg-white);
+            padding: var(--space-sm) var(--space-md);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .color-circle {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: 2px solid #333;
+        }
+
+        .blue { background: #2196F3; }
+        .red { background: #F44336; }
+        .green { background: #4CAF50; }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <a href="../index.html" style="text-decoration: none;">
+                <div class="logo">
+                    <img src="../assets/images/branding/qbees-icon-blue.svg" alt="Qbees" class="logo-icon">
+                    <h1 class="logo-text">Chemical Guide</h1>
+                </div>
+            </a>
+            <p class="tagline">Safe & Effective Cleaning Chemical Usage</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="module-content">
+            <div class="content-section">
+                <h2>🧪 Cleaning Chemicals Guide</h2>
+                <p>Learn how to use each cleaning chemical safely and effectively for professional results.</p>
+
+                <div class="warning-box">
+                    <h4>⚠️ Safety First!</h4>
+                    <ul>
+                        <li>Always wear gloves when handling chemicals</li>
+                        <li>Ensure good ventilation when using strong cleaners</li>
+                        <li>Never mix different chemicals together</li>
+                        <li>Read labels carefully for dilution instructions</li>
+                        <li>Keep chemicals away from food and guest items</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Lencia -->
+            <div class="chemical-card">
+                <div class="chemical-header">
+                    <div class="chemical-icon">🚿</div>
+                    <div class="chemical-info">
+                        <h3>Lencia - Bathroom/Mould Cleaner</h3>
+                        <p class="chemical-brand">Brand: Lencia</p>
+                        <span class="dilution-badge">⚠️ MUST DILUTE WITH WATER</span>
+                    </div>
+                </div>
+
+                <div class="usage-grid">
+                    <div class="usage-box">
+                        <h4>Primary Uses</h4>
+                        <ul>
+                            <li>Shower and bathtub cleaning</li>
+                            <li>Mould removal on tiles</li>
+                            <li>Mildew removal</li>
+                            <li>Grout cleaning</li>
+                        </ul>
+                    </div>
+
+                    <div class="usage-box">
+                        <h4>How to Use</h4>
+                        <ul>
+                            <li>Dilute with water before use</li>
+                            <li>Spray on surface</li>
+                            <li>Let sit for 2-5 minutes</li>
+                            <li>Scrub with grout brush</li>
+                            <li>Rinse thoroughly</li>
+                        </ul>
+                    </div>
+
+                    <div class="usage-box">
+                        <h4>Best For</h4>
+                        <ul>
+                            <li>Shower walls and glass</li>
+                            <li>Toilet bowl</li>
+                            <li>Bathroom tiles</li>
+                            <li>Grout lines</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Taski -->
+            <div class="chemical-card">
+                <div class="chemical-header">
+                    <div class="chemical-icon">🚽</div>
+                    <div class="chemical-info">
+                        <h3>Taski - Cream Cleanser</h3>
+                        <p class="chemical-brand">Brand: Taski</p>
+                    </div>
+                </div>
+
+                <div class="usage-grid">
+                    <div class="usage-box">
+                        <h4>Primary Uses</h4>
+                        <ul>
+                            <li>Toilet bowl cleaning</li>
+                            <li>Sink scrubbing</li>
+                            <li>Soap scum removal</li>
+                            <li>Stubborn stains</li>
+                        </ul>
+                    </div>
+
+                    <div class="usage-box">
+                        <h4>How to Use</h4>
+                        <ul>
+                            <li>Apply directly to surface</li>
+                            <li>Let sit for 5 minutes</li>
+                            <li>Scrub with sponge or brush</li>
+                            <li>Rinse completely</li>
+                        </ul>
+                    </div>
+
+                    <div class="usage-box">
+                        <h4>Best For</h4>
+                        <ul>
+                            <li>Inside toilet bowl</li>
+                            <li>Ceramic sinks</li>
+                            <li>Bathtub stains</li>
+                            <li>Glass shower doors (deep clean)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Halo Glass Cleaner -->
+            <div class="chemical-card">
+                <div class="chemical-header">
+                    <div class="chemical-icon">✨</div>
+                    <div class="chemical-info">
+                        <h3>Halo - Glass Cleaner</h3>
+                        <p class="chemical-brand">Brand: Halo</p>
+                    </div>
+                </div>
+
+                <div class="usage-grid">
+                    <div class="usage-box">
+                        <h4>Primary Uses</h4>
+                        <ul>
+                            <li>Mirrors</li>
+                            <li>Windows</li>
+                            <li>Glass surfaces</li>
+                            <li>Shiny surfaces</li>
+                        </ul>
+                    </div>
+
+                    <div class="usage-box">
+                        <h4>How to Use</h4>
+                        <ul>
+                            <li>Spray directly on glass</li>
+                            <li>Wipe with blue glass cloth</li>
+                            <li>Buff for streak-free finish</li>
+                            <li>Use circular motions</li>
+                        </ul>
+                    </div>
+
+                    <div class="usage-box">
+                        <h4>Best For</h4>
+                        <ul>
+                            <li>Bathroom mirrors</li>
+                            <li>Bedroom mirrors</li>
+                            <li>Glass tables</li>
+                            <li>Shower glass (after cleaning)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Magic Multi-Purpose -->
+            <div class="chemical-card">
+                <div class="chemical-header">
+                    <div class="chemical-icon">🌟</div>
+                    <div class="chemical-info">
+                        <h3>Magic - Multi-Purpose Cleaner</h3>
+                        <p class="chemical-brand">Brand: Magic</p>
+                        <span class="dilution-badge">⚠️ MUST DILUTE WITH WATER</span>
+                    </div>
+                </div>
+
+                <div class="usage-grid">
+                    <div class="usage-box">
+                        <h4>Primary Uses</h4>
+                        <ul>
+                            <li>Kitchen countertops</li>
+                            <li>General surface cleaning</li>
+                            <li>Cupboard wiping</li>
+                            <li>Bathroom counters</li>
+                        </ul>
+                    </div>
+
+                    <div class="usage-box">
+                        <h4>How to Use</h4>
+                        <ul>
+                            <li>Dilute with water before use</li>
+                            <li>Spray on surface</li>
+                            <li>Wipe with microfibre cloth</li>
+                            <li>No need to rinse on most surfaces</li>
+                        </ul>
+                    </div>
+
+                    <div class="usage-box">
+                        <h4>Best For</h4>
+                        <ul>
+                            <li>Kitchen surfaces</li>
+                            <li>Bathroom sinks</li>
+                            <li>Furniture</li>
+                            <li>General cleaning</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Shelley Oven Cleaner -->
+            <div class="chemical-card">
+                <div class="chemical-header">
+                    <div class="chemical-icon">🍳</div>
+                    <div class="chemical-info">
+                        <h3>Shelley Spray - Oven Cleaner</h3>
+                        <p class="chemical-brand">Brand: Shelley</p>
+                    </div>
+                </div>
+
+                <div class="usage-grid">
+                    <div class="usage-box">
+                        <h4>Primary Uses</h4>
+                        <ul>
+                            <li>Oven interior</li>
+                            <li>Oven racks</li>
+                            <li>Heavy grease removal</li>
+                            <li>Baked-on food</li>
+                        </ul>
+                    </div>
+
+                    <div class="usage-box">
+                        <h4>How to Use</h4>
+                        <ul>
+                            <li>Ensure oven is COOL</li>
+                            <li>Spray generously inside</li>
+                            <li>Let sit for 10-15 minutes</li>
+                            <li>Scrub with sponge</li>
+                            <li>Rinse thoroughly</li>
+                        </ul>
+                    </div>
+
+                    <div class="usage-box">
+                        <h4>Safety Tips</h4>
+                        <ul>
+                            <li>Use in well-ventilated area</li>
+                            <li>Wear gloves always</li>
+                            <li>Avoid breathing fumes</li>
+                            <li>Rinse completely</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ajax Floor Cleaner -->
+            <div class="chemical-card">
+                <div class="chemical-header">
+                    <div class="chemical-icon">🧹</div>
+                    <div class="chemical-info">
+                        <h3>Ajax - Floor Cleaner</h3>
+                        <p class="chemical-brand">Brand: Ajax</p>
+                    </div>
+                </div>
+
+                <div class="usage-grid">
+                    <div class="usage-box">
+                        <h4>Primary Uses</h4>
+                        <ul>
+                            <li>Mopping all hard floors</li>
+                            <li>Tiles</li>
+                            <li>Vinyl</li>
+                            <li>Laminate</li>
+                        </ul>
+                    </div>
+
+                    <div class="usage-box">
+                        <h4>How to Use</h4>
+                        <ul>
+                            <li>Add to bucket of water</li>
+                            <li>Vacuum floors first</li>
+                            <li>Mop in sections</li>
+                            <li>Wring mop well</li>
+                            <li>Let air dry</li>
+                        </ul>
+                    </div>
+
+                    <div class="usage-box">
+                        <h4>Best Practices</h4>
+                        <ul>
+                            <li>Use appropriate dilution</li>
+                            <li>Change water when dirty</li>
+                            <li>Mop towards the exit</li>
+                            <li>Don't over-wet floors</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cleaning Tools Section -->
+            <div class="tools-section">
+                <h2>🧽 Cleaning Tools & Color Codes</h2>
+                <p>Using the right tool with the right chemical is essential for safety and effectiveness.</p>
+
+                <h3 style="margin-top: var(--space-lg);">Microfibre Cloth Color System</h3>
+                <div class="color-guide">
+                    <div class="color-box">
+                        <div class="color-circle blue"></div>
+                        <div>
+                            <strong>Blue Microfibre</strong><br>
+                            <small>Dusting & general cleaning</small>
+                        </div>
+                    </div>
+                    <div class="color-box">
+                        <div class="color-circle blue"></div>
+                        <div>
+                            <strong>Blue Glass Cloth</strong><br>
+                            <small>Mirrors & glass surfaces</small>
+                        </div>
+                    </div>
+                    <div class="color-box">
+                        <div class="color-circle red"></div>
+                        <div>
+                            <strong>Red Microfibre</strong><br>
+                            <small>Bathroom only</small>
+                        </div>
+                    </div>
+                    <div class="color-box">
+                        <div class="color-circle green"></div>
+                        <div>
+                            <strong>Green Microfibre</strong><br>
+                            <small>Kitchen only</small>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 style="margin-top: var(--space-lg);">Other Essential Tools</h3>
+                <ul>
+                    <li><strong>Tile Grout Brush:</strong> For scrubbing grout lines and mould (use with Lencia)</li>
+                    <li><strong>Magic Sponge:</strong> For spot cleaning walls and marks (use dry or damp)</li>
+                    <li><strong>Stainless Steel Scrub:</strong> For tough stains on sinks and stovetops</li>
+                    <li><strong>Regular Sponge:</strong> For general scrubbing with cream cleanser</li>
+                </ul>
+            </div>
+
+            <!-- Quick Reference -->
+            <div class="content-section">
+                <h2>📝 Quick Reference Chart</h2>
+                <table style="width: 100%; border-collapse: collapse; background: white;">
+                    <thead>
+                        <tr style="background: var(--primary-dark); color: white;">
+                            <th style="padding: var(--space-sm); text-align: left;">Area</th>
+                            <th style="padding: var(--space-sm); text-align: left;">Chemical</th>
+                            <th style="padding: var(--space-sm); text-align: left;">Tool</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border-bottom: 1px solid var(--bg-gray);">
+                            <td style="padding: var(--space-sm);">Toilet Bowl</td>
+                            <td style="padding: var(--space-sm);">Taski + Lencia</td>
+                            <td style="padding: var(--space-sm);">Toilet brush, sponge</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--bg-gray);">
+                            <td style="padding: var(--space-sm);">Shower/Bathtub</td>
+                            <td style="padding: var(--space-sm);">Lencia (diluted)</td>
+                            <td style="padding: var(--space-sm);">Grout brush, red cloth</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--bg-gray);">
+                            <td style="padding: var(--space-sm);">Mirrors</td>
+                            <td style="padding: var(--space-sm);">Halo</td>
+                            <td style="padding: var(--space-sm);">Blue glass cloth</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--bg-gray);">
+                            <td style="padding: var(--space-sm);">Kitchen Counters</td>
+                            <td style="padding: var(--space-sm);">Magic (diluted)</td>
+                            <td style="padding: var(--space-sm);">Green microfibre</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--bg-gray);">
+                            <td style="padding: var(--space-sm);">Oven</td>
+                            <td style="padding: var(--space-sm);">Shelley Spray</td>
+                            <td style="padding: var(--space-sm);">Sponge, steel scrub</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: var(--space-sm);">Floors</td>
+                            <td style="padding: var(--space-sm);">Ajax</td>
+                            <td style="padding: var(--space-sm);">Mop, bucket</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div class="nav-buttons">
+                <a href="../index.html" class="btn-secondary">← Back to Dashboard</a>
+            </div>
+        </div>
+    </main>
+
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Training Video - Qbees Training Academy</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <style>
+        .resource-hero {
+            background: linear-gradient(135deg, #273E4B 0%, #1a2b35 100%);
+            padding: 2rem 1rem;
+            text-align: center;
+            color: white;
+            margin-bottom: 2rem;
+        }
+
+        .resource-hero h1 {
+            font-size: 2rem;
+            margin: 0 0 0.5rem 0;
+            color: #DFC790;
+        }
+
+        .resource-hero p {
+            margin: 0;
+            opacity: 0.9;
+            font-size: 1rem;
+        }
+
+        .video-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem 3rem 1rem;
+        }
+
+        .video-player-wrapper {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+            margin-bottom: 2rem;
+        }
+
+        .video-player {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            background: #000;
+        }
+
+        .video-player iframe,
+        .video-player video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .video-placeholder {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #273E4B 0%, #354F5E 100%);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .video-placeholder-icon {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+        }
+
+        .video-placeholder h3 {
+            font-size: 1.5rem;
+            margin: 0 0 0.5rem 0;
+            color: #DFC790;
+        }
+
+        .video-placeholder p {
+            margin: 0;
+            opacity: 0.9;
+            max-width: 500px;
+        }
+
+        .video-chapters {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin-bottom: 2rem;
+        }
+
+        .video-chapters h2 {
+            color: #273E4B;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .chapter-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .chapter-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: #FFF7EB;
+            border-radius: 8px;
+            border-left: 4px solid #273E4B;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .chapter-item:hover {
+            background: #DFC790;
+            transform: translateX(5px);
+        }
+
+        .chapter-number {
+            width: 40px;
+            height: 40px;
+            background: #273E4B;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .chapter-info {
+            flex: 1;
+        }
+
+        .chapter-title {
+            font-weight: 600;
+            color: #273E4B;
+            margin: 0 0 0.25rem 0;
+        }
+
+        .chapter-duration {
+            font-size: 0.875rem;
+            color: #354F5E;
+            margin: 0;
+        }
+
+        .chapter-timestamp {
+            background: #273E4B;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.813rem;
+            font-weight: 600;
+            font-family: 'Courier New', monospace;
+        }
+
+        .video-notes {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin-bottom: 2rem;
+        }
+
+        .video-notes h2 {
+            color: #273E4B;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .notes-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        .note-card {
+            background: #FFF7EB;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 2px solid #DFC790;
+        }
+
+        .note-card h3 {
+            color: #273E4B;
+            margin: 0 0 0.75rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .note-card ul {
+            margin: 0;
+            padding-left: 1.5rem;
+        }
+
+        .note-card li {
+            margin: 0.5rem 0;
+            color: #354F5E;
+        }
+
+        .video-downloads {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin-bottom: 2rem;
+        }
+
+        .video-downloads h2 {
+            color: #273E4B;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .download-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+
+        .download-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem;
+            background: #FFF7EB;
+            border-radius: 8px;
+            border: 2px solid #DFC790;
+        }
+
+        .download-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .download-icon {
+            font-size: 2rem;
+        }
+
+        .download-details h4 {
+            margin: 0 0 0.25rem 0;
+            color: #273E4B;
+        }
+
+        .download-details p {
+            margin: 0;
+            font-size: 0.875rem;
+            color: #354F5E;
+        }
+
+        .download-btn {
+            padding: 0.75rem 1.5rem;
+            background: #273E4B;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .download-btn:hover {
+            background: #354F5E;
+            transform: translateY(-2px);
+        }
+
+        .download-btn.disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            opacity: 0.6;
+        }
+
+        .download-btn.disabled:hover {
+            transform: none;
+        }
+
+        .setup-instructions {
+            background: #FFF7EB;
+            border: 2px solid #DFC790;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .setup-instructions h3 {
+            color: #273E4B;
+            margin: 0 0 1rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .setup-instructions ol {
+            margin: 0;
+            padding-left: 1.5rem;
+        }
+
+        .setup-instructions li {
+            margin: 0.75rem 0;
+            color: #354F5E;
+        }
+
+        .setup-instructions code {
+            background: white;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.875rem;
+            color: #273E4B;
+        }
+
+        @media (min-width: 768px) {
+            .notes-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .download-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .resource-hero h1 {
+                font-size: 1.75rem;
+            }
+
+            .video-placeholder-icon {
+                font-size: 3rem;
+            }
+
+            .video-placeholder h3 {
+                font-size: 1.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="resource-hero">
+        <h1>🎥 Training Video</h1>
+        <p>Watch and learn professional cleaning techniques</p>
+    </div>
+
+    <div class="video-container">
+        <!-- Video Player -->
+        <div class="video-player-wrapper">
+            <div class="video-player">
+                <!-- Qbees Training Video -->
+                <iframe
+                    src="https://www.youtube.com/embed/8uXLQTYGZyY"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+
+        <!-- Setup Instructions for Admin -->
+        <div class="setup-instructions">
+            <h3>📝 For Admin: Video Setup Instructions</h3>
+            <p><strong>To add the training video, choose one of these options:</strong></p>
+            <ol>
+                <li><strong>YouTube (Recommended):</strong> Upload video to YouTube → Copy embed code → Replace placeholder above</li>
+                <li><strong>Vimeo:</strong> Upload to Vimeo → Get embed code → Replace placeholder above</li>
+                <li><strong>Self-hosted:</strong> Place video file in <code>assets/videos/</code> → Uncomment self-hosted example above</li>
+            </ol>
+            <p>See <code>VIDEO_SETUP_GUIDE.md</code> for detailed instructions.</p>
+        </div>
+
+        <!-- Video Chapters -->
+        <div class="video-chapters">
+            <h2>📑 Video Chapters</h2>
+            <div class="chapter-list">
+                <div class="chapter-item" data-timestamp="0:00">
+                    <div class="chapter-number">1</div>
+                    <div class="chapter-info">
+                        <h4 class="chapter-title">Welcome & Introduction</h4>
+                        <p class="chapter-duration">Overview of Qbees and training structure</p>
+                    </div>
+                    <span class="chapter-timestamp">0:00</span>
+                </div>
+
+                <div class="chapter-item" data-timestamp="2:30">
+                    <div class="chapter-number">2</div>
+                    <div class="chapter-info">
+                        <h4 class="chapter-title">Essential Apps & Tools</h4>
+                        <p class="chapter-duration">Setting up your phone for success</p>
+                    </div>
+                    <span class="chapter-timestamp">2:30</span>
+                </div>
+
+                <div class="chapter-item" data-timestamp="5:00">
+                    <div class="chapter-number">3</div>
+                    <div class="chapter-info">
+                        <h4 class="chapter-title">Base Access & Cleaning Kit</h4>
+                        <p class="chapter-duration">What you need and where to get it</p>
+                    </div>
+                    <span class="chapter-timestamp">5:00</span>
+                </div>
+
+                <div class="chapter-item" data-timestamp="8:15">
+                    <div class="chapter-number">4</div>
+                    <div class="chapter-info">
+                        <h4 class="chapter-title">Chemical Safety Guide</h4>
+                        <p class="chapter-duration">Understanding and using cleaning chemicals safely</p>
+                    </div>
+                    <span class="chapter-timestamp">8:15</span>
+                </div>
+
+                <div class="chapter-item" data-timestamp="12:00">
+                    <div class="chapter-number">5</div>
+                    <div class="chapter-info">
+                        <h4 class="chapter-title">Property Arrival Procedure</h4>
+                        <p class="chapter-duration">First steps when you arrive at a property</p>
+                    </div>
+                    <span class="chapter-timestamp">12:00</span>
+                </div>
+
+                <div class="chapter-item" data-timestamp="15:30">
+                    <div class="chapter-number">6</div>
+                    <div class="chapter-info">
+                        <h4 class="chapter-title">Bathroom Cleaning Demonstration</h4>
+                        <p class="chapter-duration">Step-by-step bathroom cleaning technique</p>
+                    </div>
+                    <span class="chapter-timestamp">15:30</span>
+                </div>
+
+                <div class="chapter-item" data-timestamp="22:00">
+                    <div class="chapter-number">7</div>
+                    <div class="chapter-info">
+                        <h4 class="chapter-title">Kitchen Cleaning Demonstration</h4>
+                        <p class="chapter-duration">Professional kitchen cleaning walkthrough</p>
+                    </div>
+                    <span class="chapter-timestamp">22:00</span>
+                </div>
+
+                <div class="chapter-item" data-timestamp="28:00">
+                    <div class="chapter-number">8</div>
+                    <div class="chapter-info">
+                        <h4 class="chapter-title">Bedroom & Living Areas</h4>
+                        <p class="chapter-duration">Making beds and cleaning common areas</p>
+                    </div>
+                    <span class="chapter-timestamp">28:00</span>
+                </div>
+
+                <div class="chapter-item" data-timestamp="33:00">
+                    <div class="chapter-number">9</div>
+                    <div class="chapter-info">
+                        <h4 class="chapter-title">Photo Documentation</h4>
+                        <p class="chapter-duration">How to take professional quality photos</p>
+                    </div>
+                    <span class="chapter-timestamp">33:00</span>
+                </div>
+
+                <div class="chapter-item" data-timestamp="37:00">
+                    <div class="chapter-number">10</div>
+                    <div class="chapter-info">
+                        <h4 class="chapter-title">Quality Standards & Final Checks</h4>
+                        <p class="chapter-duration">Ensuring excellence before you leave</p>
+                    </div>
+                    <span class="chapter-timestamp">37:00</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Key Takeaways -->
+        <div class="video-notes">
+            <h2>💡 Key Takeaways</h2>
+            <div class="notes-grid">
+                <div class="note-card">
+                    <h3>🎯 Before You Start</h3>
+                    <ul>
+                        <li>Download all required apps</li>
+                        <li>Get cleaning kit from base</li>
+                        <li>Understand chemical safety</li>
+                        <li>Review property assignment</li>
+                    </ul>
+                </div>
+
+                <div class="note-card">
+                    <h3>🧹 Cleaning Techniques</h3>
+                    <ul>
+                        <li>Always pre-spray and let chemicals work</li>
+                        <li>Clean from top to bottom</li>
+                        <li>Use correct cloths for each area</li>
+                        <li>Follow room-by-room checklist</li>
+                    </ul>
+                </div>
+
+                <div class="note-card">
+                    <h3>📸 Photo Standards</h3>
+                    <ul>
+                        <li>Take before and after photos</li>
+                        <li>Use landscape orientation</li>
+                        <li>Ensure good lighting</li>
+                        <li>Show wide-angle room views</li>
+                    </ul>
+                </div>
+
+                <div class="note-card">
+                    <h3>⚡ Efficiency Tips</h3>
+                    <ul>
+                        <li>Start with bathroom (most time-consuming)</li>
+                        <li>Spray surfaces while cleaning other areas</li>
+                        <li>Keep supplies organized in caddy</li>
+                        <li>Do final walkthrough before leaving</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Downloads -->
+        <div class="video-downloads">
+            <h2>📥 Downloads & Resources</h2>
+            <div class="download-grid">
+                <div class="download-item">
+                    <div class="download-info">
+                        <div class="download-icon">📄</div>
+                        <div class="download-details">
+                            <h4>Video Transcript</h4>
+                            <p>Full text transcript (EN/MN)</p>
+                        </div>
+                    </div>
+                    <button class="download-btn disabled" disabled>Coming Soon</button>
+                </div>
+
+                <div class="download-item">
+                    <div class="download-info">
+                        <div class="download-icon">📋</div>
+                        <div class="download-details">
+                            <h4>Quick Reference Card</h4>
+                            <p>Printable checklist (PDF)</p>
+                        </div>
+                    </div>
+                    <a href="cleaning-checklist.html" class="download-btn">View Checklist</a>
+                </div>
+
+                <div class="download-item">
+                    <div class="download-info">
+                        <div class="download-icon">🧪</div>
+                        <div class="download-details">
+                            <h4>Chemical Safety Guide</h4>
+                            <p>Complete usage instructions</p>
+                        </div>
+                    </div>
+                    <a href="chemical-guide.html" class="download-btn">View Guide</a>
+                </div>
+
+                <div class="download-item">
+                    <div class="download-info">
+                        <div class="download-icon">🎬</div>
+                        <div class="download-details">
+                            <h4>Offline Video</h4>
+                            <p>Download for offline viewing</p>
+                        </div>
+                    </div>
+                    <button class="download-btn disabled" disabled>Coming Soon</button>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 2rem; padding: 1rem;">
+            <a href="../index.html" style="display: inline-block; padding: 1rem 2rem; background: #273E4B; color: white; text-decoration: none; border-radius: 12px; font-weight: 600;">← Back to Dashboard</a>
+        </div>
+    </div>
+
+    <script>
+        // Chapter timestamp navigation (will work when video is added)
+        const chapterItems = document.querySelectorAll('.chapter-item');
+
+        chapterItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const timestamp = item.getAttribute('data-timestamp');
+                const [minutes, seconds] = timestamp.split(':').map(Number);
+                const totalSeconds = minutes * 60 + seconds;
+
+                // Check if video player exists
+                const video = document.querySelector('video');
+                const iframe = document.querySelector('iframe');
+
+                if (video) {
+                    // For self-hosted video
+                    video.currentTime = totalSeconds;
+                    video.play();
+                } else if (iframe && iframe.src.includes('youtube')) {
+                    // For YouTube - requires YouTube API
+                    console.log('Jump to:', totalSeconds, 'seconds');
+                    // Implementation depends on YouTube iframe API
+                } else {
+                    console.log('Video player not yet configured');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

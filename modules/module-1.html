@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 1: First Day Essentials | Bee Training Academy</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐝</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <style>
+        .module-content {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .section {
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            color: #2C3E50;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #FDB913;
+        }
+
+        .checklist {
+            list-style: none;
+            padding: 0;
+        }
+
+        .checklist-item {
+            padding: 1rem;
+            margin-bottom: 0.5rem;
+            background: #F8F9FA;
+            border-radius: 8px;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .checklist-item input[type="checkbox"] {
+            margin-top: 0.25rem;
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+        }
+
+        .app-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-bottom: 1rem;
+        }
+
+        .app-card h4 {
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+
+        .important-note {
+            background: #FFF4E6;
+            border-left: 4px solid #E67E22;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+
+        .base-info {
+            background: #E8F5E9;
+            border-left: 4px solid #27AE60;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+
+        .progress-bar {
+            height: 8px;
+            background: #ECF0F1;
+            border-radius: 4px;
+            margin: 2rem 0;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #27AE60, #2ECC71);
+            width: 0%;
+            transition: width 0.5s ease;
+        }
+
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-top: 3rem;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            font-weight: 600;
+            text-decoration: none;
+            text-align: center;
+            transition: all 0.2s;
+            min-height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn-primary {
+            background: #FDB913;
+            color: #2C3E50;
+            flex: 1;
+        }
+
+        .btn-secondary {
+            background: #ECF0F1;
+            color: #2C3E50;
+        }
+
+        .completion-modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+            z-index: 1000;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .completion-modal.show {
+            display: block;
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translate(-50%, -60%);
+                opacity: 0;
+            }
+            to {
+                transform: translate(-50%, -50%);
+                opacity: 1;
+            }
+        }
+
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.5);
+            z-index: 999;
+        }
+
+        .modal-overlay.show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- Language Toggle -->
+    <div class="language-toggle">
+        <button id="langBtn" class="lang-btn">
+            <span class="lang-en">🇬🇧 EN</span>
+            <span class="lang-mn" style="display: none;">🇲🇳 МН</span>
+        </button>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <a href="../index.html" style="text-decoration: none;">
+                <div class="logo">
+                    <img src="../assets/images/branding/qbees-icon-blue.svg" alt="Qbees" class="logo-icon">
+                    <h1 class="logo-text">Module 1</h1>
+                </div>
+            </a>
+            <p class="tagline" data-en="First Day Essentials" data-mn="Эхний Өдрийн Үндсүүд">First Day Essentials</p>
+        </div>
+    </header>
+
+    <!-- Progress Bar -->
+    <div class="container">
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+        </div>
+        <p style="text-align: center; color: #5D6D7E; font-size: 0.875rem;">
+            <span data-en="Progress:" data-mn="Явц:">Progress:</span>
+            <span id="progressText">0%</span>
+        </p>
+    </div>
+
+    <!-- Main Content -->
+    <main class="container">
+
+        <!-- Welcome Section -->
+        <div class="module-content">
+            <h2 data-en="Welcome to Qbees! 😀" data-mn="Qbees-д тавтай морил! 😀">Welcome to Qbees! 😀</h2>
+            <p data-en="This module will prepare you for your first shift. You'll learn about the tools, apps, and procedures you need to get started. Complete all sections below before your first day." data-mn="Энэ модуль таныг эхний ээлжид бэлдэх болно. Та эхлэхэд шаардлагатай багаж хэрэгсэл, апп болон журмын талаар сурах болно. Эхний өдрийнхөө өмнө доорх бүх хэсгүүдийг гүйцээгээрэй.">
+                This module will prepare you for your first shift. You'll learn about the tools, apps, and procedures you need to get started. Complete all sections below before your first day.
+            </p>
+        </div>
+
+        <!-- Section 1: Apps -->
+        <div class="module-content section">
+            <h2 class="section-title" data-en="1.1 Apps We Need for the Job" data-mn="1.1 Ажилд Шаардлагатай Аппууд">1.1 Apps We Need for the Job</h2>
+
+            <div class="important-note">
+                <strong data-en="⚠️ Important:" data-mn="⚠️ Чухал:">⚠️ Important:</strong>
+                <span data-en="Make sure your notifications are ON for all apps when you are working!" data-mn="Ажиллаж байх үедээ бүх аппын мэдэгдлийг АСААСАН байхыг анхаарна уу!">
+                    Make sure your notifications are ON for all apps when you are working!
+                </span>
+            </div>
+
+            <div class="app-card">
+                <h4>📱 Breezeway</h4>
+                <p data-en="For job scheduling, location details, and job updates." data-mn="Ажлын хуваарь, байршлын мэдээлэл, ажлын шинэчлэлтүүд.">
+                    For job scheduling, location details, and job updates.
+                </p>
+            </div>
+
+            <div class="app-card" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                <h4>💬 Slack</h4>
+                <p data-en="For real-time communication with the team." data-mn="Багтайгаа бодит цагийн харилцаа холбоо.">
+                    For real-time communication with the team.
+                </p>
+            </div>
+
+            <div class="app-card" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                <h4>⏰ Timestamp</h4>
+                <p data-en="For taking photos of the finished job (turn off location settings)." data-mn="Дууссан ажлын зураг авах (байршлын тохиргоог унтраа).">
+                    For taking photos of the finished job (turn off location settings).
+                </p>
+            </div>
+
+            <div class="app-card" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
+                <h4>💚 WhatsApp</h4>
+                <p data-en="Backup communication platform if other apps aren't working." data-mn="Бусад апп ажиллахгүй бол нөөц холбооны платформ.">
+                    Backup communication platform if other apps aren't working.
+                </p>
+            </div>
+
+            <ul class="checklist">
+                <li class="checklist-item">
+                    <input type="checkbox" id="app1" class="progress-checkbox">
+                    <label for="app1" data-en="Downloaded and installed Breezeway app" data-mn="Breezeway апп татаж суулгасан">Downloaded and installed Breezeway app</label>
+                </li>
+                <li class="checklist-item">
+                    <input type="checkbox" id="app2" class="progress-checkbox">
+                    <label for="app2" data-en="Downloaded and installed Slack app" data-mn="Slack апп татаж суулгасан">Downloaded and installed Slack app</label>
+                </li>
+                <li class="checklist-item">
+                    <input type="checkbox" id="app3" class="progress-checkbox">
+                    <label for="app3" data-en="Downloaded and installed Timestamp app (location OFF)" data-mn="Timestamp апп татаж суулгасан (байршил УНТРААЛТТАЙ)">Downloaded and installed Timestamp app (location OFF)</label>
+                </li>
+                <li class="checklist-item">
+                    <input type="checkbox" id="app4" class="progress-checkbox">
+                    <label for="app4" data-en="WhatsApp installed and ready" data-mn="WhatsApp суулгасан бэлэн болсон">WhatsApp installed and ready</label>
+                </li>
+                <li class="checklist-item">
+                    <input type="checkbox" id="app5" class="progress-checkbox">
+                    <label for="app5" data-en="All app notifications turned ON" data-mn="Бүх аппын мэдэгдэл АСААЛТТАЙ">All app notifications turned ON</label>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Section 2: Cleaning Kit -->
+        <div class="module-content section">
+            <h2 class="section-title" data-en="1.2 What We Provide in a Cleaning Kit" data-mn="1.2 Цэвэрлэгээний Багажны Жагсаалт">1.2 What We Provide in a Cleaning Kit</h2>
+
+            <p data-en="Please check that you have the full cleaning kit (list below). If something is missing, contact Chemka to ask for more supplies before starting the job." data-mn="Бүрэн цэвэрлэгээний багажтай байгаа эсэхээ шалгана уу (доорх жагсаалт). Хэрэв ямар нэг зүйл дутуу байвал ажил эхлэхээсээ өмнө Чемка руу хандаж нэмэлт хангамж авна уу.">
+                Please check that you have the full cleaning kit (list below). If something is missing, contact Chemka to ask for more supplies before starting the job.
+            </p>
+
+            <h3 style="margin-top: 2rem;">🧹 Cleaning Cloths & Tools</h3>
+            <ul class="checklist">
+                <li class="checklist-item">
+                    <input type="checkbox" id="kit1" class="progress-checkbox">
+                    <label for="kit1">🔵 <span data-en="Blue Microfibre Cloths (for dusting & general cleaning)" data-mn="Цэнхэр микро даавуу (тоос арчих & ерөнхий цэвэрлэгээ)">Blue Microfibre Cloths (for dusting & general cleaning)</span></label>
+                </li>
+                <li class="checklist-item">
+                    <input type="checkbox" id="kit2" class="progress-checkbox">
+                    <label for="kit2">🔵 <span data-en="Blue Glass Cloths (for mirrors & glass surfaces)" data-mn="Цэнхэр шилэн даавуу (толь & шилэн гадаргуу)">Blue Glass Cloths (for mirrors & glass surfaces)</span></label>
+                </li>
+                <li class="checklist-item">
+                    <input type="checkbox" id="kit3" class="progress-checkbox">
+                    <label for="kit3">🔴 <span data-en="Red Microfibre (for bathroom)" data-mn="Улаан микро даавуу (угаалгын өрөө)">Red Microfibre (for bathroom)</span></label>
+                </li>
+                <li class="checklist-item">
+                    <input type="checkbox" id="kit4" class="progress-checkbox">
+                    <label for="kit4">🟢 <span data-en="Green Microfibre (for kitchen)" data-mn="Ногоон микро даавуу (гал тогоо)">Green Microfibre (for kitchen)</span></label>
+                </li>
+                <li class="checklist-item">
+                    <input type="checkbox" id="kit5" class="progress-checkbox">
+                    <label for="kit5">🪥 <span data-en="Tile Grout Brush" data-mn="Хавтангийн сул зайн сойз">Tile Grout Brush</span></label>
+                </li>
+                <li class="checklist-item">
+                    <input type="checkbox" id="kit6" class="progress-checkbox">
+                    <label for="kit6">◽ <span data-en="Magic Sponge" data-mn="Ид шидийн хөвөн">Magic Sponge</span></label>
+                </li>
+                <li class="checklist-item">
+                    <input type="checkbox" id="kit7" class="progress-checkbox">
+                    <label for="kit7">⚙️ <span data-en="Stainless Steel Scrub" data-mn="Зэвэрдэггүй ган хусуур">Stainless Steel Scrub</span></label>
+                </li>
+                <li class="checklist-item">
+                    <input type="checkbox" id="kit8" class="progress-checkbox">
+                    <label for="kit8">🧽 <span data-en="Sponge" data-mn="Хөвөн">Sponge</span></label>
+                </li>
+            </ul>
+
+            <h3 style="margin-top: 2rem;">🧪 Cleaning Chemicals</h3>
+            <ul class="checklist">
+                <li class="checklist-item">
+                    <input type="checkbox" id="chem1" class="progress-checkbox">
+                    <label for="chem1">🚿 <span data-en="Bathroom/Mould Cleaner (Lencia: make sure to dilute with water)" data-mn="Угаалгын өрөө/Хөгц цэвэрлэгч (Lencia: устай шингэлээрэй)">Bathroom/Mould Cleaner (Lencia: make sure to dilute with water)</span></label>
+                </li>
+                <li class="checklist-item">
+                    <input type="checkbox" id="chem2" class="progress-checkbox">
+                    <label for="chem2">🚽 <span data-en="Cream Cleanser (Taski)" data-mn="Цөцгий цэвэрлэгч (Taski)">Cream Cleanser (Taski)</span></label>
+                </li>
+                <li class="checklist-item">
+                    <input type="checkbox" id="chem3" class="progress-checkbox">
+                    <label for="chem3">✨ <span data-en="Glass Cleaner (Halo)" data-mn="Шилэн цэвэрлэгч (Halo)">Glass Cleaner (Halo)</span></label>
+                </li>
+                <li class="checklist-item">
+                    <input type="checkbox" id="chem4" class="progress-checkbox">
+                    <label for="chem4">🌟 <span data-en="Multi-Purpose Cleaner (Magic: make sure to dilute with water)" data-mn="Олон зориулалттай цэвэрлэгч (Magic: устай шингэлээрэй)">Multi-Purpose Cleaner (Magic: make sure to dilute with water)</span></label>
+                </li>
+                <li class="checklist-item">
+                    <input type="checkbox" id="chem5" class="progress-checkbox">
+                    <label for="chem5">🍳 <span data-en="Oven Cleaner (Shelley Spray)" data-mn="Зуухны цэвэрлэгч (Shelley Spray)">Oven Cleaner (Shelley Spray)</span></label>
+                </li>
+                <li class="checklist-item">
+                    <input type="checkbox" id="chem6" class="progress-checkbox">
+                    <label for="chem6">🧹 <span data-en="Floor Cleaner (Ajax)" data-mn="Шалны цэвэрлэгч (Ajax)">Floor Cleaner (Ajax)</span></label>
+                </li>
+            </ul>
+
+            <h3 style="margin-top: 2rem;">🧤 Protective Gear</h3>
+            <ul class="checklist">
+                <li class="checklist-item">
+                    <input type="checkbox" id="gear1" class="progress-checkbox">
+                    <label for="gear1">🧤 <span data-en="Gloves" data-mn="Бээлий">Gloves</span></label>
+                </li>
+                <li class="checklist-item">
+                    <input type="checkbox" id="gear2" class="progress-checkbox">
+                    <label for="gear2">😷 <span data-en="Mask" data-mn="Амны хаалт">Mask</span></label>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Section 3: Base Location -->
+        <div class="module-content section">
+            <h2 class="section-title" data-en="1.3 Qbees Base Location" data-mn="1.3 Qbees Баазын Байршил">1.3 Qbees Base Location</h2>
+
+            <div class="base-info">
+                <h3 data-en="📍 Base Location: South Melbourne National Storage" data-mn="📍 Баазын Байршил: South Melbourne National Storage">📍 Base Location: South Melbourne National Storage</h3>
+
+                <p><strong data-en="Address:" data-mn="Хаяг:">Address:</strong> 38 York St, South Melbourne</p>
+                <p><strong data-en="Unit Location:" data-mn="Нэгжийн Байршил:">Unit Location:</strong> Level 2</p>
+                <p><strong data-en="Access Code:" data-mn="Хандах Код:">Access Code:</strong> <span data-en="(Check Slack for current code)" data-mn="(Одоогийн кодыг Slack-ээс шалгана уу)">(Check Slack for current code)</span></p>
+                <p><em data-en="Use for both main door (grey big roller doors) and on the lift - press 2" data-mn="Гол хаалга (саарал том гулсмал хаалга) болон лифтэнд хэрэглэ - 2 дар">Use for both main door (grey big roller doors) and on the lift - press 2</em></p>
+
+                <h4 style="margin-top: 1.5rem;" data-en="🔑 Accessing Units:" data-mn="🔑 Нэгжүүдэд Хандах:">🔑 Accessing Units:</h4>
+                <p><strong data-en="Lockbox Location:" data-mn="Цоожны Хайрцагны Байршил:">Lockbox Location:</strong> <span data-en="On the wall on your right-hand side" data-mn="Баруун гар талын хана дээр">On the wall on your right-hand side</span></p>
+                <p><strong data-en="Lockbox Code:" data-mn="Цоожны Хайрцагны Код:">Lockbox Code:</strong> 1027</p>
+                <p><strong data-en="Unit 426:" data-mn="Нэгж 426:">Unit 426:</strong> <span data-en="Fresh linen storage" data-mn="Шинэ даавуу хадгалах">Fresh linen storage</span></p>
+                <p><strong data-en="Unit 411:" data-mn="Нэгж 411:">Unit 411:</strong> <span data-en="Dirty linen base" data-mn="Бохир даавууны бааз">Dirty linen base</span></p>
+
+                <p style="margin-top: 1rem; color: #E67E22;">
+                    ⚠️ <strong data-en="Important:" data-mn="Чухал:">Important:</strong>
+                    <span data-en="Do not forget to put the key back in the lockbox after use!" data-mn="Ашигласны дараа түлхүүрээ цоожны хайрцагт буцааж хийхээ мартуузай!">
+                        Do not forget to put the key back in the lockbox after use!
+                    </span>
+                </p>
+            </div>
+
+            <ul class="checklist">
+                <li class="checklist-item">
+                    <input type="checkbox" id="base1" class="progress-checkbox">
+                    <label for="base1" data-en="I know the base address (38 York St, South Melbourne)" data-mn="Би баазын хаягийг мэднэ (38 York St, South Melbourne)">I know the base address (38 York St, South Melbourne)</label>
+                </li>
+                <li class="checklist-item">
+                    <input type="checkbox" id="base2" class="progress-checkbox">
+                    <label for="base2" data-en="I have the access code saved in my phone (check Slack)" data-mn="Миний утсанд хандах код хадгалагдсан (Slack шалгах)">I have the access code saved in my phone (check Slack)</label>
+                </li>
+                <li class="checklist-item">
+                    <input type="checkbox" id="base3" class="progress-checkbox">
+                    <label for="base3" data-en="I know where the lockbox is located (right-hand wall)" data-mn="Цоожны хайрцаг хаана байгааг мэднэ (баруун талын хана)">I know where the lockbox is located (right-hand wall)</label>
+                </li>
+                <li class="checklist-item">
+                    <input type="checkbox" id="base4" class="progress-checkbox">
+                    <label for="base4" data-en="I know the lockbox code (1027)" data-mn="Цоожны хайрцагны кодыг мэднэ (1027)">I know the lockbox code (1027)</label>
+                </li>
+                <li class="checklist-item">
+                    <input type="checkbox" id="base5" class="progress-checkbox">
+                    <label for="base5" data-en="I know Unit 426 is for fresh linens" data-mn="Нэгж 426 нь шинэ даавуунд зориулагдсан гэдгийг мэднэ">I know Unit 426 is for fresh linens</label>
+                </li>
+                <li class="checklist-item">
+                    <input type="checkbox" id="base6" class="progress-checkbox">
+                    <label for="base6" data-en="I know Unit 411 is for dirty linens" data-mn="Нэгж 411 нь бохир даавуунд зориулагдсан гэдгийг мэднэ">I know Unit 411 is for dirty linens</label>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Quiz Section -->
+        <div class="module-content section">
+            <h2 class="section-title" data-en="✅ Knowledge Check" data-mn="✅ Мэдлэг Шалгах">✅ Knowledge Check</h2>
+
+            <p data-en="Complete this quick quiz to test your understanding:" data-mn="Ойлголтоо шалгахын тулд энэ хурдан тестийг бөглөнө үү:">Complete this quick quiz to test your understanding:</p>
+
+            <div style="background: #F8F9FA; padding: 1.5rem; border-radius: 12px; margin-top: 1rem;">
+                <h4 data-en="Question 1: Which app do you use for job scheduling?" data-mn="Асуулт 1: Ажлын хуваарьт ямар апп хэрэглэх вэ?">Question 1: Which app do you use for job scheduling?</h4>
+                <ul class="checklist">
+                    <li class="checklist-item">
+                        <input type="radio" name="q1" id="q1a" value="wrong">
+                        <label for="q1a">Slack</label>
+                    </li>
+                    <li class="checklist-item">
+                        <input type="radio" name="q1" id="q1b" value="correct" class="quiz-answer">
+                        <label for="q1b">Breezeway ✓</label>
+                    </li>
+                    <li class="checklist-item">
+                        <input type="radio" name="q1" id="q1c" value="wrong">
+                        <label for="q1c">Timestamp</label>
+                    </li>
+                </ul>
+            </div>
+
+            <div style="background: #F8F9FA; padding: 1.5rem; border-radius: 12px; margin-top: 1rem;">
+                <h4 data-en="Question 2: What is the lockbox code at the base?" data-mn="Асуулт 2: Баазын цоожны хайрцагны код юу вэ?">Question 2: What is the lockbox code at the base?</h4>
+                <ul class="checklist">
+                    <li class="checklist-item">
+                        <input type="radio" name="q2" id="q2a" value="wrong">
+                        <label for="q2a">1234</label>
+                    </li>
+                    <li class="checklist-item">
+                        <input type="radio" name="q2" id="q2b" value="correct" class="quiz-answer">
+                        <label for="q2b">1027 ✓</label>
+                    </li>
+                    <li class="checklist-item">
+                        <input type="radio" name="q2" id="q2c" value="wrong">
+                        <label for="q2c">4260</label>
+                    </li>
+                </ul>
+            </div>
+
+            <div style="background: #F8F9FA; padding: 1.5rem; border-radius: 12px; margin-top: 1rem;">
+                <h4 data-en="Question 3: Which cloth is used for bathroom cleaning?" data-mn="Асуулт 3: Угаалгын өрөө цэвэрлэхэд ямар даавуу хэрэглэх вэ?">Question 3: Which cloth is used for bathroom cleaning?</h4>
+                <ul class="checklist">
+                    <li class="checklist-item">
+                        <input type="radio" name="q3" id="q3a" value="wrong">
+                        <label for="q3a" data-en="Green Microfibre" data-mn="Ногоон микро даавуу">Green Microfibre</label>
+                    </li>
+                    <li class="checklist-item">
+                        <input type="radio" name="q3" id="q3b" value="correct" class="quiz-answer">
+                        <label for="q3b" data-en="Red Microfibre ✓" data-mn="Улаан микро даавуу ✓">Red Microfibre ✓</label>
+                    </li>
+                    <li class="checklist-item">
+                        <input type="radio" name="q3" id="q3c" value="wrong">
+                        <label for="q3c" data-en="Blue Microfibre" data-mn="Цэнхэр микро даавуу">Blue Microfibre</label>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="nav-buttons">
+            <a href="../index.html" class="btn btn-secondary" data-en="← Back to Home" data-mn="← Нүүр хуудас руу">← Back to Home</a>
+            <button id="completeBtn" class="btn btn-primary" data-en="Complete Module 1 →" data-mn="Модуль 1-ийг Дуусгах →">Complete Module 1 →</button>
+        </div>
+
+    </main>
+
+    <!-- Completion Modal -->
+    <div class="modal-overlay" id="modalOverlay"></div>
+    <div class="completion-modal" id="completionModal">
+        <div style="font-size: 4rem; margin-bottom: 1rem;">🎉</div>
+        <h2 data-en="Congratulations!" data-mn="Баяр хүргэе!">Congratulations!</h2>
+        <p data-en="You've completed Module 1: First Day Essentials" data-mn="Та Модуль 1-ийг дуусгалаа: Эхний Өдрийн Үндсүүд">You've completed Module 1: First Day Essentials</p>
+        <p style="color: #5D6D7E; font-size: 0.875rem;" data-en="Module 2 is now unlocked!" data-mn="Модуль 2 одоо нээгдсэн!">Module 2 is now unlocked!</p>
+        <div style="margin-top: 2rem;">
+            <a href="../index.html" class="btn btn-primary" data-en="Continue to Dashboard" data-mn="Хянах самбар руу">Continue to Dashboard</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Qbees. <span data-en="All rights reserved." data-mn="Бүх эрх хуулиар хамгаалагдсан.">All rights reserved.</span></p>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+    <script>
+        // Progress tracking
+        const checkboxes = document.querySelectorAll('.progress-checkbox');
+        const quizAnswers = document.querySelectorAll('.quiz-answer');
+        const progressFill = document.getElementById('progressFill');
+        const progressText = document.getElementById('progressText');
+        const completeBtn = document.getElementById('completeBtn');
+        const modal = document.getElementById('completionModal');
+        const overlay = document.getElementById('modalOverlay');
+
+        function updateProgress() {
+            const totalItems = checkboxes.length + quizAnswers.length;
+            const checkedBoxes = document.querySelectorAll('.progress-checkbox:checked').length;
+            const answeredQuiz = document.querySelectorAll('.quiz-answer:checked').length;
+            const completed = checkedBoxes + answeredQuiz;
+            const percentage = Math.round((completed / totalItems) * 100);
+
+            progressFill.style.width = percentage + '%';
+            progressText.textContent = percentage + '%';
+
+            // Save progress
+            localStorage.setItem('module1-progress', percentage);
+
+            // Enable complete button if 100%
+            if (percentage === 100) {
+                completeBtn.disabled = false;
+                completeBtn.style.opacity = '1';
+            } else {
+                completeBtn.disabled = true;
+                completeBtn.style.opacity = '0.5';
+            }
+        }
+
+        checkboxes.forEach(cb => {
+            cb.addEventListener('change', updateProgress);
+        });
+
+        quizAnswers.forEach(qa => {
+            qa.addEventListener('change', updateProgress);
+        });
+
+        completeBtn.addEventListener('click', () => {
+            if (completeBtn.disabled) {
+                alert('Please complete all sections and quiz questions first!');
+                return;
+            }
+
+            // Mark module as complete
+            localStorage.setItem('module1-completed', 'true');
+            localStorage.setItem('module1-completed-date', new Date().toISOString());
+
+            // Show modal
+            modal.classList.add('show');
+            overlay.classList.add('show');
+
+            // Track completion
+            if (window.beeAcademy && window.beeAcademy.analytics) {
+                window.beeAcademy.analytics.trackEvent('module_completed', { module: 1 });
+            }
+        });
+
+        overlay.addEventListener('click', () => {
+            modal.classList.remove('show');
+            overlay.classList.remove('show');
+        });
+
+        // Load saved progress
+        window.addEventListener('load', () => {
+            const savedProgress = localStorage.getItem('module1-progress');
+            if (savedProgress) {
+                progressFill.style.width = savedProgress + '%';
+                progressText.textContent = savedProgress + '%';
+            }
+            updateProgress();
+        });
+    </script>
+</body>
+</html>

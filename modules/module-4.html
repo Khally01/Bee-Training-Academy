@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 4: Mastery Level | Bee Training Academy</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐝</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <style>
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-md);
+            margin: var(--space-lg) 0;
+        }
+
+        .photo-card {
+            background: var(--bg-white);
+            padding: var(--space-md);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+            border-left: 3px solid var(--success-green);
+        }
+
+        .photo-card h4 {
+            color: var(--primary-dark);
+            margin-bottom: var(--space-sm);
+            font-size: 1rem;
+        }
+
+        .photo-card ul {
+            margin: 0;
+            padding-left: var(--space-md);
+            font-size: 0.9rem;
+        }
+
+        .photo-card ul li {
+            margin-bottom: var(--space-xs);
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%);
+            padding: var(--space-lg);
+            border-radius: var(--radius-lg);
+            border-left: 4px solid var(--success-green);
+            margin: var(--space-lg) 0;
+        }
+
+        .highlight-box h3 {
+            color: var(--success-green);
+            margin-bottom: var(--space-md);
+        }
+
+        .dont-list {
+            background: #FFEBEE;
+            padding: var(--space-md);
+            border-left: 3px solid var(--error-red);
+            border-radius: var(--radius-md);
+            margin: var(--space-md) 0;
+        }
+
+        .dont-list h4 {
+            color: var(--error-red);
+            margin-bottom: var(--space-sm);
+        }
+
+        .tip-badge {
+            display: inline-block;
+            background: var(--primary-gold);
+            color: var(--primary-dark);
+            padding: 0.25rem 0.75rem;
+            border-radius: var(--radius-sm);
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: var(--space-sm);
+        }
+
+        .mastery-card {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--secondary-blue) 100%);
+            color: var(--bg-white);
+            padding: var(--space-xl);
+            border-radius: var(--radius-lg);
+            text-align: center;
+            margin: var(--space-xl) 0;
+        }
+
+        .mastery-card h2 {
+            color: var(--primary-gold);
+            margin-bottom: var(--space-md);
+        }
+
+        .badge-showcase {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-md);
+            flex-wrap: wrap;
+            margin: var(--space-lg) 0;
+        }
+
+        .achievement-badge {
+            background: var(--primary-gold);
+            color: var(--primary-dark);
+            padding: var(--space-md) var(--space-lg);
+            border-radius: var(--radius-lg);
+            font-weight: 600;
+            box-shadow: var(--shadow-md);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <a href="../index.html" style="text-decoration: none;">
+                <div class="logo">
+                    <img src="../assets/images/branding/qbees-icon-blue.svg" alt="Qbees" class="logo-icon">
+                    <h1 class="logo-text">Module 4</h1>
+                </div>
+            </a>
+            <p class="tagline" data-en="Mastery Level" data-mn="Мастер Түвшин">Mastery Level</p>
+        </div>
+    </header>
+
+    <!-- Progress Bar -->
+    <div class="progress-container">
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressBar"></div>
+        </div>
+        <div class="progress-text" id="progressText">0%</div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="container">
+        <div class="module-content">
+            <div class="content-section">
+                <h2>📸 Professional Photo Documentation</h2>
+                <p>Taking clear photos of the Airbnb property after your cleaning helps show the owner/host the fantastic job you've done! These photos act as proof of what we have cleaned and provide timestamps showing exactly when the cleaning was completed.</p>
+
+                <div class="highlight-box">
+                    <h3>📷 Photography Principles</h3>
+                    <ul>
+                        <li><strong>Clear Photos:</strong> Make sure all photos are clear and well-lit</li>
+                        <li><strong>Landscape Mode:</strong> Hold your phone horizontally to capture landscape photos</li>
+                        <li><strong>Use Timestamp camera</strong> and upload to Breezeway</li>
+                        <li><strong>Don't Include People</strong> in your photos</li>
+                        <li><strong>Quality over Quantity:</strong> Don't take too many photos of 1 area - we just need the essential shots</li>
+                    </ul>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="photo-principle" class="progress-checkbox">
+                    <label for="photo-principle">
+                        I understand the photography principles
+                    </label>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2>🏠 Room-by-Room Photo Requirements</h2>
+
+                <div class="photo-grid">
+                    <div class="photo-card">
+                        <h4>🚿 Bathroom</h4>
+                        <ul>
+                            <li>Wide photo of whole bathroom</li>
+                            <li>Bathroom cupboards (inside & outside)</li>
+                            <li>Shower and bathtub</li>
+                            <li>Sink and consumables setup</li>
+                            <li>Inside the toilet</li>
+                            <li>Drain</li>
+                            <li>Bin (open showing bin bag)</li>
+                            <li>Mirrors</li>
+                        </ul>
+                    </div>
+
+                    <div class="photo-card">
+                        <h4>🛋️ Living Room</h4>
+                        <ul>
+                            <li>Overall living room (1-2 angles)</li>
+                            <li>Sofa area and under the sofa</li>
+                            <li>TV area and inside cupboard</li>
+                            <li>Remote controls (AC, TV, blinds)</li>
+                            <li>Carpeted area</li>
+                        </ul>
+                    </div>
+
+                    <div class="photo-card">
+                        <h4>🍳 Kitchen</h4>
+                        <ul>
+                            <li>Overall kitchen</li>
+                            <li>Inside the dishwasher</li>
+                            <li>Cutlery drawer</li>
+                            <li>Toaster tray</li>
+                            <li>Coffee machine (empty)</li>
+                            <li>Inside the fridge</li>
+                            <li>Under the sink</li>
+                            <li>Inside the oven</li>
+                            <li>Kitchen amenities setup</li>
+                        </ul>
+                    </div>
+
+                    <div class="photo-card">
+                        <h4>🛏️ Bedroom</h4>
+                        <ul>
+                            <li>Overall bedroom</li>
+                            <li>Inside bedside table</li>
+                            <li>Under the bed</li>
+                            <li>Inside the wardrobe</li>
+                        </ul>
+                    </div>
+
+                    <div class="photo-card">
+                        <h4>🧺 Laundry</h4>
+                        <ul>
+                            <li>Inside washing machine</li>
+                            <li>Tray clean</li>
+                            <li>Empty dryer lint</li>
+                            <li>Laundry sink</li>
+                        </ul>
+                    </div>
+
+                    <div class="photo-card">
+                        <h4>🏡 Balcony/Patio</h4>
+                        <ul>
+                            <li>Overall balcony/patio</li>
+                            <li>Outside furniture (if any)</li>
+                        </ul>
+                    </div>
+
+                    <div class="photo-card">
+                        <h4>🔑 Keys</h4>
+                        <ul>
+                            <li>Returned to the base</li>
+                            <li>Returned to the lockbox</li>
+                            <li>Returned to Keynest location (if instructed)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="photo-rooms" class="progress-checkbox">
+                    <label for="photo-rooms">
+                        I know what photos to take in each room
+                    </label>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2>🧺 Rejected Linen Procedures</h2>
+                <p><strong>What are Rejected Linens?</strong> Linens we receive from our supplier that have stains, rips, or are in bad condition and cannot be used for cleans.</p>
+
+                <div class="highlight-box">
+                    <h3>Why This Matters</h3>
+                    <p>When you properly identify and separate rejected linens, we can:</p>
+                    <ul>
+                        <li>Return them to our linen supplier</li>
+                        <li>Get our money back for unusable linens</li>
+                        <li>Avoid paying for linens we couldn't use</li>
+                    </ul>
+                </div>
+
+                <div class="checklist-section">
+                    <h3>What to Do:</h3>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="linen-1" class="progress-checkbox">
+                        <label for="linen-1">
+                            <strong>Step 1:</strong> When you find NEW linens with stains or rips at the base
+                        </label>
+                    </div>
+
+                    <div class="checklist-item">
+                        <input type="checkbox" id="linen-2" class="progress-checkbox">
+                        <label for="linen-2">
+                            <strong>Step 2:</strong> Place them in the box next to the Toilet Paper (NOT in the dirties)
+                        </label>
+                    </div>
+
+                    <div class="checklist-item">
+                        <input type="checkbox" id="linen-3" class="progress-checkbox">
+                        <label for="linen-3">
+                            <strong>Step 3:</strong> The team will sort and deliver back to supplier for refund
+                        </label>
+                    </div>
+                </div>
+
+                <div class="dont-list">
+                    <h4>❌ Don't Do This:</h4>
+                    <ul>
+                        <li>Don't put rejected linens in the dirties trolley - this means we used them and must pay</li>
+                        <li>Don't use damaged linens for jobs</li>
+                        <li>Don't throw them away</li>
+                    </ul>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="linen-understood" class="progress-checkbox">
+                    <label for="linen-understood">
+                        I understand the rejected linen procedure
+                    </label>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2>⭐ Professional Excellence Checklist</h2>
+                <p>These are the hallmarks of a master Qbees cleaner:</p>
+
+                <div class="checklist-section">
+                    <div class="checklist-item">
+                        <input type="checkbox" id="excellence-1" class="progress-checkbox">
+                        <label for="excellence-1">
+                            <strong>Attention to Detail</strong> - I check every surface, corner, and hidden area
+                        </label>
+                    </div>
+
+                    <div class="checklist-item">
+                        <input type="checkbox" id="excellence-2" class="progress-checkbox">
+                        <label for="excellence-2">
+                            <strong>Time Management</strong> - I arrive on time and complete jobs within allocated time
+                        </label>
+                    </div>
+
+                    <div class="checklist-item">
+                        <input type="checkbox" id="excellence-3" class="progress-checkbox">
+                        <label for="excellence-3">
+                            <strong>Communication</strong> - I proactively update the team on Slack about any issues
+                        </label>
+                    </div>
+
+                    <div class="checklist-item">
+                        <input type="checkbox" id="excellence-4" class="progress-checkbox">
+                        <label for="excellence-4">
+                            <strong>Quality Photos</strong> - My photos clearly show the completed work
+                        </label>
+                    </div>
+
+                    <div class="checklist-item">
+                        <input type="checkbox" id="excellence-5" class="progress-checkbox">
+                        <label for="excellence-5">
+                            <strong>Property Care</strong> - I treat every property as if it were my own
+                        </label>
+                    </div>
+
+                    <div class="checklist-item">
+                        <input type="checkbox" id="excellence-6" class="progress-checkbox">
+                        <label for="excellence-6">
+                            <strong>Guest Experience</strong> - I ensure guests arrive to a spotless, welcoming space
+                        </label>
+                    </div>
+
+                    <div class="checklist-item">
+                        <input type="checkbox" id="excellence-7" class="progress-checkbox">
+                        <label for="excellence-7">
+                            <strong>Base Organization</strong> - I keep the base tidy and linens organized
+                        </label>
+                    </div>
+
+                    <div class="checklist-item">
+                        <input type="checkbox" id="excellence-8" class="progress-checkbox">
+                        <label for="excellence-8">
+                            <strong>Continuous Improvement</strong> - I always look for ways to work smarter and faster
+                        </label>
+                    </div>
+
+                    <div class="checklist-item">
+                        <input type="checkbox" id="excellence-9" class="progress-checkbox">
+                        <label for="excellence-9">
+                            <strong>Team Support</strong> - I help other bees when they need assistance
+                        </label>
+                    </div>
+
+                    <div class="checklist-item">
+                        <input type="checkbox" id="excellence-10" class="progress-checkbox">
+                        <label for="excellence-10">
+                            <strong>Professional Standards</strong> - I follow all Qbees procedures and quality standards
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2>💡 Pro Tips for Efficiency</h2>
+                <div class="highlight-box">
+                    <h3>Work Smarter, Not Harder</h3>
+                    <ul>
+                        <li><span class="tip-badge">TIP</span> Spray chemicals and let them sit while you work on other areas</li>
+                        <li><span class="tip-badge">TIP</span> Group similar tasks together (all dusting, then all wiping, then all vacuuming)</li>
+                        <li><span class="tip-badge">TIP</span> Start from the farthest room and work toward the exit</li>
+                        <li><span class="tip-badge">TIP</span> Keep your cleaning kit organized - time wasted looking for supplies adds up!</li>
+                        <li><span class="tip-badge">TIP</span> Take photos as you go, not all at the end</li>
+                        <li><span class="tip-badge">TIP</span> Check vacuum battery at arrival, plug in if needed</li>
+                        <li><span class="tip-badge">TIP</span> Prepare tomorrow's linens at base today to save morning time</li>
+                    </ul>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="tips-learned" class="progress-checkbox">
+                    <label for="tips-learned">
+                        I will apply these efficiency tips to my work
+                    </label>
+                </div>
+            </div>
+
+            <div class="mastery-card">
+                <h2>🏆 You're Now a Master Bee!</h2>
+                <p>Congratulations on completing all four modules of the Bee Training Academy!</p>
+                <p>You now have the skills, knowledge, and confidence to deliver exceptional cleaning services for Qbees.</p>
+
+                <div class="badge-showcase">
+                    <div class="achievement-badge">✅ Module 1 Complete</div>
+                    <div class="achievement-badge">✅ Module 2 Complete</div>
+                    <div class="achievement-badge">✅ Module 3 Complete</div>
+                    <div class="achievement-badge">✅ Module 4 Complete</div>
+                </div>
+
+                <p style="margin-top: var(--space-lg); font-size: 1.1rem;">
+                    <strong>Ready to buzz? 🐝</strong><br>
+                    You're all set to deliver world-class Airbnb cleaning services!
+                </p>
+            </div>
+
+            <div class="content-section">
+                <h2>📞 Need Support?</h2>
+                <p>Remember, the Qbees team is always here to help:</p>
+                <ul>
+                    <li><strong>Slack:</strong> #general for questions and support</li>
+                    <li><strong>Email:</strong> support@qbees.com.au</li>
+                    <li><strong>Breezeway:</strong> For job-specific questions and issues</li>
+                </ul>
+                <p><em>Never hesitate to ask questions - that's how we all improve!</em></p>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div class="nav-buttons">
+                <a href="module-3.html" class="btn-secondary">← Previous Module</a>
+                <a href="../index.html" class="btn-primary">Back to Dashboard 🏠</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Completion Modal -->
+    <div id="completionModal" class="modal">
+        <div class="modal-content">
+            <h2>🎉🎊 CONGRATULATIONS! 🎊🎉</h2>
+            <p><strong>You've completed the entire Bee Training Academy!</strong></p>
+            <p>You're now a certified Qbees professional cleaner ready to deliver exceptional service.</p>
+            <p>Keep buzzing and making our guests happy!</p>
+            <button id="continueBtn" class="btn-primary">Return to Dashboard 🏠</button>
+        </div>
+    </div>
+
+    <script src="../assets/js/main.js"></script>
+    <script>
+        // Progress tracking
+        const checkboxes = document.querySelectorAll('.progress-checkbox');
+        const progressBar = document.getElementById('progressBar');
+        const progressText = document.getElementById('progressText');
+        const modal = document.getElementById('completionModal');
+        const continueBtn = document.getElementById('continueBtn');
+
+        // Load saved progress
+        const savedProgress = localStorage.getItem('module4-progress');
+        if (savedProgress) {
+            const progressValue = parseInt(savedProgress);
+            progressBar.style.width = progressValue + '%';
+            progressText.textContent = progressValue + '%';
+        }
+
+        // Load checkbox states
+        checkboxes.forEach((checkbox, index) => {
+            const savedState = localStorage.getItem(`module4-checkbox-${index}`);
+            if (savedState === 'true') {
+                checkbox.checked = true;
+            }
+        });
+
+        function updateProgress() {
+            const checkedBoxes = document.querySelectorAll('.progress-checkbox:checked').length;
+            const totalBoxes = checkboxes.length;
+            const percentage = Math.round((checkedBoxes / totalBoxes) * 100);
+
+            progressBar.style.width = percentage + '%';
+            progressText.textContent = percentage + '%';
+
+            // Save progress
+            localStorage.setItem('module4-progress', percentage);
+
+            // Show completion modal at 100%
+            if (percentage === 100) {
+                modal.style.display = 'flex';
+                localStorage.setItem('module4-completed', 'true');
+                localStorage.setItem('academy-completed', 'true');
+            }
+        }
+
+        // Add event listeners to checkboxes
+        checkboxes.forEach((checkbox, index) => {
+            checkbox.addEventListener('change', function() {
+                localStorage.setItem(`module4-checkbox-${index}`, this.checked);
+                updateProgress();
+            });
+        });
+
+        // Continue button
+        continueBtn.addEventListener('click', () => {
+            window.location.href = '../index.html';
+        });
+
+        // Close modal on outside click
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+
+        // Initial progress calculation
+        updateProgress();
+    </script>
+</body>
+</html>

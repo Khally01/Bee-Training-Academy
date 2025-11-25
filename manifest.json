@@ -1,0 +1,28 @@
+{
+  "name": "Bee Training Academy",
+  "short_name": "Bee Academy",
+  "description": "Qbees Professional Airbnb Cleaning Training Platform",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FFF7EB",
+  "theme_color": "#DFC790",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "assets/images/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/images/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["education", "productivity"],
+  "lang": "en",
+  "dir": "ltr",
+  "screenshots": []
+}

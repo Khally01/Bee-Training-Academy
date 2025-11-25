@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 3: Advanced Procedures | Bee Training Academy</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐝</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <style>
+        .job-type-card {
+            background: var(--bg-white);
+            padding: var(--space-lg);
+            border-radius: var(--radius-lg);
+            margin-bottom: var(--space-lg);
+            box-shadow: var(--shadow-md);
+            border-left: 4px solid var(--primary-gold);
+        }
+
+        .job-type-card h3 {
+            color: var(--primary-dark);
+            margin-bottom: var(--space-md);
+        }
+
+        .message-template {
+            background: #F5F5F5;
+            padding: var(--space-md);
+            border-radius: var(--radius-md);
+            border-left: 3px solid var(--info-blue);
+            margin: var(--space-md) 0;
+            font-family: monospace;
+            font-size: 0.9rem;
+        }
+
+        .pricing-section {
+            background: linear-gradient(135deg, var(--primary-cream) 0%, var(--primary-gold) 100%);
+            padding: var(--space-lg);
+            border-radius: var(--radius-lg);
+            margin: var(--space-lg) 0;
+        }
+
+        .pricing-table {
+            width: 100%;
+            overflow-x: auto;
+            margin: var(--space-md) 0;
+        }
+
+        .pricing-table table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--bg-white);
+            box-shadow: var(--shadow-sm);
+            border-radius: var(--radius-md);
+        }
+
+        .pricing-table th {
+            background: var(--primary-dark);
+            color: var(--bg-white);
+            padding: var(--space-sm);
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .pricing-table td {
+            padding: var(--space-sm);
+            border-bottom: 1px solid var(--bg-gray);
+        }
+
+        .warning-box {
+            background: #FFF3CD;
+            border: 2px solid var(--warning-orange);
+            padding: var(--space-md);
+            border-radius: var(--radius-md);
+            margin: var(--space-md) 0;
+        }
+
+        .warning-box strong {
+            color: var(--warning-orange);
+        }
+
+        .step-number {
+            display: inline-block;
+            background: var(--primary-gold);
+            color: var(--primary-dark);
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            font-weight: bold;
+            margin-right: var(--space-xs);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <a href="../index.html" style="text-decoration: none;">
+                <div class="logo">
+                    <img src="../assets/images/branding/qbees-icon-blue.svg" alt="Qbees" class="logo-icon">
+                    <h1 class="logo-text">Module 3</h1>
+                </div>
+            </a>
+            <p class="tagline" data-en="Advanced Procedures" data-mn="Дэвшилтэт Горимууд">Advanced Procedures</p>
+        </div>
+    </header>
+
+    <!-- Progress Bar -->
+    <div class="progress-container">
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressBar"></div>
+        </div>
+        <div class="progress-text" id="progressText">0%</div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="container">
+        <div class="module-content">
+            <div class="content-section">
+                <h2>📋 Different Job Types</h2>
+                <p>As you advance in your Qbees career, you'll encounter different types of jobs. Each requires specific procedures:</p>
+            </div>
+
+            <!-- Job Type 1: Check-in -->
+            <div class="job-type-card">
+                <h3>1️⃣ Check-in Job</h3>
+                <p><strong>Purpose:</strong> Meet the guest and hand over keys while verifying their identity.</p>
+
+                <div class="message-template">
+                    <strong>Template Message:</strong><br>
+                    Hi [Guest Name], it's [Your Name] from Qbees! 🐝<br><br>
+                    Could you kindly confirm your ETA for [Property Address]? This helps us ensure a smooth key handover.<br><br>
+                    Please reply with your arrival time. For updates, text me directly: [Cleaner's Phone Number].<br><br>
+                    Thank you! 🙌
+                </div>
+
+                <h4>Steps to Follow:</h4>
+                <div class="checklist-section">
+                    <div class="checklist-item">
+                        <input type="checkbox" id="checkin-1" class="progress-checkbox">
+                        <label for="checkin-1">
+                            <span class="step-number">1</span>
+                            <strong>Coordinate with guest</strong> - Introduce yourself and confirm check-in time. (If guest number is wrong/unreachable/not responding, contact support)
+                        </label>
+                    </div>
+
+                    <div class="checklist-item">
+                        <input type="checkbox" id="checkin-2" class="progress-checkbox">
+                        <label for="checkin-2">
+                            <span class="step-number">2</span>
+                            <strong>Meet guest</strong> at the property (building entrance)
+                        </label>
+                    </div>
+
+                    <div class="checklist-item">
+                        <input type="checkbox" id="checkin-3" class="progress-checkbox">
+                        <label for="checkin-3">
+                            <span class="step-number">3</span>
+                            <strong>Ask for valid ID</strong> (passport/driver's license)
+                        </label>
+                    </div>
+
+                    <div class="checklist-item">
+                        <input type="checkbox" id="checkin-4" class="progress-checkbox">
+                        <label for="checkin-4">
+                            <span class="step-number">4</span>
+                            <strong>Double check</strong> guest's name on the app and on guest ID - make sure it matches
+                        </label>
+                    </div>
+
+                    <div class="checklist-item">
+                        <input type="checkbox" id="checkin-5" class="progress-checkbox">
+                        <label for="checkin-5">
+                            <span class="step-number">5</span>
+                            <strong>Take a photo</strong> of guest ID together with the guest keys and upload to the app
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Job Type 2: Check-out -->
+            <div class="job-type-card">
+                <h3>2️⃣ Check-out Job</h3>
+                <p><strong>Purpose:</strong> Collect keys from departing guests.</p>
+
+                <div class="message-template">
+                    <strong>Template Message:</strong><br>
+                    Hi [Guest Name], it's [Your Name] from Qbees! 🐝<br><br>
+                    Could you confirm your check-out time? We'll meet you to collect the keys.<br>
+                    For changes, text me: [Cleaner's Phone Number].<br><br>
+                    Thank you! 🙌
+                </div>
+
+                <h4>Steps to Follow:</h4>
+                <div class="checklist-section">
+                    <div class="checklist-item">
+                        <input type="checkbox" id="checkout-1" class="progress-checkbox">
+                        <label for="checkout-1">
+                            <span class="step-number">1</span>
+                            <strong>Confirm check-out time</strong> from Breezeway or contact guest directly
+                        </label>
+                    </div>
+
+                    <div class="checklist-item">
+                        <input type="checkbox" id="checkout-2" class="progress-checkbox">
+                        <label for="checkout-2">
+                            <span class="step-number">2</span>
+                            <strong>Meet & retrieve keys</strong> - Arrive on time and collect all keys (including parking/garage keys)
+                        </label>
+                    </div>
+
+                    <div class="checklist-item">
+                        <input type="checkbox" id="checkout-3" class="progress-checkbox">
+                        <label for="checkout-3">
+                            <span class="step-number">3</span>
+                            <strong>Take key photo</strong> - Snap a photo of the retrieved keys in Breezeway as proof
+                        </label>
+                    </div>
+
+                    <div class="checklist-item">
+                        <input type="checkbox" id="checkout-4" class="progress-checkbox">
+                        <label for="checkout-4">
+                            <span class="step-number">4</span>
+                            <strong>Submit confirmation</strong> - Update Breezeway: "Keys retrieved at [Time] – photo uploaded"
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Job Type 3: Adhoc -->
+            <div class="job-type-card">
+                <h3>3️⃣ Adhoc Job</h3>
+                <p><strong>Purpose:</strong> Handle on-demand tasks that pop up unexpectedly (deliveries, guest errands, special requests).</p>
+
+                <div class="warning-box">
+                    <strong>⚠️ IMPORTANT:</strong> Always Ask for Details First! Do NOT accept the job in Breezeway until you:
+                    <ul>
+                        <li>Check Slack for instructions from the Support Team</li>
+                        <li>Confirm exactly what's needed (task scope, deadlines, special tools)</li>
+                        <li>Clarify safety protocols (access codes, guest preferences)</li>
+                    </ul>
+                </div>
+
+                <h4>Examples of Adhoc Jobs:</h4>
+                <ul>
+                    <li>Delivering keys or letting guests into properties</li>
+                    <li>Guest errands (grocery shopping, picking up supplies)</li>
+                    <li>Deep cleaning specific areas (post-renovation)</li>
+                    <li>Returning lost items to guests</li>
+                    <li>Delivering extra linens and towels</li>
+                </ul>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="adhoc-1" class="progress-checkbox">
+                    <label for="adhoc-1">
+                        I understand to always check Slack for details before accepting adhoc jobs
+                    </label>
+                </div>
+            </div>
+
+            <!-- Job Type 4: Initial Clean -->
+            <div class="job-type-card">
+                <h3>4️⃣ Initial Clean</h3>
+                <p><strong>Purpose:</strong> First clean at a new property - requires detailed inspection and reporting.</p>
+
+                <h4>Your Responsibilities:</h4>
+                <div class="checklist-section">
+                    <div class="checklist-item">
+                        <input type="checkbox" id="initial-1" class="progress-checkbox">
+                        <label for="initial-1">
+                            <span class="step-number">1</span>
+                            <strong>Detailed Inspection</strong> - Check for extra beds/rooms, pet hair, stains, damage, excessive dirt/mold, missing supplies
+                        </label>
+                    </div>
+
+                    <div class="checklist-item">
+                        <input type="checkbox" id="initial-2" class="progress-checkbox">
+                        <label for="initial-2">
+                            <span class="step-number">2</span>
+                            <strong>Take Before Photos</strong> - Capture clear photos of problem areas and upload to Breezeway
+                        </label>
+                    </div>
+
+                    <div class="checklist-item">
+                        <input type="checkbox" id="initial-3" class="progress-checkbox">
+                        <label for="initial-3">
+                            <span class="step-number">3</span>
+                            <strong>Report in Breezeway</strong> - Specify if it needs Deep Clean or Normal Clean + Extra Time
+                        </label>
+                    </div>
+
+                    <div class="checklist-item">
+                        <input type="checkbox" id="initial-4" class="progress-checkbox">
+                        <label for="initial-4">
+                            <span class="step-number">4</span>
+                            <strong>Wait for Approval</strong> - Do NOT proceed until the team reviews and confirms adjusted time/job type
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Job Type 5: Deep Clean -->
+            <div class="job-type-card">
+                <h3>5️⃣ Deep Clean</h3>
+                <p><strong>Purpose:</strong> Tackle hidden dirt, grime, and neglected areas beyond standard cleaning.</p>
+
+                <h4>Deep Clean Process:</h4>
+                <div class="checklist-section">
+                    <div class="checklist-item">
+                        <input type="checkbox" id="deep-1" class="progress-checkbox">
+                        <label for="deep-1">
+                            <span class="step-number">1</span>
+                            <strong>Prepare!</strong> Gather heavy-duty chemicals, scrub brushes, steam cleaner (if needed), gloves, mask, protective gear
+                        </label>
+                    </div>
+
+                    <div class="checklist-item">
+                        <input type="checkbox" id="deep-2" class="progress-checkbox">
+                        <label for="deep-2">
+                            <span class="step-number">2</span>
+                            <strong>Take Before Photos</strong> - Capture problem areas (greasy ovens, moldy grout, stained carpets)
+                        </label>
+                    </div>
+
+                    <div class="checklist-item">
+                        <input type="checkbox" id="deep-3" class="progress-checkbox">
+                        <label for="deep-3">
+                            <span class="step-number">3</span>
+                            <strong>Track Your Time</strong> - Log hours accurately in Breezeway (e.g., "Spent 1.5 hours degreasing kitchen")
+                        </label>
+                    </div>
+
+                    <div class="checklist-item">
+                        <input type="checkbox" id="deep-4" class="progress-checkbox">
+                        <label for="deep-4">
+                            <span class="step-number">4</span>
+                            <strong>Take After Photos</strong> - Show the transformation with clear "after" photos
+                        </label>
+                    </div>
+
+                    <div class="checklist-item">
+                        <input type="checkbox" id="deep-5" class="progress-checkbox">
+                        <label for="deep-5">
+                            <span class="step-number">5</span>
+                            <strong>Report & Get Paid</strong> - Submit total hours, before/after photos, and notes on challenges
+                        </label>
+                    </div>
+                </div>
+
+                <div class="warning-box">
+                    <strong>⏱️ Time Expectation:</strong> Deep cleans take 2-4x longer than regular cleans. Block your schedule accordingly!
+                </div>
+            </div>
+
+            <!-- Job Type 6: Mid-Stay -->
+            <div class="job-type-card">
+                <h3>6️⃣ Mid-Stay Clean</h3>
+                <p><strong>Purpose:</strong> Routine clean while guests are still occupying the property.</p>
+
+                <h4>Key Differences:</h4>
+                <ul>
+                    <li><strong>Guest Belongings Present</strong> - Do not move or rearrange personal items</li>
+                    <li><strong>Clean around belongings</strong> - Wipe surfaces under items, vacuum around suitcases</li>
+                    <li><strong>Strict Timing</strong> - Guests may specify exact windows (e.g., "10 AM–12 PM only")</li>
+                </ul>
+
+                <div class="checklist-section">
+                    <div class="checklist-item">
+                        <input type="checkbox" id="midstay-1" class="progress-checkbox">
+                        <label for="midstay-1">
+                            <span class="step-number">1</span>
+                            <strong>Confirm Start Time</strong> - Check Slack for the guest's approved cleaning window
+                        </label>
+                    </div>
+
+                    <div class="checklist-item">
+                        <input type="checkbox" id="midstay-2" class="progress-checkbox">
+                        <label for="midstay-2">
+                            <span class="step-number">2</span>
+                            <strong>Focus on high-touch areas</strong> - Bathrooms, kitchens, floors (leave belongings exactly as found)
+                        </label>
+                    </div>
+
+                    <div class="checklist-item">
+                        <input type="checkbox" id="midstay-3" class="progress-checkbox">
+                        <label for="midstay-3">
+                            <span class="step-number">3</span>
+                            <strong>Document Issues Discreetly</strong> - Take photos of damage/hazards and report via Breezeway
+                        </label>
+                    </div>
+
+                    <div class="checklist-item">
+                        <input type="checkbox" id="midstay-4" class="progress-checkbox">
+                        <label for="midstay-4">
+                            <span class="step-number">4</span>
+                            <strong>Communicate Delays</strong> - If running late/early, notify the team immediately in Slack
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pricing Section -->
+            <div class="pricing-section">
+                <h2>💰 Pricing Structure</h2>
+                <p>Understanding how you get paid for different job types and circumstances:</p>
+
+                <h3>Special Circumstances</h3>
+                <ul>
+                    <li><strong>Public Holidays:</strong> Rate increased by 50%</li>
+                    <li><strong>Attendance Fee:</strong> $30 if job canceled when you're already at property</li>
+                    <li><strong>Waiting Time:</strong> $15 if you wait more than 30 minutes for guest to check out</li>
+                    <li><strong>Extra Bed:</strong> $7.50 per additional bed</li>
+                    <li><strong>Key Exchange Waiting:</strong> $30/hour if you wait more than 15 minutes</li>
+                </ul>
+
+                <h3>Key Exchange Rates</h3>
+                <div class="pricing-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Time</th>
+                                <th>Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>8 AM - 8 PM</td>
+                                <td>$20</td>
+                            </tr>
+                            <tr>
+                                <td>9 PM - 11 PM</td>
+                                <td>$40</td>
+                            </tr>
+                            <tr>
+                                <td>12 AM - 7 AM</td>
+                                <td>$60</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Adhoc Job Rates</h3>
+                <div class="pricing-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Task</th>
+                                <th>Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Delivery adhoc (Deliver extra linens and towels)</td>
+                                <td>$30</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="pricing-1" class="progress-checkbox">
+                    <label for="pricing-1">
+                        I understand the pricing structure for different job types
+                    </label>
+                </div>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div class="nav-buttons">
+                <a href="module-2.html" class="btn-secondary">← Previous Module</a>
+                <a href="module-4.html" class="btn-primary">Next Module →</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Completion Modal -->
+    <div id="completionModal" class="modal">
+        <div class="modal-content">
+            <h2>🎉 Excellent Work!</h2>
+            <p>You've completed Module 3: Advanced Procedures!</p>
+            <p>You're now ready to handle all types of Qbees jobs professionally.</p>
+            <button id="continueBtn" class="btn-primary">Continue to Module 4 →</button>
+        </div>
+    </div>
+
+    <script src="../assets/js/main.js"></script>
+    <script>
+        // Progress tracking
+        const checkboxes = document.querySelectorAll('.progress-checkbox');
+        const progressBar = document.getElementById('progressBar');
+        const progressText = document.getElementById('progressText');
+        const modal = document.getElementById('completionModal');
+        const continueBtn = document.getElementById('continueBtn');
+
+        // Load saved progress
+        const savedProgress = localStorage.getItem('module3-progress');
+        if (savedProgress) {
+            const progressValue = parseInt(savedProgress);
+            progressBar.style.width = progressValue + '%';
+            progressText.textContent = progressValue + '%';
+        }
+
+        // Load checkbox states
+        checkboxes.forEach((checkbox, index) => {
+            const savedState = localStorage.getItem(`module3-checkbox-${index}`);
+            if (savedState === 'true') {
+                checkbox.checked = true;
+            }
+        });
+
+        function updateProgress() {
+            const checkedBoxes = document.querySelectorAll('.progress-checkbox:checked').length;
+            const totalBoxes = checkboxes.length;
+            const percentage = Math.round((checkedBoxes / totalBoxes) * 100);
+
+            progressBar.style.width = percentage + '%';
+            progressText.textContent = percentage + '%';
+
+            // Save progress
+            localStorage.setItem('module3-progress', percentage);
+
+            // Show completion modal at 100%
+            if (percentage === 100) {
+                modal.style.display = 'flex';
+                localStorage.setItem('module3-completed', 'true');
+            }
+        }
+
+        // Add event listeners to checkboxes
+        checkboxes.forEach((checkbox, index) => {
+            checkbox.addEventListener('change', function() {
+                localStorage.setItem(`module3-checkbox-${index}`, this.checked);
+                updateProgress();
+            });
+        });
+
+        // Continue button
+        continueBtn.addEventListener('click', () => {
+            window.location.href = 'module-4.html';
+        });
+
+        // Close modal on outside click
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+
+        // Initial progress calculation
+        updateProgress();
+    </script>
+</body>
+</html>

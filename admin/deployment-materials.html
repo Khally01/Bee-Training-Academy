@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deployment Materials - Qbees Training Academy</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <style>
+        .admin-hero {
+            background: linear-gradient(135deg, #273E4B 0%, #1a2b35 100%);
+            padding: 2rem 1rem;
+            text-align: center;
+            color: white;
+            margin-bottom: 2rem;
+        }
+
+        .admin-hero h1 {
+            font-size: 2rem;
+            margin: 0 0 0.5rem 0;
+            color: #DFC790;
+        }
+
+        .admin-hero p {
+            margin: 0;
+            opacity: 0.9;
+        }
+
+        .admin-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem 3rem 1rem;
+        }
+
+        .materials-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .material-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .material-header {
+            background: #273E4B;
+            color: white;
+            padding: 1.5rem;
+        }
+
+        .material-header h3 {
+            margin: 0 0 0.5rem 0;
+            color: #DFC790;
+        }
+
+        .material-header p {
+            margin: 0;
+            opacity: 0.9;
+            font-size: 0.875rem;
+        }
+
+        .material-preview {
+            padding: 2rem;
+            min-height: 200px;
+        }
+
+        .material-actions {
+            padding: 1.5rem;
+            background: #FFF7EB;
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .action-btn {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-print {
+            background: #273E4B;
+            color: white;
+        }
+
+        .btn-print:hover {
+            background: #354F5E;
+        }
+
+        .btn-download {
+            background: #DFC790;
+            color: #273E4B;
+        }
+
+        .btn-download:hover {
+            background: #E5A511;
+        }
+
+        /* Printable Materials */
+        .poster {
+            background: white;
+            border: 2px solid #273E4B;
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .poster-logo {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .poster-title {
+            font-size: 2.5rem;
+            color: #273E4B;
+            margin: 0 0 0.5rem 0;
+            font-weight: 700;
+        }
+
+        .poster-subtitle {
+            font-size: 1.25rem;
+            color: #354F5E;
+            margin: 0 0 2rem 0;
+        }
+
+        .poster-qr-placeholder {
+            width: 200px;
+            height: 200px;
+            background: #FFF7EB;
+            border: 3px dashed #DFC790;
+            margin: 2rem auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            border-radius: 12px;
+        }
+
+        .poster-url {
+            font-size: 1.5rem;
+            color: #273E4B;
+            font-weight: 600;
+            margin: 2rem 0;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .poster-features {
+            text-align: left;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .poster-features li {
+            font-size: 1.25rem;
+            margin: 1rem 0;
+            color: #354F5E;
+        }
+
+        .business-card {
+            width: 350px;
+            height: 200px;
+            background: linear-gradient(135deg, #273E4B 0%, #354F5E 100%);
+            border-radius: 12px;
+            padding: 1.5rem;
+            color: white;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .business-card::before {
+            content: '🐝';
+            position: absolute;
+            font-size: 10rem;
+            opacity: 0.1;
+            right: -2rem;
+            bottom: -2rem;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #DFC790;
+            margin: 0 0 0.5rem 0;
+        }
+
+        .card-subtitle {
+            font-size: 0.875rem;
+            opacity: 0.9;
+            margin: 0 0 1rem 0;
+        }
+
+        .card-qr {
+            width: 80px;
+            height: 80px;
+            background: white;
+            border-radius: 8px;
+            margin-top: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+        }
+
+        .quick-start-card {
+            background: white;
+            border: 2px solid #273E4B;
+            border-radius: 12px;
+            padding: 2rem;
+        }
+
+        .quick-start-card h4 {
+            color: #273E4B;
+            margin: 0 0 1rem 0;
+            font-size: 1.5rem;
+        }
+
+        .quick-start-card ol {
+            margin: 0;
+            padding-left: 1.5rem;
+        }
+
+        .quick-start-card li {
+            margin: 0.75rem 0;
+            color: #354F5E;
+            font-size: 1.125rem;
+        }
+
+        .quick-start-card .highlight {
+            background: #DFC790;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        @media print {
+            .admin-hero,
+            .material-actions,
+            .admin-container > div:last-child,
+            .action-btn {
+                display: none !important;
+            }
+
+            .material-card {
+                page-break-after: always;
+                box-shadow: none;
+                border: 1px solid #ccc;
+            }
+
+            .material-preview {
+                padding: 0;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .materials-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .materials-grid .material-card:first-child {
+                grid-column: 1 / -1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="admin-hero">
+        <h1>📄 Deployment Materials</h1>
+        <p>Printable materials to promote the training academy</p>
+    </div>
+
+    <div class="admin-container">
+        <div class="materials-grid">
+            <!-- Large Poster -->
+            <div class="material-card">
+                <div class="material-header">
+                    <h3>🖼️ Large Poster (A3/A4)</h3>
+                    <p>For break rooms, bulletin boards, or high-traffic areas</p>
+                </div>
+                <div class="material-preview">
+                    <div class="poster">
+                        <div class="poster-logo">🐝</div>
+                        <h2 class="poster-title">Qbees Training Academy</h2>
+                        <p class="poster-subtitle">Your Complete Cleaning Training Platform</p>
+
+                        <div class="poster-qr-placeholder">
+                            📱
+                        </div>
+
+                        <p style="color: #354F5E; font-size: 1.125rem; margin: 1rem 0;">
+                            <strong>Scan QR code or visit:</strong>
+                        </p>
+                        <div class="poster-url">training.qbees.com.au</div>
+
+                        <div class="poster-features">
+                            <ul>
+                                <li>✅ 4 Complete Training Modules</li>
+                                <li>📱 Mobile-Friendly Platform</li>
+                                <li>🎥 Video Demonstrations</li>
+                                <li>📋 Quick Reference Checklists</li>
+                                <li>🧪 Chemical Safety Guide</li>
+                                <li>💰 Pricing Calculator</li>
+                            </ul>
+                        </div>
+
+                        <p style="color: #273E4B; font-weight: 600; margin-top: 2rem; font-size: 1.125rem;">
+                            Available in English & Mongolian
+                        </p>
+                    </div>
+                </div>
+                <div class="material-actions">
+                    <button class="action-btn btn-print" onclick="window.print()">🖨️ Print Poster</button>
+                    <a href="qr-generator.html" class="action-btn btn-download">📱 Generate QR Code</a>
+                </div>
+            </div>
+
+            <!-- Business Card / Pocket Card -->
+            <div class="material-card">
+                <div class="material-header">
+                    <h3>💳 Pocket Reference Card</h3>
+                    <p>Credit card sized, laminate and distribute to all cleaners</p>
+                </div>
+                <div class="material-preview">
+                    <div style="display: grid; grid-template-columns: 1fr; gap: 1rem; padding: 1rem;">
+                        <div class="business-card">
+                            <h3 class="card-title">🐝 Qbees Training Academy</h3>
+                            <p class="card-subtitle">Your complete cleaning training platform</p>
+                            <div style="display: flex; justify-content: space-between; align-items: flex-end;">
+                                <div>
+                                    <p style="margin: 0.5rem 0; font-size: 0.875rem;"><strong>training.qbees.com.au</strong></p>
+                                    <p style="margin: 0.5rem 0; font-size: 0.75rem; opacity: 0.8;">English & Mongolian</p>
+                                </div>
+                                <div class="card-qr">📱</div>
+                            </div>
+                        </div>
+
+                        <div class="business-card" style="background: linear-gradient(135deg, #DFC790 0%, #AC9F7B 100%); color: #273E4B;">
+                            <h3 class="card-title" style="color: #273E4B;">Quick Access</h3>
+                            <p class="card-subtitle" style="color: #273E4B;">Scan for instant access</p>
+                            <ul style="list-style: none; padding: 0; margin: 1rem 0;">
+                                <li style="margin: 0.5rem 0; font-size: 0.875rem;">📋 Checklists</li>
+                                <li style="margin: 0.5rem 0; font-size: 0.875rem;">🧪 Chemical Guide</li>
+                                <li style="margin: 0.5rem 0; font-size: 0.875rem;">📸 Photo Guide</li>
+                                <li style="margin: 0.5rem 0; font-size: 0.875rem;">❓ FAQ</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="material-actions">
+                    <button class="action-btn btn-print" onclick="printCards()">🖨️ Print Cards</button>
+                    <p style="margin: 0; color: #354F5E; font-size: 0.875rem;">💡 Tip: Print on cardstock and laminate for durability</p>
+                </div>
+            </div>
+
+            <!-- Quick Start Guide -->
+            <div class="material-card">
+                <div class="material-header">
+                    <h3>📋 Quick Start Guide</h3>
+                    <p>Step-by-step onboarding for new cleaners</p>
+                </div>
+                <div class="material-preview">
+                    <div class="quick-start-card">
+                        <h4>🚀 Welcome to Qbees Training Academy!</h4>
+
+                        <p style="color: #354F5E; margin-bottom: 1.5rem;">
+                            Follow these simple steps to get started:
+                        </p>
+
+                        <ol>
+                            <li>
+                                <strong>Access the platform:</strong><br>
+                                Scan the QR code or visit <span class="highlight">training.qbees.com.au</span>
+                            </li>
+                            <li>
+                                <strong>Choose your language:</strong><br>
+                                Click the language switcher (EN / МН) in the top right
+                            </li>
+                            <li>
+                                <strong>Start with Module 1:</strong><br>
+                                Learn the essentials - apps, base access, and cleaning kit
+                            </li>
+                            <li>
+                                <strong>Complete all 4 modules:</strong><br>
+                                Track your progress as you go through each section
+                            </li>
+                            <li>
+                                <strong>Bookmark quick references:</strong><br>
+                                Save the checklist and chemical guide on your phone
+                            </li>
+                        </ol>
+
+                        <div style="background: #FFF7EB; padding: 1rem; border-radius: 8px; margin-top: 2rem; border-left: 4px solid #DFC790;">
+                            <p style="margin: 0; color: #273E4B;"><strong>💡 Pro Tip:</strong> Add the training academy to your phone's home screen for instant access!</p>
+                        </div>
+
+                        <div style="margin-top: 2rem; text-align: center;">
+                            <div class="poster-qr-placeholder" style="width: 150px; height: 150px;">📱</div>
+                            <p style="margin-top: 1rem; color: #273E4B; font-weight: 600;">Scan to get started!</p>
+                        </div>
+
+                        <hr style="margin: 2rem 0; border: 1px solid #DFC790;">
+
+                        <h4 style="color: #273E4B; margin-bottom: 1rem;">📱 Available Resources:</h4>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin: 0.5rem 0;">📋 <strong>Cleaning Checklists</strong> - Room-by-room guides</li>
+                            <li style="margin: 0.5rem 0;">🧪 <strong>Chemical Guide</strong> - Safe usage instructions</li>
+                            <li style="margin: 0.5rem 0;">💰 <strong>Pricing Calculator</strong> - Calculate your pay</li>
+                            <li style="margin: 0.5rem 0;">🎥 <strong>Training Videos</strong> - Watch techniques</li>
+                            <li style="margin: 0.5rem 0;">❓ <strong>FAQ</strong> - Common questions answered</li>
+                        </ul>
+
+                        <div style="background: #273E4B; color: white; padding: 1rem; border-radius: 8px; margin-top: 2rem; text-align: center;">
+                            <p style="margin: 0; font-size: 0.875rem;">Need help? Contact your property manager or team leader</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="material-actions">
+                    <button class="action-btn btn-print" onclick="window.print()">🖨️ Print Guide</button>
+                    <p style="margin: 0; color: #354F5E; font-size: 0.875rem;">💡 Tip: Include in onboarding packets for new hires</p>
+                </div>
+            </div>
+
+            <!-- Email Template -->
+            <div class="material-card">
+                <div class="material-header">
+                    <h3>📧 Email Template</h3>
+                    <p>Copy and send to new team members</p>
+                </div>
+                <div class="material-preview">
+                    <div style="background: #FFF7EB; padding: 2rem; border-radius: 8px; font-family: Arial, sans-serif;">
+                        <p><strong>Subject:</strong> Welcome to Qbees! Access Your Training Academy 🐝</p>
+                        <hr style="margin: 1.5rem 0; border: 1px solid #DFC790;">
+
+                        <p>Hi [Name],</p>
+
+                        <p>Welcome to the Qbees family! We're excited to have you on our cleaning team.</p>
+
+                        <p>To help you get started, we've created a comprehensive training academy that you can access anytime, anywhere from your phone or computer.</p>
+
+                        <p><strong>🔗 Access the training platform:</strong><br>
+                        <span style="background: white; padding: 0.5rem 1rem; display: inline-block; border-radius: 4px; margin: 0.5rem 0; font-weight: 600;">training.qbees.com.au</span></p>
+
+                        <p><strong>📚 What you'll find:</strong></p>
+                        <ul>
+                            <li>4 complete training modules</li>
+                            <li>Step-by-step cleaning guides</li>
+                            <li>Chemical safety instructions</li>
+                            <li>Photo documentation standards</li>
+                            <li>Pricing calculator</li>
+                            <li>Quick reference checklists</li>
+                        </ul>
+
+                        <p><strong>🌐 Available in English and Mongolian</strong><br>
+                        Just click the language switcher at the top of the page.</p>
+
+                        <p><strong>✅ Next steps:</strong></p>
+                        <ol>
+                            <li>Click the link above to access the platform</li>
+                            <li>Start with Module 1 - First Day Essentials</li>
+                            <li>Complete all modules before your first shift</li>
+                            <li>Bookmark the page on your phone for easy access</li>
+                        </ol>
+
+                        <p>If you have any questions, feel free to reach out to your team leader or contact us at support@qbees.com.au</p>
+
+                        <p>Looking forward to working with you!</p>
+
+                        <p><strong>The Qbees Team 🐝</strong></p>
+                    </div>
+                </div>
+                <div class="material-actions">
+                    <button class="action-btn btn-download" onclick="copyEmail()">📋 Copy Template</button>
+                    <p id="copyStatus" style="margin: 0; color: #354F5E; font-size: 0.875rem;"></p>
+                </div>
+            </div>
+
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: #FFF7EB; border-radius: 12px;">
+            <h3 style="color: #273E4B; margin-bottom: 1rem;">📦 Complete Deployment Package</h3>
+            <p style="color: #354F5E; margin-bottom: 1.5rem;">Everything you need to launch the training academy</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="qr-generator.html" class="action-btn btn-print">📱 QR Code Generator</a>
+                <a href="../DEPLOYMENT.md" class="action-btn btn-download" download>📘 Deployment Guide</a>
+                <a href="../index.html" class="action-btn btn-print">← Back to Academy</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function printCards() {
+            window.print();
+        }
+
+        function copyEmail() {
+            const emailTemplate = document.querySelector('.material-preview').innerText;
+            navigator.clipboard.writeText(emailTemplate).then(() => {
+                document.getElementById('copyStatus').textContent = '✅ Template copied to clipboard!';
+                setTimeout(() => {
+                    document.getElementById('copyStatus').textContent = '';
+                }, 3000);
+            }).catch(() => {
+                document.getElementById('copyStatus').textContent = '❌ Please copy manually';
+            });
+        }
+    </script>
+</body>
+</html>
