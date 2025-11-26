@@ -388,59 +388,59 @@ const translations = {
         // All content below should be translated by a professional Mongolian translator
 
         nav: {
-            dashboard: "[Dashboard - MN]",
-            modules: "[Training Modules - MN]",
-            resources: "[Resources - MN]",
-            progress: "[My Progress - MN]"
+            dashboard: "Хянах самбар",
+            modules: "Сургалтын модулиуд",
+            resources: "Нөөц",
+            progress: "Миний явц"
         },
 
         dashboard: {
-            welcome: "[Welcome to Qbees Training Academy - MN]",
-            subtitle: "[Your complete guide to professional cleaning excellence - MN]",
-            completedModules: "[Modules Completed - MN]",
-            overallProgress: "[Overall Progress - MN]",
-            startTraining: "[Start Training - MN]",
-            continueTraining: "[Continue Training - MN]",
+            welcome: "Qbees Сургалтын Академид тавтай морил",
+            subtitle: "Мэргэжлийн цэвэрлэгээний иж бүрэн гарын авлага",
+            completedModules: "Дууссан модулиуд",
+            overallProgress: "Нийт явц",
+            startTraining: "Сургалт эхлүүлэх",
+            continueTraining: "Сургалт үргэлжлүүлэх",
 
-            module1Title: "[Module 1: Foundation - MN]",
-            module1Desc: "[Welcome to Qbees, company culture, core values, and professional standards - MN]",
-            module1Duration: "[30 minutes - MN]",
+            module1Title: "Модуль 1: Суурь",
+            module1Desc: "Qbees-д тавтай морил, компанийн соёл, үндсэн үнэт зүйлс болон мэргэжлийн стандартууд",
+            module1Duration: "30 минут",
 
-            module2Title: "[Module 2: Core Skills - MN]",
-            module2Desc: "[Property arrival, inspection procedures, and room-by-room cleaning techniques - MN]",
-            module2Duration: "[45 minutes - MN]",
+            module2Title: "Модуль 2: Үндсэн ур чадвар",
+            module2Desc: "Үл хөдлөх хөрөнгөд ирэх, шалгах журам болон өрөө бүрээр цэвэрлэх техник",
+            module2Duration: "45 минут",
 
-            module3Title: "[Module 3: Advanced Procedures - MN]",
-            module3Desc: "[Job types, pricing structure, and guest communication protocols - MN]",
-            module3Duration: "[40 minutes - MN]",
+            module3Title: "Модуль 3: Ахисан түвшний журам",
+            module3Desc: "Ажлын төрлүүд, үнийн бүтэц болон зочидтой харилцах протокол",
+            module3Duration: "40 минут",
 
-            module4Title: "[Module 4: Mastery Level - MN]",
-            module4Desc: "[Professional photo documentation, quality standards, and excellence - MN]",
-            module4Duration: "[35 minutes - MN]",
+            module4Title: "Модуль 4: Мастер түвшин",
+            module4Desc: "Мэргэжлийн зургийн баримтжуулалт, чанарын стандарт болон шилдэг байдал",
+            module4Duration: "35 минут",
 
-            resourcesTitle: "[Quick Reference Resources - MN]",
+            resourcesTitle: "Шуурхай лавлах нөөц",
 
-            checklistTitle: "[Cleaning Checklist - MN]",
-            checklistDesc: "[Interactive room-by-room cleaning checklist for on-the-job reference - MN]",
+            checklistTitle: "Цэвэрлэгээний жагсаалт",
+            checklistDesc: "Ажил дээр ашиглах өрөө бүрийн интерактив цэвэрлэгээний жагсаалт",
 
-            chemicalTitle: "[Chemical Guide - MN]",
-            chemicalDesc: "[Safety guide for all cleaning chemicals with usage instructions - MN]",
+            chemicalTitle: "Химийн заавар",
+            chemicalDesc: "Бүх цэвэрлэгээний химийн бодисын аюулгүй байдлын заавар",
 
-            pricingTitle: "[Pricing Reference - MN]",
-            pricingDesc: "[Complete rate tables and interactive pricing calculator - MN]",
+            pricingTitle: "Үнийн лавлах",
+            pricingDesc: "Бүрэн үнийн хүснэгт болон интерактив үнийн тооцоолуур",
 
-            faqTitle: "[FAQ - MN]",
-            faqDesc: "[Frequently asked questions and quick answers - MN]",
+            faqTitle: "Түгээмэл асуултууд",
+            faqDesc: "Түгээмэл асуултууд болон хурдан хариултууд",
 
-            notStarted: "[Not Started - MN]",
-            inProgress: "[In Progress - MN]",
-            completed: "[Completed - MN]",
-            locked: "[Locked - MN]",
+            notStarted: "Эхлээгүй",
+            inProgress: "Явагдаж байна",
+            completed: "Дууссан",
+            locked: "Түгжээтэй",
 
-            viewResource: "[View Resource - MN]",
-            startModule: "[Start Module - MN]",
-            continueModule: "[Continue Module - MN]",
-            reviewModule: "[Review Module - MN]"
+            viewResource: "Нөөц үзэх",
+            startModule: "Модуль эхлүүлэх",
+            continueModule: "Модуль үргэлжлүүлэх",
+            reviewModule: "Модуль шалгах"
         },
 
         // Additional sections would follow the same pattern
@@ -494,32 +494,32 @@ const translations = {
         },
 
         common: {
-            progress: "[Progress - MN]",
-            complete: "[Complete - MN]",
-            incomplete: "[Incomplete - MN]",
-            loading: "[Loading... - MN]",
-            error: "[Error - MN]",
-            success: "[Success! - MN]",
-            close: "[Close - MN]",
-            cancel: "[Cancel - MN]",
-            confirm: "[Confirm - MN]",
-            save: "[Save - MN]",
-            back: "[Back - MN]",
-            next: "[Next - MN]",
-            previous: "[Previous - MN]",
-            home: "[Home - MN]",
+            progress: "Явц",
+            complete: "Дуусгах",
+            incomplete: "Дуусаагүй",
+            loading: "Ачааллаж байна...",
+            error: "Алдаа",
+            success: "Амжилттай!",
+            close: "Хаах",
+            cancel: "Цуцлах",
+            confirm: "Батлах",
+            save: "Хадгалах",
+            back: "Буцах",
+            next: "Дараах",
+            previous: "Өмнөх",
+            home: "Нүүр",
 
-            minutes: "[minutes - MN]",
-            hours: "[hours - MN]",
+            minutes: "минут",
+            hours: "цаг",
 
-            moduleComplete: "[Module Complete! - MN]",
-            congratulations: "[Congratulations! - MN]",
-            wellDone: "[Well done! - MN]",
-            keepGoing: "[Keep going! - MN]",
+            moduleComplete: "Модуль дууслаа!",
+            congratulations: "Баяр хүргэе!",
+            wellDone: "Сайн хийлээ!",
+            keepGoing: "Үргэлжлүүл!",
 
-            errorLoading: "[Error loading content - MN]",
-            tryAgain: "[Please try again - MN]",
-            contactSupport: "[Contact support if the problem persists - MN]"
+            errorLoading: "Контент ачаалахад алдаа гарлаа",
+            tryAgain: "Дахин оролдоно уу",
+            contactSupport: "Асуудал үргэлжилбэл тусламж хүсээрэй"
         }
     }
 };
