@@ -109,13 +109,21 @@
     </style>
 </head>
 <body>
+    <!-- Language Toggle -->
+    <div class="language-toggle">
+        <button id="langBtn" class="lang-btn">
+            <span class="lang-en">🇬🇧 EN</span>
+            <span class="lang-mn" style="display: none;">🇲🇳 МН</span>
+        </button>
+    </div>
+
     <!-- Header -->
     <header class="header">
         <div class="container">
             <a href="../index.html" style="text-decoration: none;">
                 <div class="logo">
                     <img src="../assets/images/branding/qbees-icon-blue.svg" alt="Qbees" class="logo-icon">
-                    <h1 class="logo-text">Module 4</h1>
+                    <h1 class="logo-text" data-en="Module 4" data-mn="Модуль 4">Module 4</h1>
                 </div>
             </a>
             <p class="tagline" data-en="Mastery Level" data-mn="Мастер Түвшин">Mastery Level</p>
@@ -136,312 +144,312 @@
         <div style="margin: 1rem 0;">
             <a href="../index.html" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.5rem; background: #273E4B; color: white; text-decoration: none; border-radius: 8px; font-weight: 600; transition: all 0.3s ease;">
                 <span>←</span>
-                <span>Back to Homepage</span>
+                <span data-en="Back to Homepage" data-mn="Нүүр хуудас руу">Back to Homepage</span>
             </a>
         </div>
 
         <div class="module-content">
             <div class="content-section">
-                <h2>📸 Professional Photo Documentation</h2>
-                <p>Taking clear photos of the Airbnb property after your cleaning helps show the owner/host the fantastic job you've done! These photos act as proof of what we have cleaned and provide timestamps showing exactly when the cleaning was completed.</p>
+                <h2 data-en="📸 Professional Photo Documentation" data-mn="📸 Мэргэжлийн Гэрэл Зургийн Баримтжуулалт">📸 Professional Photo Documentation</h2>
+                <p data-en="Taking clear photos of the Airbnb property after your cleaning helps show the owner/host the fantastic job you've done! These photos act as proof of what we have cleaned and provide timestamps showing exactly when the cleaning was completed." data-mn="Цэвэрлэгээний дараа Airbnb байшингийн тод зураг авах нь эзэнд/хостод таны хийсэн гайхалтай ажлыг харуулахад тусална! Эдгээр зурагууд нь бид юу цэвэрлэсэн тухай нотолгоо болж, цэвэрлэгээ хэзээ дууссаныг яг цагийн тэмдэглэлтэй харуулдаг.">Taking clear photos of the Airbnb property after your cleaning helps show the owner/host the fantastic job you've done! These photos act as proof of what we have cleaned and provide timestamps showing exactly when the cleaning was completed.</p>
 
                 <div class="highlight-box">
-                    <h3>📷 Photography Principles</h3>
+                    <h3 data-en="📷 Photography Principles" data-mn="📷 Гэрэл Зураг Авах Зарчмууд">📷 Photography Principles</h3>
                     <ul>
-                        <li><strong>Clear Photos:</strong> Make sure all photos are clear and well-lit</li>
-                        <li><strong>Landscape Mode:</strong> Hold your phone horizontally to capture landscape photos</li>
-                        <li><strong>Use Timestamp camera</strong> and upload to Breezeway</li>
-                        <li><strong>Don't Include People</strong> in your photos</li>
-                        <li><strong>Quality over Quantity:</strong> Don't take too many photos of 1 area - we just need the essential shots</li>
+                        <li><strong data-en="Clear Photos:" data-mn="Тод Зураг:">Clear Photos:</strong> <span data-en="Make sure all photos are clear and well-lit" data-mn="Бүх зураг тод, сайн гэрэлтэй байгаа эсэхийг шалгаарай">Make sure all photos are clear and well-lit</span></li>
+                        <li><strong data-en="Landscape Mode:" data-mn="Хэвтээ Горим:">Landscape Mode:</strong> <span data-en="Hold your phone horizontally to capture landscape photos" data-mn="Хэвтээ зураг авахын тулд утсаа хэвтээ байрлал руу эргүүлээрэй">Hold your phone horizontally to capture landscape photos</span></li>
+                        <li><strong data-en="Use Timestamp camera" data-mn="Timestamp камер ашиглах">Use Timestamp camera</strong> <span data-en="and upload to Breezeway" data-mn="бөгөөд Breezeway-д байршуулах">and upload to Breezeway</span></li>
+                        <li><strong data-en="Don't Include People" data-mn="Хүмүүсийг Оруулахгүй">Don't Include People</strong> <span data-en="in your photos" data-mn="зургуудад">in your photos</span></li>
+                        <li><strong data-en="Quality over Quantity:" data-mn="Чанар нь Тооноос Илүү:">Quality over Quantity:</strong> <span data-en="Don't take too many photos of 1 area - we just need the essential shots" data-mn="1 хэсгийн хэт олон зураг бүү авна - зөвхөн чухал зураг хэрэгтэй">Don't take too many photos of 1 area - we just need the essential shots</span></li>
                     </ul>
                 </div>
 
                 <div class="checklist-item">
                     <input type="checkbox" id="photo-principle" class="progress-checkbox">
-                    <label for="photo-principle">
+                    <label for="photo-principle" data-en="I understand the photography principles" data-mn="Би гэрэл зураг авах зарчмуудыг ойлгож байна">
                         I understand the photography principles
                     </label>
                 </div>
             </div>
 
             <div class="content-section">
-                <h2>🏠 Room-by-Room Photo Requirements</h2>
+                <h2 data-en="🏠 Room-by-Room Photo Requirements" data-mn="🏠 Өрөө Бүрийн Зургийн Шаардлага">🏠 Room-by-Room Photo Requirements</h2>
 
                 <div class="photo-grid">
                     <div class="photo-card">
-                        <h4>🚿 Bathroom</h4>
+                        <h4 data-en="🚿 Bathroom" data-mn="🚿 Угаалгын Өрөө">🚿 Bathroom</h4>
                         <ul>
-                            <li>Wide photo of whole bathroom</li>
-                            <li>Bathroom cupboards (inside & outside)</li>
-                            <li>Shower and bathtub</li>
-                            <li>Sink and consumables setup</li>
-                            <li>Inside the toilet</li>
-                            <li>Drain</li>
-                            <li>Bin (open showing bin bag)</li>
-                            <li>Mirrors</li>
+                            <li data-en="Wide photo of whole bathroom" data-mn="Угаалгын өрөөний бүхэл өргөн зураг">Wide photo of whole bathroom</li>
+                            <li data-en="Bathroom cupboards (inside & outside)" data-mn="Угаалгын өрөөний шкаф (дотор & гадна)">Bathroom cupboards (inside & outside)</li>
+                            <li data-en="Shower and bathtub" data-mn="Шүршүүр ба ванн">Shower and bathtub</li>
+                            <li data-en="Sink and consumables setup" data-mn="Угаалтуур ба хэрэглээний зүйлсийн тохиргоо">Sink and consumables setup</li>
+                            <li data-en="Inside the toilet" data-mn="Жорлонгийн дотор">Inside the toilet</li>
+                            <li data-en="Drain" data-mn="Ус зайлуулагч">Drain</li>
+                            <li data-en="Bin (open showing bin bag)" data-mn="Хогийн сав (хогийн уут харагдахаар нээлттэй)">Bin (open showing bin bag)</li>
+                            <li data-en="Mirrors" data-mn="Толь">Mirrors</li>
                         </ul>
                     </div>
 
                     <div class="photo-card">
-                        <h4>🛋️ Living Room</h4>
+                        <h4 data-en="🛋️ Living Room" data-mn="🛋️ Зочны Өрөө">🛋️ Living Room</h4>
                         <ul>
-                            <li>Overall living room (1-2 angles)</li>
-                            <li>Sofa area and under the sofa</li>
-                            <li>TV area and inside cupboard</li>
-                            <li>Remote controls (AC, TV, blinds)</li>
-                            <li>Carpeted area</li>
+                            <li data-en="Overall living room (1-2 angles)" data-mn="Зочны өрөөний ерөнхий байдал (1-2 өнцөг)">Overall living room (1-2 angles)</li>
+                            <li data-en="Sofa area and under the sofa" data-mn="Буйдангийн хэсэг ба буйдангийн доор">Sofa area and under the sofa</li>
+                            <li data-en="TV area and inside cupboard" data-mn="ТВ хэсэг ба шкафны дотор">TV area and inside cupboard</li>
+                            <li data-en="Remote controls (AC, TV, blinds)" data-mn="Удирдлага (Агаарын аппарат, ТВ, хөшиг)">Remote controls (AC, TV, blinds)</li>
+                            <li data-en="Carpeted area" data-mn="Хивсэн дэвсгэр хэсэг">Carpeted area</li>
                         </ul>
                     </div>
 
                     <div class="photo-card">
-                        <h4>🍳 Kitchen</h4>
+                        <h4 data-en="🍳 Kitchen" data-mn="🍳 Гал Тогоо">🍳 Kitchen</h4>
                         <ul>
-                            <li>Overall kitchen</li>
-                            <li>Inside the dishwasher</li>
-                            <li>Cutlery drawer</li>
-                            <li>Toaster tray</li>
-                            <li>Coffee machine (empty)</li>
-                            <li>Inside the fridge</li>
-                            <li>Under the sink</li>
-                            <li>Inside the oven</li>
-                            <li>Kitchen amenities setup</li>
+                            <li data-en="Overall kitchen" data-mn="Гал тогооны ерөнхий байдал">Overall kitchen</li>
+                            <li data-en="Inside the dishwasher" data-mn="Аяга угаагчийн дотор">Inside the dishwasher</li>
+                            <li data-en="Cutlery drawer" data-mn="Хутга сэрээний шургуулга">Cutlery drawer</li>
+                            <li data-en="Toaster tray" data-mn="Тостерын тавиур">Toaster tray</li>
+                            <li data-en="Coffee machine (empty)" data-mn="Кофены машин (хоосон)">Coffee machine (empty)</li>
+                            <li data-en="Inside the fridge" data-mn="Хөргөгчийн дотор">Inside the fridge</li>
+                            <li data-en="Under the sink" data-mn="Угаалтуурын доор">Under the sink</li>
+                            <li data-en="Inside the oven" data-mn="Зуухны дотор">Inside the oven</li>
+                            <li data-en="Kitchen amenities setup" data-mn="Гал тогооны хэрэгслийн тохиргоо">Kitchen amenities setup</li>
                         </ul>
                     </div>
 
                     <div class="photo-card">
-                        <h4>🛏️ Bedroom</h4>
+                        <h4 data-en="🛏️ Bedroom" data-mn="🛏️ Унтлагын Өрөө">🛏️ Bedroom</h4>
                         <ul>
-                            <li>Overall bedroom</li>
-                            <li>Inside bedside table</li>
-                            <li>Under the bed</li>
-                            <li>Inside the wardrobe</li>
+                            <li data-en="Overall bedroom" data-mn="Унтлагын өрөөний ерөнхий байдал">Overall bedroom</li>
+                            <li data-en="Inside bedside table" data-mn="Орны хажуугийн ширээний дотор">Inside bedside table</li>
+                            <li data-en="Under the bed" data-mn="Орны доор">Under the bed</li>
+                            <li data-en="Inside the wardrobe" data-mn="Шкафны дотор">Inside the wardrobe</li>
                         </ul>
                     </div>
 
                     <div class="photo-card">
-                        <h4>🧺 Laundry</h4>
+                        <h4 data-en="🧺 Laundry" data-mn="🧺 Угаалгын Газар">🧺 Laundry</h4>
                         <ul>
-                            <li>Inside washing machine</li>
-                            <li>Tray clean</li>
-                            <li>Empty dryer lint</li>
-                            <li>Laundry sink</li>
+                            <li data-en="Inside washing machine" data-mn="Угаалгын машины дотор">Inside washing machine</li>
+                            <li data-en="Tray clean" data-mn="Тавиур цэвэрлэсэн">Tray clean</li>
+                            <li data-en="Empty dryer lint" data-mn="Хатаагчийн ширхэг хоосон">Empty dryer lint</li>
+                            <li data-en="Laundry sink" data-mn="Угаалгын угаалтуур">Laundry sink</li>
                         </ul>
                     </div>
 
                     <div class="photo-card">
-                        <h4>🏡 Balcony/Patio</h4>
+                        <h4 data-en="🏡 Balcony/Patio" data-mn="🏡 Тагт/Террас">🏡 Balcony/Patio</h4>
                         <ul>
-                            <li>Overall balcony/patio</li>
-                            <li>Outside furniture (if any)</li>
+                            <li data-en="Overall balcony/patio" data-mn="Тагт/террасын ерөнхий байдал">Overall balcony/patio</li>
+                            <li data-en="Outside furniture (if any)" data-mn="Гадна тавилга (хэрэв байвал)">Outside furniture (if any)</li>
                         </ul>
                     </div>
 
                     <div class="photo-card">
-                        <h4>🔑 Keys</h4>
+                        <h4 data-en="🔑 Keys" data-mn="🔑 Түлхүүрүүд">🔑 Keys</h4>
                         <ul>
-                            <li>Returned to the base</li>
-                            <li>Returned to the lockbox</li>
-                            <li>Returned to Keynest location (if instructed)</li>
+                            <li data-en="Returned to the base" data-mn="Бааз руу буцаасан">Returned to the base</li>
+                            <li data-en="Returned to the lockbox" data-mn="Цоожны хайрцаг руу буцаасан">Returned to the lockbox</li>
+                            <li data-en="Returned to Keynest location (if instructed)" data-mn="Keynest байршил руу буцаасан (хэрэв заавал байвал)">Returned to Keynest location (if instructed)</li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="checklist-item">
                     <input type="checkbox" id="photo-rooms" class="progress-checkbox">
-                    <label for="photo-rooms">
+                    <label for="photo-rooms" data-en="I know what photos to take in each room" data-mn="Би өрөө бүрт ямар зураг авахыг мэднэ">
                         I know what photos to take in each room
                     </label>
                 </div>
             </div>
 
             <div class="content-section">
-                <h2>🧺 Rejected Linen Procedures</h2>
-                <p><strong>What are Rejected Linens?</strong> Linens we receive from our supplier that have stains, rips, or are in bad condition and cannot be used for cleans.</p>
+                <h2 data-en="🧺 Rejected Linen Procedures" data-mn="🧺 Буцаасан Даавууны Горим">🧺 Rejected Linen Procedures</h2>
+                <p><strong data-en="What are Rejected Linens?" data-mn="Буцаасан Даавуу гэж юу вэ?">What are Rejected Linens?</strong> <span data-en="Linens we receive from our supplier that have stains, rips, or are in bad condition and cannot be used for cleans." data-mn="Нийлүүлэгчээс авсан толботой, урагдсан, эсвэл муу нөхцөлтэй цэвэрлэгээнд ашиглах боломжгүй даавуу.">Linens we receive from our supplier that have stains, rips, or are in bad condition and cannot be used for cleans.</span></p>
 
                 <div class="highlight-box">
-                    <h3>Why This Matters</h3>
-                    <p>When you properly identify and separate rejected linens, we can:</p>
+                    <h3 data-en="Why This Matters" data-mn="Яагаад Энэ Чухал вэ">Why This Matters</h3>
+                    <p data-en="When you properly identify and separate rejected linens, we can:" data-mn="Буцаасан даавууг зөв тодорхойлж, ялгахад бид:">When you properly identify and separate rejected linens, we can:</p>
                     <ul>
-                        <li>Return them to our linen supplier</li>
-                        <li>Get our money back for unusable linens</li>
-                        <li>Avoid paying for linens we couldn't use</li>
+                        <li data-en="Return them to our linen supplier" data-mn="Даавууны нийлүүлэгч рүү буцаах боломжтой">Return them to our linen supplier</li>
+                        <li data-en="Get our money back for unusable linens" data-mn="Ашиглагдаагүй даавууны мөнгийг буцааж авах боломжтой">Get our money back for unusable linens</li>
+                        <li data-en="Avoid paying for linens we couldn't use" data-mn="Ашиглаж чадаагүй даавууны төлбөр төлөхөөс зайлсхийх боломжтой">Avoid paying for linens we couldn't use</li>
                     </ul>
                 </div>
 
                 <div class="checklist-section">
-                    <h3>What to Do:</h3>
+                    <h3 data-en="What to Do:" data-mn="Юу Хийх вэ:">What to Do:</h3>
                     <div class="checklist-item">
                         <input type="checkbox" id="linen-1" class="progress-checkbox">
                         <label for="linen-1">
-                            <strong>Step 1:</strong> When you find NEW linens with stains or rips at the base
+                            <strong data-en="Step 1:" data-mn="Алхам 1:">Step 1:</strong> <span data-en="When you find NEW linens with stains or rips at the base" data-mn="Баазад толботой эсвэл урагдсан ШИНЭ даавуу олоход">When you find NEW linens with stains or rips at the base</span>
                         </label>
                     </div>
 
                     <div class="checklist-item">
                         <input type="checkbox" id="linen-2" class="progress-checkbox">
                         <label for="linen-2">
-                            <strong>Step 2:</strong> Place them in the box next to the Toilet Paper (NOT in the dirties)
+                            <strong data-en="Step 2:" data-mn="Алхам 2:">Step 2:</strong> <span data-en="Place them in the box next to the Toilet Paper (NOT in the dirties)" data-mn="Ариун цэврийн цаасны хажууд байгаа хайрцагт хийнэ үү (бохир даавуунд биш)">Place them in the box next to the Toilet Paper (NOT in the dirties)</span>
                         </label>
                     </div>
 
                     <div class="checklist-item">
                         <input type="checkbox" id="linen-3" class="progress-checkbox">
                         <label for="linen-3">
-                            <strong>Step 3:</strong> The team will sort and deliver back to supplier for refund
+                            <strong data-en="Step 3:" data-mn="Алхам 3:">Step 3:</strong> <span data-en="The team will sort and deliver back to supplier for refund" data-mn="Баг нь эрэмбэлж, буцаан олголт авахаар нийлүүлэгч рүү илгээнэ">The team will sort and deliver back to supplier for refund</span>
                         </label>
                     </div>
                 </div>
 
                 <div class="dont-list">
-                    <h4>❌ Don't Do This:</h4>
+                    <h4 data-en="❌ Don't Do This:" data-mn="❌ Үүнийг Бүү Хий:">❌ Don't Do This:</h4>
                     <ul>
-                        <li>Don't put rejected linens in the dirties trolley - this means we used them and must pay</li>
-                        <li>Don't use damaged linens for jobs</li>
-                        <li>Don't throw them away</li>
+                        <li data-en="Don't put rejected linens in the dirties trolley - this means we used them and must pay" data-mn="Буцаасан даавууг бохир даавууны тэрэгт бүү хий - энэ нь бид ашигласан гэсэн үг бөгөөд төлбөр төлөх ёстой">Don't put rejected linens in the dirties trolley - this means we used them and must pay</li>
+                        <li data-en="Don't use damaged linens for jobs" data-mn="Гэмтсэн даавууг ажилд бүү ашигла">Don't use damaged linens for jobs</li>
+                        <li data-en="Don't throw them away" data-mn="Тэдгээрийг бүү хая">Don't throw them away</li>
                     </ul>
                 </div>
 
                 <div class="checklist-item">
                     <input type="checkbox" id="linen-understood" class="progress-checkbox">
-                    <label for="linen-understood">
+                    <label for="linen-understood" data-en="I understand the rejected linen procedure" data-mn="Би буцаасан даавууны горимыг ойлгож байна">
                         I understand the rejected linen procedure
                     </label>
                 </div>
             </div>
 
             <div class="content-section">
-                <h2>⭐ Professional Excellence Checklist</h2>
-                <p>These are the hallmarks of a master Qbees cleaner:</p>
+                <h2 data-en="⭐ Professional Excellence Checklist" data-mn="⭐ Мэргэжлийн Шилдэг Жагсаалт">⭐ Professional Excellence Checklist</h2>
+                <p data-en="These are the hallmarks of a master Qbees cleaner:" data-mn="Эдгээр нь Qbees мастер цэвэрлэгчийн онцлог шинж юм:">These are the hallmarks of a master Qbees cleaner:</p>
 
                 <div class="checklist-section">
                     <div class="checklist-item">
                         <input type="checkbox" id="excellence-1" class="progress-checkbox">
                         <label for="excellence-1">
-                            <strong>Attention to Detail</strong> - I check every surface, corner, and hidden area
+                            <strong data-en="Attention to Detail" data-mn="Нарийн Мэдрэмж">Attention to Detail</strong> - <span data-en="I check every surface, corner, and hidden area" data-mn="Би бүх гадаргуу, булан, нуугдмал хэсгийг шалгадаг">I check every surface, corner, and hidden area</span>
                         </label>
                     </div>
 
                     <div class="checklist-item">
                         <input type="checkbox" id="excellence-2" class="progress-checkbox">
                         <label for="excellence-2">
-                            <strong>Time Management</strong> - I arrive on time and complete jobs within allocated time
+                            <strong data-en="Time Management" data-mn="Цагийн Менежмент">Time Management</strong> - <span data-en="I arrive on time and complete jobs within allocated time" data-mn="Би цагтаа ирж, хуваарилагдсан цагт ажлаа дуусгадаг">I arrive on time and complete jobs within allocated time</span>
                         </label>
                     </div>
 
                     <div class="checklist-item">
                         <input type="checkbox" id="excellence-3" class="progress-checkbox">
                         <label for="excellence-3">
-                            <strong>Communication</strong> - I proactively update the team on Slack about any issues
+                            <strong data-en="Communication" data-mn="Харилцаа Холбоо">Communication</strong> - <span data-en="I proactively update the team on Slack about any issues" data-mn="Би аливаа асуудлын талаар Slack дээр багаа идэвхтэй мэдэгддэг">I proactively update the team on Slack about any issues</span>
                         </label>
                     </div>
 
                     <div class="checklist-item">
                         <input type="checkbox" id="excellence-4" class="progress-checkbox">
                         <label for="excellence-4">
-                            <strong>Quality Photos</strong> - My photos clearly show the completed work
+                            <strong data-en="Quality Photos" data-mn="Чанартай Зураг">Quality Photos</strong> - <span data-en="My photos clearly show the completed work" data-mn="Миний зурагууд дууссан ажлыг тодорхой харуулдаг">My photos clearly show the completed work</span>
                         </label>
                     </div>
 
                     <div class="checklist-item">
                         <input type="checkbox" id="excellence-5" class="progress-checkbox">
                         <label for="excellence-5">
-                            <strong>Property Care</strong> - I treat every property as if it were my own
+                            <strong data-en="Property Care" data-mn="Байшингийн Арчилгаа">Property Care</strong> - <span data-en="I treat every property as if it were my own" data-mn="Би бүх байшинд өөрийнхөө гэр мэт хандаж байна">I treat every property as if it were my own</span>
                         </label>
                     </div>
 
                     <div class="checklist-item">
                         <input type="checkbox" id="excellence-6" class="progress-checkbox">
                         <label for="excellence-6">
-                            <strong>Guest Experience</strong> - I ensure guests arrive to a spotless, welcoming space
+                            <strong data-en="Guest Experience" data-mn="Зочны Туршлага">Guest Experience</strong> - <span data-en="I ensure guests arrive to a spotless, welcoming space" data-mn="Би зочид толбогүй, таатай орчинд ирэхийг баталгаажуулдаг">I ensure guests arrive to a spotless, welcoming space</span>
                         </label>
                     </div>
 
                     <div class="checklist-item">
                         <input type="checkbox" id="excellence-7" class="progress-checkbox">
                         <label for="excellence-7">
-                            <strong>Base Organization</strong> - I keep the base tidy and linens organized
+                            <strong data-en="Base Organization" data-mn="Баазын Зохион Байгуулалт">Base Organization</strong> - <span data-en="I keep the base tidy and linens organized" data-mn="Би баазыг цэвэрхэн, даавууг эмх цэгцтэй байлгадаг">I keep the base tidy and linens organized</span>
                         </label>
                     </div>
 
                     <div class="checklist-item">
                         <input type="checkbox" id="excellence-8" class="progress-checkbox">
                         <label for="excellence-8">
-                            <strong>Continuous Improvement</strong> - I always look for ways to work smarter and faster
+                            <strong data-en="Continuous Improvement" data-mn="Тасралтгүй Сайжруулалт">Continuous Improvement</strong> - <span data-en="I always look for ways to work smarter and faster" data-mn="Би илүү ухаалаг, хурдан ажиллах арга замыг үргэлж хайдаг">I always look for ways to work smarter and faster</span>
                         </label>
                     </div>
 
                     <div class="checklist-item">
                         <input type="checkbox" id="excellence-9" class="progress-checkbox">
                         <label for="excellence-9">
-                            <strong>Team Support</strong> - I help other bees when they need assistance
+                            <strong data-en="Team Support" data-mn="Багийн Дэмжлэг">Team Support</strong> - <span data-en="I help other bees when they need assistance" data-mn="Би бусад зөгийнүүдэд тусламж хэрэгтэй үед туслдаг">I help other bees when they need assistance</span>
                         </label>
                     </div>
 
                     <div class="checklist-item">
                         <input type="checkbox" id="excellence-10" class="progress-checkbox">
                         <label for="excellence-10">
-                            <strong>Professional Standards</strong> - I follow all Qbees procedures and quality standards
+                            <strong data-en="Professional Standards" data-mn="Мэргэжлийн Стандартууд">Professional Standards</strong> - <span data-en="I follow all Qbees procedures and quality standards" data-mn="Би Qbees-ийн бүх горим болон чанарын стандартыг дагадаг">I follow all Qbees procedures and quality standards</span>
                         </label>
                     </div>
                 </div>
             </div>
 
             <div class="content-section">
-                <h2>💡 Pro Tips for Efficiency</h2>
+                <h2 data-en="💡 Pro Tips for Efficiency" data-mn="💡 Үр Ашгийн Зөвлөмжүүд">💡 Pro Tips for Efficiency</h2>
                 <div class="highlight-box">
-                    <h3>Work Smarter, Not Harder</h3>
+                    <h3 data-en="Work Smarter, Not Harder" data-mn="Илүү Ухаалаг Ажилла, Илүү Хүчтэй Биш">Work Smarter, Not Harder</h3>
                     <ul>
-                        <li><span class="tip-badge">TIP</span> Spray chemicals and let them sit while you work on other areas</li>
-                        <li><span class="tip-badge">TIP</span> Group similar tasks together (all dusting, then all wiping, then all vacuuming)</li>
-                        <li><span class="tip-badge">TIP</span> Start from the farthest room and work toward the exit</li>
-                        <li><span class="tip-badge">TIP</span> Keep your cleaning kit organized - time wasted looking for supplies adds up!</li>
-                        <li><span class="tip-badge">TIP</span> Take photos as you go, not all at the end</li>
-                        <li><span class="tip-badge">TIP</span> Check vacuum battery at arrival, plug in if needed</li>
-                        <li><span class="tip-badge">TIP</span> Prepare tomorrow's linens at base today to save morning time</li>
+                        <li><span class="tip-badge" data-en="TIP" data-mn="ЗӨВЛӨГӨӨ">TIP</span> <span data-en="Spray chemicals and let them sit while you work on other areas" data-mn="Химийн бодис шүршээд өөр хэсэг дээр ажиллах зуур тэдгээрийг суулгаарай">Spray chemicals and let them sit while you work on other areas</span></li>
+                        <li><span class="tip-badge" data-en="TIP" data-mn="ЗӨВЛӨГӨӨ">TIP</span> <span data-en="Group similar tasks together (all dusting, then all wiping, then all vacuuming)" data-mn="Ижил төстэй ажлуудыг хамтад нь бүлэглэ (бүх тоос арчилт, дараа нь бүх арчилт, дараа нь бүх тоос сорох)">Group similar tasks together (all dusting, then all wiping, then all vacuuming)</span></li>
+                        <li><span class="tip-badge" data-en="TIP" data-mn="ЗӨВЛӨГӨӨ">TIP</span> <span data-en="Start from the farthest room and work toward the exit" data-mn="Хамгийн алслагдсан өрөөнөөс эхэлж гарц руу ажилла">Start from the farthest room and work toward the exit</span></li>
+                        <li><span class="tip-badge" data-en="TIP" data-mn="ЗӨВЛӨГӨӨ">TIP</span> <span data-en="Keep your cleaning kit organized - time wasted looking for supplies adds up!" data-mn="Цэвэрлэгээний багажаа эмх цэгцтэй байлга - хангамж хайхад алдсан цаг нэмэгдэнэ!">Keep your cleaning kit organized - time wasted looking for supplies adds up!</span></li>
+                        <li><span class="tip-badge" data-en="TIP" data-mn="ЗӨВЛӨГӨӨ">TIP</span> <span data-en="Take photos as you go, not all at the end" data-mn="Явж байхдаа зураг авч бай, эцэст нь бүгдийг биш">Take photos as you go, not all at the end</span></li>
+                        <li><span class="tip-badge" data-en="TIP" data-mn="ЗӨВЛӨГӨӨ">TIP</span> <span data-en="Check vacuum battery at arrival, plug in if needed" data-mn="Ирэхдээ тоос сорогчийн батарейг шалгаж, хэрэгтэй бол залгаарай">Check vacuum battery at arrival, plug in if needed</span></li>
+                        <li><span class="tip-badge" data-en="TIP" data-mn="ЗӨВЛӨГӨӨ">TIP</span> <span data-en="Prepare tomorrow's linens at base today to save morning time" data-mn="Өглөөний цагаа хэмнэхийн тулд маргаашийн даавууг өнөөдөр баазад бэлдээрэй">Prepare tomorrow's linens at base today to save morning time</span></li>
                     </ul>
                 </div>
 
                 <div class="checklist-item">
                     <input type="checkbox" id="tips-learned" class="progress-checkbox">
-                    <label for="tips-learned">
+                    <label for="tips-learned" data-en="I will apply these efficiency tips to my work" data-mn="Би эдгээр үр ашгийн зөвлөмжийг ажилдаа хэрэглэнэ">
                         I will apply these efficiency tips to my work
                     </label>
                 </div>
             </div>
 
             <div class="mastery-card">
-                <h2>🏆 You're Now a Master Bee!</h2>
-                <p>Congratulations on completing all four modules of the Bee Training Academy!</p>
-                <p>You now have the skills, knowledge, and confidence to deliver exceptional cleaning services for Qbees.</p>
+                <h2 data-en="🏆 You're Now a Master Bee!" data-mn="🏆 Та Одоо Мастер Зөгий Боллоо!">🏆 You're Now a Master Bee!</h2>
+                <p data-en="Congratulations on completing all four modules of the Bee Training Academy!" data-mn="Зөгийн Сургалтын Академийн дөрвөн модулийг амжилттай дуусгасанд баяр хүргэе!">Congratulations on completing all four modules of the Bee Training Academy!</p>
+                <p data-en="You now have the skills, knowledge, and confidence to deliver exceptional cleaning services for Qbees." data-mn="Та одоо Qbees-ийн онцгой цэвэрлэгээний үйлчилгээг хүргэх ур чадвар, мэдлэг, итгэлтэй боллоо.">You now have the skills, knowledge, and confidence to deliver exceptional cleaning services for Qbees.</p>
 
                 <div class="badge-showcase">
-                    <div class="achievement-badge">✅ Module 1 Complete</div>
-                    <div class="achievement-badge">✅ Module 2 Complete</div>
-                    <div class="achievement-badge">✅ Module 3 Complete</div>
-                    <div class="achievement-badge">✅ Module 4 Complete</div>
+                    <div class="achievement-badge" data-en="✅ Module 1 Complete" data-mn="✅ Модуль 1 Дууссан">✅ Module 1 Complete</div>
+                    <div class="achievement-badge" data-en="✅ Module 2 Complete" data-mn="✅ Модуль 2 Дууссан">✅ Module 2 Complete</div>
+                    <div class="achievement-badge" data-en="✅ Module 3 Complete" data-mn="✅ Модуль 3 Дууссан">✅ Module 3 Complete</div>
+                    <div class="achievement-badge" data-en="✅ Module 4 Complete" data-mn="✅ Модуль 4 Дууссан">✅ Module 4 Complete</div>
                 </div>
 
                 <p style="margin-top: var(--space-lg); font-size: 1.1rem;">
-                    <strong>Ready to buzz? 🐝</strong><br>
-                    You're all set to deliver world-class Airbnb cleaning services!
+                    <strong data-en="Ready to buzz? 🐝" data-mn="Бүжиглэхэд бэлэн үү? 🐝">Ready to buzz? 🐝</strong><br>
+                    <span data-en="You're all set to deliver world-class Airbnb cleaning services!" data-mn="Та дэлхийн түвшний Airbnb цэвэрлэгээний үйлчилгээг хүргэхэд бүрэн бэлэн боллоо!">You're all set to deliver world-class Airbnb cleaning services!</span>
                 </p>
             </div>
 
             <div class="content-section">
-                <h2>📞 Need Support?</h2>
-                <p>Remember, the Qbees team is always here to help:</p>
+                <h2 data-en="📞 Need Support?" data-mn="📞 Тусламж Хэрэгтэй юу?">📞 Need Support?</h2>
+                <p data-en="Remember, the Qbees team is always here to help:" data-mn="Санаарай, Qbees баг үргэлж туслахад бэлэн байна:">Remember, the Qbees team is always here to help:</p>
                 <ul>
-                    <li><strong>Slack:</strong> #general for questions and support</li>
+                    <li><strong>Slack:</strong> <span data-en="#general for questions and support" data-mn="#general асуулт болон тусламж авахад">#general for questions and support</span></li>
                     <li><strong>Email:</strong> support@qbees.com.au</li>
-                    <li><strong>Breezeway:</strong> For job-specific questions and issues</li>
+                    <li><strong>Breezeway:</strong> <span data-en="For job-specific questions and issues" data-mn="Ажилтай холбоотой асуулт, асуудлын талаар">For job-specific questions and issues</span></li>
                 </ul>
-                <p><em>Never hesitate to ask questions - that's how we all improve!</em></p>
+                <p><em data-en="Never hesitate to ask questions - that's how we all improve!" data-mn="Асуулт асуухаас хэзээ ч бүү эргэлзээрэй - бид бүгд ингэж сайжирдаг!">Never hesitate to ask questions - that's how we all improve!</em></p>
             </div>
 
             <!-- Navigation Buttons -->
             <div class="nav-buttons">
-                <a href="module-3.html" class="btn-secondary">← Previous Module</a>
-                <a href="../index.html" class="btn-primary">Back to Dashboard 🏠</a>
+                <a href="module-3.html" class="btn-secondary" data-en="← Previous Module" data-mn="← Өмнөх Модуль">← Previous Module</a>
+                <a href="../index.html" class="btn-primary" data-en="Back to Dashboard 🏠" data-mn="Хянах Самбар руу 🏠">Back to Dashboard 🏠</a>
             </div>
         </div>
     </main>
@@ -449,11 +457,11 @@
     <!-- Completion Modal -->
     <div id="completionModal" class="modal">
         <div class="modal-content">
-            <h2>🎉🎊 CONGRATULATIONS! 🎊🎉</h2>
-            <p><strong>You've completed the entire Bee Training Academy!</strong></p>
-            <p>You're now a certified Qbees professional cleaner ready to deliver exceptional service.</p>
-            <p>Keep buzzing and making our guests happy!</p>
-            <button id="continueBtn" class="btn-primary">Return to Dashboard 🏠</button>
+            <h2 data-en="🎉🎊 CONGRATULATIONS! 🎊🎉" data-mn="🎉🎊 БАЯР ХҮРГЭЕ! 🎊🎉">🎉🎊 CONGRATULATIONS! 🎊🎉</h2>
+            <p><strong data-en="You've completed the entire Bee Training Academy!" data-mn="Та Зөгийн Сургалтын Академийг бүрэн дуусгалаа!">You've completed the entire Bee Training Academy!</strong></p>
+            <p data-en="You're now a certified Qbees professional cleaner ready to deliver exceptional service." data-mn="Та одоо Qbees-ийн гэрчилгээтэй мэргэжлийн цэвэрлэгч бөгөөд онцгой үйлчилгээ үзүүлэхэд бэлэн боллоо.">You're now a certified Qbees professional cleaner ready to deliver exceptional service.</p>
+            <p data-en="Keep buzzing and making our guests happy!" data-mn="Үргэлжлүүлэн бүжиглэж, зочдыг маань баяртай болгоорой!">Keep buzzing and making our guests happy!</p>
+            <button id="continueBtn" class="btn-primary" data-en="Return to Dashboard 🏠" data-mn="Хянах Самбар руу Буцах 🏠">Return to Dashboard 🏠</button>
         </div>
     </div>
 

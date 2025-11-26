@@ -93,6 +93,14 @@
     </style>
 </head>
 <body>
+    <!-- Language Toggle -->
+    <div class="language-toggle">
+        <button id="langBtn" class="lang-btn">
+            <span class="lang-en">🇬🇧 EN</span>
+            <span class="lang-mn" style="display: none;">🇲🇳 МН</span>
+        </button>
+    </div>
+
     <!-- Header -->
     <header class="header">
         <div class="container">
@@ -120,36 +128,48 @@
         <div style="margin: 1rem 0;">
             <a href="../index.html" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.5rem; background: #273E4B; color: white; text-decoration: none; border-radius: 8px; font-weight: 600; transition: all 0.3s ease;">
                 <span>←</span>
-                <span>Back to Homepage</span>
+                <span data-en="Back to Homepage" data-mn="Нүүр хуудас руу">Back to Homepage</span>
             </a>
         </div>
 
         <div class="module-content">
             <div class="content-section">
-                <h2>📋 Different Job Types</h2>
-                <p>As you advance in your Qbees career, you'll encounter different types of jobs. Each requires specific procedures:</p>
+                <h2 data-en="📋 Different Job Types" data-mn="📋 Өөр Өөр Ажлын Төрлүүд">📋 Different Job Types</h2>
+                <p data-en="As you advance in your Qbees career, you'll encounter different types of jobs. Each requires specific procedures:" data-mn="Qbees-д ажиллах явцдаа та янз бүрийн ажлын төрлүүдтэй тулгарах болно. Тус бүр нь тусгай горим шаарддаг:">As you advance in your Qbees career, you'll encounter different types of jobs. Each requires specific procedures:</p>
             </div>
 
             <!-- Job Type 1: Check-in -->
             <div class="job-type-card">
-                <h3>1️⃣ Check-in Job</h3>
-                <p><strong>Purpose:</strong> Meet the guest and hand over keys while verifying their identity.</p>
+                <h3 data-en="1️⃣ Check-in Job" data-mn="1️⃣ Орох Ажил">1️⃣ Check-in Job</h3>
+                <p><strong data-en="Purpose:" data-mn="Зорилго:">Purpose:</strong> <span data-en="Meet the guest and hand over keys while verifying their identity." data-mn="Зочинтой уулзаж, түлхүүр өгөхдөө тэдний хэн болохыг баталгаажуулах.">Meet the guest and hand over keys while verifying their identity.</span></p>
 
                 <div class="message-template">
-                    <strong>Template Message:</strong><br>
-                    Hi [Guest Name], it's [Your Name] from Qbees! 🐝<br><br>
+                    <strong data-en="Template Message:" data-mn="Загвар Мессеж:">Template Message:</strong><br>
+                    <span data-en="Hi [Guest Name], it's [Your Name] from Qbees! 🐝
+
+Could you kindly confirm your ETA for [Property Address]? This helps us ensure a smooth key handover.
+
+Please reply with your arrival time. For updates, text me directly: [Cleaner's Phone Number].
+
+Thank you! 🙌" data-mn="Сайн байна уу [Зочны Нэр], би Qbees-ийн [Таны Нэр]! 🐝
+
+[Хаяг]-д хэзээ ирэхээ батлаж өгөхгүй юу? Энэ нь түлхүүр хүлээлгэн өгөхөд тусална.
+
+Ирэх цагаа хариулна уу. Өөрчлөлт байвал надад бичнэ үү: [Утасны дугаар].
+
+Баярлалаа! 🙌">Hi [Guest Name], it's [Your Name] from Qbees! 🐝<br><br>
                     Could you kindly confirm your ETA for [Property Address]? This helps us ensure a smooth key handover.<br><br>
                     Please reply with your arrival time. For updates, text me directly: [Cleaner's Phone Number].<br><br>
-                    Thank you! 🙌
+                    Thank you! 🙌</span>
                 </div>
 
-                <h4>Steps to Follow:</h4>
+                <h4 data-en="Steps to Follow:" data-mn="Дагах Алхамууд:">Steps to Follow:</h4>
                 <div class="checklist-section">
                     <div class="checklist-item">
                         <input type="checkbox" id="checkin-1" class="progress-checkbox">
                         <label for="checkin-1">
                             <span class="step-number">1</span>
-                            <strong>Coordinate with guest</strong> - Introduce yourself and confirm check-in time. (If guest number is wrong/unreachable/not responding, contact support)
+                            <strong data-en="Coordinate with guest" data-mn="Зочинтой уялдуулах">Coordinate with guest</strong> - <span data-en="Introduce yourself and confirm check-in time. (If guest number is wrong/unreachable/not responding, contact support)" data-mn="Өөрийгөө танилцуулж, орох цагаа баталгаажуулаарай. (Хэрэв зочны дугаар буруу/холбогдохгүй/хариу өгөхгүй бол тусламжийн багтай холбогдоно уу)">Introduce yourself and confirm check-in time. (If guest number is wrong/unreachable/not responding, contact support)</span>
                         </label>
                     </div>
 
@@ -157,7 +177,7 @@
                         <input type="checkbox" id="checkin-2" class="progress-checkbox">
                         <label for="checkin-2">
                             <span class="step-number">2</span>
-                            <strong>Meet guest</strong> at the property (building entrance)
+                            <strong data-en="Meet guest" data-mn="Зочинтой уулзах">Meet guest</strong> <span data-en="at the property (building entrance)" data-mn="байшинд (барилгын орц)">at the property (building entrance)</span>
                         </label>
                     </div>
 
@@ -165,7 +185,7 @@
                         <input type="checkbox" id="checkin-3" class="progress-checkbox">
                         <label for="checkin-3">
                             <span class="step-number">3</span>
-                            <strong>Ask for valid ID</strong> (passport/driver's license)
+                            <strong data-en="Ask for valid ID" data-mn="Хүчинтэй бичиг баримт асуух">Ask for valid ID</strong> <span data-en="(passport/driver's license)" data-mn="(паспорт/жолооны үнэмлэх)">(passport/driver's license)</span>
                         </label>
                     </div>
 
@@ -173,7 +193,7 @@
                         <input type="checkbox" id="checkin-4" class="progress-checkbox">
                         <label for="checkin-4">
                             <span class="step-number">4</span>
-                            <strong>Double check</strong> guest's name on the app and on guest ID - make sure it matches
+                            <strong data-en="Double check" data-mn="Дахин шалгах">Double check</strong> <span data-en="guest's name on the app and on guest ID - make sure it matches" data-mn="апп дээрх зочны нэр болон бичиг баримт дээрх нэр таарч байгаа эсэхийг">guest's name on the app and on guest ID - make sure it matches</span>
                         </label>
                     </div>
 
@@ -181,7 +201,7 @@
                         <input type="checkbox" id="checkin-5" class="progress-checkbox">
                         <label for="checkin-5">
                             <span class="step-number">5</span>
-                            <strong>Take a photo</strong> of guest ID together with the guest keys and upload to the app
+                            <strong data-en="Take a photo" data-mn="Зураг авах">Take a photo</strong> <span data-en="of guest ID together with the guest keys and upload to the app" data-mn="зочны бичиг баримт болон түлхүүрийг хамт зураглаж апп руу байршуулах">of guest ID together with the guest keys and upload to the app</span>
                         </label>
                     </div>
                 </div>
@@ -189,24 +209,34 @@
 
             <!-- Job Type 2: Check-out -->
             <div class="job-type-card">
-                <h3>2️⃣ Check-out Job</h3>
-                <p><strong>Purpose:</strong> Collect keys from departing guests.</p>
+                <h3 data-en="2️⃣ Check-out Job" data-mn="2️⃣ Гарах Ажил">2️⃣ Check-out Job</h3>
+                <p><strong data-en="Purpose:" data-mn="Зорилго:">Purpose:</strong> <span data-en="Collect keys from departing guests." data-mn="Явж буй зочдоос түлхүүр авах.">Collect keys from departing guests.</span></p>
 
                 <div class="message-template">
-                    <strong>Template Message:</strong><br>
-                    Hi [Guest Name], it's [Your Name] from Qbees! 🐝<br><br>
+                    <strong data-en="Template Message:" data-mn="Загвар Мессеж:">Template Message:</strong><br>
+                    <span data-en="Hi [Guest Name], it's [Your Name] from Qbees! 🐝
+
+Could you confirm your check-out time? We'll meet you to collect the keys.
+For changes, text me: [Cleaner's Phone Number].
+
+Thank you! 🙌" data-mn="Сайн байна уу [Зочны Нэр], би Qbees-ийн [Таны Нэр]! 🐝
+
+Гарах цагаа батлаж өгөөч? Бид түлхүүр авахаар уулзана.
+Өөрчлөлт байвал надад бичнэ үү: [Утасны дугаар].
+
+Баярлалаа! 🙌">Hi [Guest Name], it's [Your Name] from Qbees! 🐝<br><br>
                     Could you confirm your check-out time? We'll meet you to collect the keys.<br>
                     For changes, text me: [Cleaner's Phone Number].<br><br>
-                    Thank you! 🙌
+                    Thank you! 🙌</span>
                 </div>
 
-                <h4>Steps to Follow:</h4>
+                <h4 data-en="Steps to Follow:" data-mn="Дагах Алхамууд:">Steps to Follow:</h4>
                 <div class="checklist-section">
                     <div class="checklist-item">
                         <input type="checkbox" id="checkout-1" class="progress-checkbox">
                         <label for="checkout-1">
                             <span class="step-number">1</span>
-                            <strong>Confirm check-out time</strong> from Breezeway or contact guest directly
+                            <strong data-en="Confirm check-out time" data-mn="Гарах цагийг баталгаажуулах">Confirm check-out time</strong> <span data-en="from Breezeway or contact guest directly" data-mn="Breezeway-с эсвэл зочинтой шууд холбогдоно">from Breezeway or contact guest directly</span>
                         </label>
                     </div>
 
@@ -214,7 +244,7 @@
                         <input type="checkbox" id="checkout-2" class="progress-checkbox">
                         <label for="checkout-2">
                             <span class="step-number">2</span>
-                            <strong>Meet & retrieve keys</strong> - Arrive on time and collect all keys (including parking/garage keys)
+                            <strong data-en="Meet & retrieve keys" data-mn="Уулзаж түлхүүр авах">Meet & retrieve keys</strong> - <span data-en="Arrive on time and collect all keys (including parking/garage keys)" data-mn="Цагтаа ирж бүх түлхүүрийг (зогсоол/гаражийн түлхүүрийг оролцуулан) цуглуулна">Arrive on time and collect all keys (including parking/garage keys)</span>
                         </label>
                     </div>
 
@@ -222,7 +252,7 @@
                         <input type="checkbox" id="checkout-3" class="progress-checkbox">
                         <label for="checkout-3">
                             <span class="step-number">3</span>
-                            <strong>Take key photo</strong> - Snap a photo of the retrieved keys in Breezeway as proof
+                            <strong data-en="Take key photo" data-mn="Түлхүүрийн зураг авах">Take key photo</strong> - <span data-en="Snap a photo of the retrieved keys in Breezeway as proof" data-mn="Авсан түлхүүрүүдийн зургийг Breezeway-д нотолгоо болгон байршуулна">Snap a photo of the retrieved keys in Breezeway as proof</span>
                         </label>
                     </div>
 
@@ -230,7 +260,7 @@
                         <input type="checkbox" id="checkout-4" class="progress-checkbox">
                         <label for="checkout-4">
                             <span class="step-number">4</span>
-                            <strong>Submit confirmation</strong> - Update Breezeway: "Keys retrieved at [Time] – photo uploaded"
+                            <strong data-en="Submit confirmation" data-mn="Баталгаажуулалт илгээх">Submit confirmation</strong> - <span data-en='Update Breezeway: "Keys retrieved at [Time] – photo uploaded"' data-mn='Breezeway-г шинэчлэх: "Түлхүүрийг [Цаг]-д авсан – зураг байршуулсан"'>Update Breezeway: "Keys retrieved at [Time] – photo uploaded"</span>
                         </label>
                     </div>
                 </div>
@@ -238,30 +268,30 @@
 
             <!-- Job Type 3: Adhoc -->
             <div class="job-type-card">
-                <h3>3️⃣ Adhoc Job</h3>
-                <p><strong>Purpose:</strong> Handle on-demand tasks that pop up unexpectedly (deliveries, guest errands, special requests).</p>
+                <h3 data-en="3️⃣ Adhoc Job" data-mn="3️⃣ Нэмэлт Ажил">3️⃣ Adhoc Job</h3>
+                <p><strong data-en="Purpose:" data-mn="Зорилго:">Purpose:</strong> <span data-en="Handle on-demand tasks that pop up unexpectedly (deliveries, guest errands, special requests)." data-mn="Санамсаргүй гарч ирсэн шаардлагатай ажлуудыг гүйцэтгэх (хүргэлт, зочны ажил, тусгай хүсэлтүүд).">Handle on-demand tasks that pop up unexpectedly (deliveries, guest errands, special requests).</span></p>
 
                 <div class="warning-box">
-                    <strong>⚠️ IMPORTANT:</strong> Always Ask for Details First! Do NOT accept the job in Breezeway until you:
+                    <strong data-en="⚠️ IMPORTANT:" data-mn="⚠️ ЧУХАЛ:">⚠️ IMPORTANT:</strong> <span data-en="Always Ask for Details First! Do NOT accept the job in Breezeway until you:" data-mn="Эхлээд дэлгэрэнгүй мэдээлэл асуугаарай! Breezeway-д ажлыг зөвшөөрөхөөс өмнө:">Always Ask for Details First! Do NOT accept the job in Breezeway until you:</span>
                     <ul>
-                        <li>Check Slack for instructions from the Support Team</li>
-                        <li>Confirm exactly what's needed (task scope, deadlines, special tools)</li>
-                        <li>Clarify safety protocols (access codes, guest preferences)</li>
+                        <li data-en="Check Slack for instructions from the Support Team" data-mn="Тусламжийн багийн зааварчилгааг Slack-аас шалгана уу">Check Slack for instructions from the Support Team</li>
+                        <li data-en="Confirm exactly what's needed (task scope, deadlines, special tools)" data-mn="Яг юу хэрэгтэйг баталгаажуулна уу (ажлын хүрээ, эцсийн хугацаа, тусгай багаж)">Confirm exactly what's needed (task scope, deadlines, special tools)</li>
+                        <li data-en="Clarify safety protocols (access codes, guest preferences)" data-mn="Аюулгүй байдлын горимыг тодруулна уу (нэвтрэх код, зочны сонголт)">Clarify safety protocols (access codes, guest preferences)</li>
                     </ul>
                 </div>
 
-                <h4>Examples of Adhoc Jobs:</h4>
+                <h4 data-en="Examples of Adhoc Jobs:" data-mn="Нэмэлт Ажлын Жишээнүүд:">Examples of Adhoc Jobs:</h4>
                 <ul>
-                    <li>Delivering keys or letting guests into properties</li>
-                    <li>Guest errands (grocery shopping, picking up supplies)</li>
-                    <li>Deep cleaning specific areas (post-renovation)</li>
-                    <li>Returning lost items to guests</li>
-                    <li>Delivering extra linens and towels</li>
+                    <li data-en="Delivering keys or letting guests into properties" data-mn="Түлхүүр хүргэх эсвэл зочдыг байшинд оруулах">Delivering keys or letting guests into properties</li>
+                    <li data-en="Guest errands (grocery shopping, picking up supplies)" data-mn="Зочны ажил (хүнс худалдан авах, хангамж авах)">Guest errands (grocery shopping, picking up supplies)</li>
+                    <li data-en="Deep cleaning specific areas (post-renovation)" data-mn="Тусгай хэсгүүдийг гүн цэвэрлэх (засварын дараа)">Deep cleaning specific areas (post-renovation)</li>
+                    <li data-en="Returning lost items to guests" data-mn="Алдсан зүйлсийг зочдод буцаах">Returning lost items to guests</li>
+                    <li data-en="Delivering extra linens and towels" data-mn="Нэмэлт даавуу болон алчуур хүргэх">Delivering extra linens and towels</li>
                 </ul>
 
                 <div class="checklist-item">
                     <input type="checkbox" id="adhoc-1" class="progress-checkbox">
-                    <label for="adhoc-1">
+                    <label for="adhoc-1" data-en="I understand to always check Slack for details before accepting adhoc jobs" data-mn="Нэмэлт ажлыг хүлээн авахаас өмнө Slack-аас дэлгэрэнгүй мэдээлэл шалгах ёстойг би ойлгож байна">
                         I understand to always check Slack for details before accepting adhoc jobs
                     </label>
                 </div>
@@ -269,16 +299,16 @@
 
             <!-- Job Type 4: Initial Clean -->
             <div class="job-type-card">
-                <h3>4️⃣ Initial Clean</h3>
-                <p><strong>Purpose:</strong> First clean at a new property - requires detailed inspection and reporting.</p>
+                <h3 data-en="4️⃣ Initial Clean" data-mn="4️⃣ Анхны Цэвэрлэгээ">4️⃣ Initial Clean</h3>
+                <p><strong data-en="Purpose:" data-mn="Зорилго:">Purpose:</strong> <span data-en="First clean at a new property - requires detailed inspection and reporting." data-mn="Шинэ байшинд анхны цэвэрлэгээ - нарийвчилсан шалгалт болон тайлан шаарддаг.">First clean at a new property - requires detailed inspection and reporting.</span></p>
 
-                <h4>Your Responsibilities:</h4>
+                <h4 data-en="Your Responsibilities:" data-mn="Таны Үүрэг:">Your Responsibilities:</h4>
                 <div class="checklist-section">
                     <div class="checklist-item">
                         <input type="checkbox" id="initial-1" class="progress-checkbox">
                         <label for="initial-1">
                             <span class="step-number">1</span>
-                            <strong>Detailed Inspection</strong> - Check for extra beds/rooms, pet hair, stains, damage, excessive dirt/mold, missing supplies
+                            <strong data-en="Detailed Inspection" data-mn="Нарийвчилсан Шалгалт">Detailed Inspection</strong> - <span data-en="Check for extra beds/rooms, pet hair, stains, damage, excessive dirt/mold, missing supplies" data-mn="Нэмэлт ор/өрөө, амьтны үс, толбо, эвдрэл, хэт их бохир/хөгц, дутуу хангамжийг шалгана">Check for extra beds/rooms, pet hair, stains, damage, excessive dirt/mold, missing supplies</span>
                         </label>
                     </div>
 
@@ -286,7 +316,7 @@
                         <input type="checkbox" id="initial-2" class="progress-checkbox">
                         <label for="initial-2">
                             <span class="step-number">2</span>
-                            <strong>Take Before Photos</strong> - Capture clear photos of problem areas and upload to Breezeway
+                            <strong data-en="Take Before Photos" data-mn="Өмнөх Зураг Авах">Take Before Photos</strong> - <span data-en="Capture clear photos of problem areas and upload to Breezeway" data-mn="Асуудалтай хэсгүүдийн тод зураг авч Breezeway-д байршуулна">Capture clear photos of problem areas and upload to Breezeway</span>
                         </label>
                     </div>
 
@@ -294,7 +324,7 @@
                         <input type="checkbox" id="initial-3" class="progress-checkbox">
                         <label for="initial-3">
                             <span class="step-number">3</span>
-                            <strong>Report in Breezeway</strong> - Specify if it needs Deep Clean or Normal Clean + Extra Time
+                            <strong data-en="Report in Breezeway" data-mn="Breezeway-д Мэдэгдэх">Report in Breezeway</strong> - <span data-en="Specify if it needs Deep Clean or Normal Clean + Extra Time" data-mn="Гүн Цэвэрлэгээ эсвэл Энгийн Цэвэрлэгээ + Нэмэлт Цаг хэрэгтэй эсэхийг тодорхойлно">Specify if it needs Deep Clean or Normal Clean + Extra Time</span>
                         </label>
                     </div>
 
@@ -302,7 +332,7 @@
                         <input type="checkbox" id="initial-4" class="progress-checkbox">
                         <label for="initial-4">
                             <span class="step-number">4</span>
-                            <strong>Wait for Approval</strong> - Do NOT proceed until the team reviews and confirms adjusted time/job type
+                            <strong data-en="Wait for Approval" data-mn="Зөвшөөрөл Хүлээх">Wait for Approval</strong> - <span data-en="Do NOT proceed until the team reviews and confirms adjusted time/job type" data-mn="Баг шалгаж, засварласан цаг/ажлын төрлийг батлах хүртэл үргэлжлүүлэхгүй байна">Do NOT proceed until the team reviews and confirms adjusted time/job type</span>
                         </label>
                     </div>
                 </div>
@@ -310,16 +340,16 @@
 
             <!-- Job Type 5: Deep Clean -->
             <div class="job-type-card">
-                <h3>5️⃣ Deep Clean</h3>
-                <p><strong>Purpose:</strong> Tackle hidden dirt, grime, and neglected areas beyond standard cleaning.</p>
+                <h3 data-en="5️⃣ Deep Clean" data-mn="5️⃣ Гүн Цэвэрлэгээ">5️⃣ Deep Clean</h3>
+                <p><strong data-en="Purpose:" data-mn="Зорилго:">Purpose:</strong> <span data-en="Tackle hidden dirt, grime, and neglected areas beyond standard cleaning." data-mn="Стандарт цэвэрлэгээнээс давсан нуугдмал бохир, тоос, анхаарал хандуулаагүй хэсгүүдийг цэвэрлэх.">Tackle hidden dirt, grime, and neglected areas beyond standard cleaning.</span></p>
 
-                <h4>Deep Clean Process:</h4>
+                <h4 data-en="Deep Clean Process:" data-mn="Гүн Цэвэрлэгээний Үйл Явц:">Deep Clean Process:</h4>
                 <div class="checklist-section">
                     <div class="checklist-item">
                         <input type="checkbox" id="deep-1" class="progress-checkbox">
                         <label for="deep-1">
                             <span class="step-number">1</span>
-                            <strong>Prepare!</strong> Gather heavy-duty chemicals, scrub brushes, steam cleaner (if needed), gloves, mask, protective gear
+                            <strong data-en="Prepare!" data-mn="Бэлтгэ!">Prepare!</strong> <span data-en="Gather heavy-duty chemicals, scrub brushes, steam cleaner (if needed), gloves, mask, protective gear" data-mn="Хүчтэй химийн бодис, угаалгын сойз, уурын цэвэрлэгч (хэрэгтэй бол), бээлий, маск, хамгаалалтын хэрэгслийг цуглуул">Gather heavy-duty chemicals, scrub brushes, steam cleaner (if needed), gloves, mask, protective gear</span>
                         </label>
                     </div>
 
@@ -327,7 +357,7 @@
                         <input type="checkbox" id="deep-2" class="progress-checkbox">
                         <label for="deep-2">
                             <span class="step-number">2</span>
-                            <strong>Take Before Photos</strong> - Capture problem areas (greasy ovens, moldy grout, stained carpets)
+                            <strong data-en="Take Before Photos" data-mn="Өмнөх Зураг Авах">Take Before Photos</strong> - <span data-en="Capture problem areas (greasy ovens, moldy grout, stained carpets)" data-mn="Асуудалтай хэсгүүдийн зураг авах (тослог зуух, хөгцтэй залгаас, толботой хивс)">Capture problem areas (greasy ovens, moldy grout, stained carpets)</span>
                         </label>
                     </div>
 
@@ -335,7 +365,7 @@
                         <input type="checkbox" id="deep-3" class="progress-checkbox">
                         <label for="deep-3">
                             <span class="step-number">3</span>
-                            <strong>Track Your Time</strong> - Log hours accurately in Breezeway (e.g., "Spent 1.5 hours degreasing kitchen")
+                            <strong data-en="Track Your Time" data-mn="Цагаа Бүртгэ">Track Your Time</strong> - <span data-en='Log hours accurately in Breezeway (e.g., "Spent 1.5 hours degreasing kitchen")' data-mn='Breezeway-д цагийг нарийн бүртгэнэ үү (жишээ нь: "Гал тогооны тосыг арилгахад 1.5 цаг зарцуулсан")'>Log hours accurately in Breezeway (e.g., "Spent 1.5 hours degreasing kitchen")</span>
                         </label>
                     </div>
 
@@ -343,7 +373,7 @@
                         <input type="checkbox" id="deep-4" class="progress-checkbox">
                         <label for="deep-4">
                             <span class="step-number">4</span>
-                            <strong>Take After Photos</strong> - Show the transformation with clear "after" photos
+                            <strong data-en="Take After Photos" data-mn="Дараах Зураг Авах">Take After Photos</strong> - <span data-en='Show the transformation with clear "after" photos' data-mn='Тод "дараах" зургуудаар өөрчлөлтийг харуулна'>Show the transformation with clear "after" photos</span>
                         </label>
                     </div>
 
@@ -351,26 +381,26 @@
                         <input type="checkbox" id="deep-5" class="progress-checkbox">
                         <label for="deep-5">
                             <span class="step-number">5</span>
-                            <strong>Report & Get Paid</strong> - Submit total hours, before/after photos, and notes on challenges
+                            <strong data-en="Report & Get Paid" data-mn="Тайлагнаж & Цалин Авах">Report & Get Paid</strong> - <span data-en="Submit total hours, before/after photos, and notes on challenges" data-mn="Нийт цаг, өмнөх/дараах зураг, хүндрэлүүдийн тэмдэглэлийг илгээнэ">Submit total hours, before/after photos, and notes on challenges</span>
                         </label>
                     </div>
                 </div>
 
                 <div class="warning-box">
-                    <strong>⏱️ Time Expectation:</strong> Deep cleans take 2-4x longer than regular cleans. Block your schedule accordingly!
+                    <strong data-en="⏱️ Time Expectation:" data-mn="⏱️ Цагийн Хүлээлт:">⏱️ Time Expectation:</strong> <span data-en="Deep cleans take 2-4x longer than regular cleans. Block your schedule accordingly!" data-mn="Гүн цэвэрлэгээ нь энгийн цэвэрлэгээнээс 2-4 дахин удаан үргэлжилнэ. Хуваарьаа зохих ёсоор төлөвлөөрэй!">Deep cleans take 2-4x longer than regular cleans. Block your schedule accordingly!</span>
                 </div>
             </div>
 
             <!-- Job Type 6: Mid-Stay -->
             <div class="job-type-card">
-                <h3>6️⃣ Mid-Stay Clean</h3>
-                <p><strong>Purpose:</strong> Routine clean while guests are still occupying the property.</p>
+                <h3 data-en="6️⃣ Mid-Stay Clean" data-mn="6️⃣ Байршилтын Дунд Цэвэрлэгээ">6️⃣ Mid-Stay Clean</h3>
+                <p><strong data-en="Purpose:" data-mn="Зорилго:">Purpose:</strong> <span data-en="Routine clean while guests are still occupying the property." data-mn="Зочид байшинд байршсан байхад хийх энгийн цэвэрлэгээ.">Routine clean while guests are still occupying the property.</span></p>
 
-                <h4>Key Differences:</h4>
+                <h4 data-en="Key Differences:" data-mn="Гол Ялгаанууд:">Key Differences:</h4>
                 <ul>
-                    <li><strong>Guest Belongings Present</strong> - Do not move or rearrange personal items</li>
-                    <li><strong>Clean around belongings</strong> - Wipe surfaces under items, vacuum around suitcases</li>
-                    <li><strong>Strict Timing</strong> - Guests may specify exact windows (e.g., "10 AM–12 PM only")</li>
+                    <li><strong data-en="Guest Belongings Present" data-mn="Зочны Эд Зүйлс Байна">Guest Belongings Present</strong> - <span data-en="Do not move or rearrange personal items" data-mn="Хувийн эд зүйлсийг хөдөлгөж эсвэл дахин байрлуулж болохгүй">Do not move or rearrange personal items</span></li>
+                    <li><strong data-en="Clean around belongings" data-mn="Эд зүйлсийн эргэн тойронд цэвэрлэх">Clean around belongings</strong> - <span data-en="Wipe surfaces under items, vacuum around suitcases" data-mn="Эд зүйлсийн доорх гадаргууг арчих, чемоданы эргэн тойронд тоос соруул">Wipe surfaces under items, vacuum around suitcases</span></li>
+                    <li><strong data-en="Strict Timing" data-mn="Хатуу Хугацаа">Strict Timing</strong> - <span data-en='Guests may specify exact windows (e.g., "10 AM–12 PM only")' data-mn='Зочид яг цагийг тодорхойлж болно (жишээ нь: "зөвхөн 10:00-12:00")'>Guests may specify exact windows (e.g., "10 AM–12 PM only")</span></li>
                 </ul>
 
                 <div class="checklist-section">
@@ -378,7 +408,7 @@
                         <input type="checkbox" id="midstay-1" class="progress-checkbox">
                         <label for="midstay-1">
                             <span class="step-number">1</span>
-                            <strong>Confirm Start Time</strong> - Check Slack for the guest's approved cleaning window
+                            <strong data-en="Confirm Start Time" data-mn="Эхлэх Цагийг Баталгаажуулах">Confirm Start Time</strong> - <span data-en="Check Slack for the guest's approved cleaning window" data-mn="Зочны зөвшөөрсөн цэвэрлэгээний цонхыг Slack-аас шалгана">Check Slack for the guest's approved cleaning window</span>
                         </label>
                     </div>
 
@@ -386,7 +416,7 @@
                         <input type="checkbox" id="midstay-2" class="progress-checkbox">
                         <label for="midstay-2">
                             <span class="step-number">2</span>
-                            <strong>Focus on high-touch areas</strong> - Bathrooms, kitchens, floors (leave belongings exactly as found)
+                            <strong data-en="Focus on high-touch areas" data-mn="Их хүрдэг хэсгүүдэд анхаарах">Focus on high-touch areas</strong> - <span data-en="Bathrooms, kitchens, floors (leave belongings exactly as found)" data-mn="Угаалгын өрөө, гал тогоо, шал (эд зүйлсийг олсон шигээ үлдээнэ)">Bathrooms, kitchens, floors (leave belongings exactly as found)</span>
                         </label>
                     </div>
 
@@ -394,7 +424,7 @@
                         <input type="checkbox" id="midstay-3" class="progress-checkbox">
                         <label for="midstay-3">
                             <span class="step-number">3</span>
-                            <strong>Document Issues Discreetly</strong> - Take photos of damage/hazards and report via Breezeway
+                            <strong data-en="Document Issues Discreetly" data-mn="Асуудлыг Нууцаар Бүртгэх">Document Issues Discreetly</strong> - <span data-en="Take photos of damage/hazards and report via Breezeway" data-mn="Эвдрэл/аюулын зураг авч Breezeway-р мэдэгдэнэ">Take photos of damage/hazards and report via Breezeway</span>
                         </label>
                     </div>
 
@@ -402,7 +432,7 @@
                         <input type="checkbox" id="midstay-4" class="progress-checkbox">
                         <label for="midstay-4">
                             <span class="step-number">4</span>
-                            <strong>Communicate Delays</strong> - If running late/early, notify the team immediately in Slack
+                            <strong data-en="Communicate Delays" data-mn="Саатлыг Мэдэгдэх">Communicate Delays</strong> - <span data-en="If running late/early, notify the team immediately in Slack" data-mn="Хоцорч/эрт ирвэл Slack дээр багт шууд мэдэгдэнэ">If running late/early, notify the team immediately in Slack</span>
                         </label>
                     </div>
                 </div>
@@ -410,56 +440,56 @@
 
             <!-- Pricing Section -->
             <div class="pricing-section">
-                <h2>💰 Pricing Structure</h2>
-                <p>Understanding how you get paid for different job types and circumstances:</p>
+                <h2 data-en="💰 Pricing Structure" data-mn="💰 Үнийн Бүтэц">💰 Pricing Structure</h2>
+                <p data-en="Understanding how you get paid for different job types and circumstances:" data-mn="Өөр өөр ажлын төрөл болон нөхцөл байдалд хэрхэн цалин авахыг ойлгох:">Understanding how you get paid for different job types and circumstances:</p>
 
-                <h3>Special Circumstances</h3>
+                <h3 data-en="Special Circumstances" data-mn="Тусгай Нөхцөл Байдал">Special Circumstances</h3>
                 <ul>
-                    <li><strong>Public Holidays:</strong> Rate increased by 50%</li>
-                    <li><strong>Attendance Fee:</strong> $30 if job canceled when you're already at property</li>
-                    <li><strong>Waiting Time:</strong> $15 if you wait more than 30 minutes for guest to check out</li>
-                    <li><strong>Extra Bed:</strong> $7.50 per additional bed</li>
-                    <li><strong>Key Exchange Waiting:</strong> $30/hour if you wait more than 15 minutes</li>
+                    <li><strong data-en="Public Holidays:" data-mn="Олон Нийтийн Баяр:">Public Holidays:</strong> <span data-en="Rate increased by 50%" data-mn="Үнэлгээ 50%-иар нэмэгдэнэ">Rate increased by 50%</span></li>
+                    <li><strong data-en="Attendance Fee:" data-mn="Байршлын Хураамж:">Attendance Fee:</strong> <span data-en="$30 if job canceled when you're already at property" data-mn="Байшинд аль хэдийн очоод байхад ажил цуцлагдвал $30">$30 if job canceled when you're already at property</span></li>
+                    <li><strong data-en="Waiting Time:" data-mn="Хүлээх Цаг:">Waiting Time:</strong> <span data-en="$15 if you wait more than 30 minutes for guest to check out" data-mn="Зочин гарахыг 30 минутаас дээш хүлээвэл $15">$15 if you wait more than 30 minutes for guest to check out</span></li>
+                    <li><strong data-en="Extra Bed:" data-mn="Нэмэлт Ор:">Extra Bed:</strong> <span data-en="$7.50 per additional bed" data-mn="Нэмэлт ор бүрт $7.50">$7.50 per additional bed</span></li>
+                    <li><strong data-en="Key Exchange Waiting:" data-mn="Түлхүүр Солих Хүлээлт:">Key Exchange Waiting:</strong> <span data-en="$30/hour if you wait more than 15 minutes" data-mn="15 минутаас дээш хүлээвэл цагт $30">$30/hour if you wait more than 15 minutes</span></li>
                 </ul>
 
-                <h3>Key Exchange Rates</h3>
+                <h3 data-en="Key Exchange Rates" data-mn="Түлхүүр Солих Үнэлгээ">Key Exchange Rates</h3>
                 <div class="pricing-table">
                     <table>
                         <thead>
                             <tr>
-                                <th>Time</th>
-                                <th>Price</th>
+                                <th data-en="Time" data-mn="Цаг">Time</th>
+                                <th data-en="Price" data-mn="Үнэ">Price</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>8 AM - 8 PM</td>
+                                <td data-en="8 AM - 8 PM" data-mn="Өглөө 8 - Орой 8">8 AM - 8 PM</td>
                                 <td>$20</td>
                             </tr>
                             <tr>
-                                <td>9 PM - 11 PM</td>
+                                <td data-en="9 PM - 11 PM" data-mn="Орой 9 - Шөнө 11">9 PM - 11 PM</td>
                                 <td>$40</td>
                             </tr>
                             <tr>
-                                <td>12 AM - 7 AM</td>
+                                <td data-en="12 AM - 7 AM" data-mn="Шөнө 12 - Өглөө 7">12 AM - 7 AM</td>
                                 <td>$60</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
 
-                <h3>Adhoc Job Rates</h3>
+                <h3 data-en="Adhoc Job Rates" data-mn="Нэмэлт Ажлын Үнэлгээ">Adhoc Job Rates</h3>
                 <div class="pricing-table">
                     <table>
                         <thead>
                             <tr>
-                                <th>Task</th>
-                                <th>Price</th>
+                                <th data-en="Task" data-mn="Даалгавар">Task</th>
+                                <th data-en="Price" data-mn="Үнэ">Price</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Delivery adhoc (Deliver extra linens and towels)</td>
+                                <td data-en="Delivery adhoc (Deliver extra linens and towels)" data-mn="Хүргэлтийн нэмэлт ажил (Нэмэлт даавуу болон алчуур хүргэх)">Delivery adhoc (Deliver extra linens and towels)</td>
                                 <td>$30</td>
                             </tr>
                         </tbody>
@@ -468,7 +498,7 @@
 
                 <div class="checklist-item">
                     <input type="checkbox" id="pricing-1" class="progress-checkbox">
-                    <label for="pricing-1">
+                    <label for="pricing-1" data-en="I understand the pricing structure for different job types" data-mn="Өөр өөр ажлын төрлийн үнийн бүтцийг би ойлгож байна">
                         I understand the pricing structure for different job types
                     </label>
                 </div>
@@ -476,8 +506,8 @@
 
             <!-- Navigation Buttons -->
             <div class="nav-buttons">
-                <a href="module-2.html" class="btn-secondary">← Previous Module</a>
-                <a href="module-4.html" class="btn-primary">Next Module →</a>
+                <a href="module-2.html" class="btn-secondary" data-en="← Previous Module" data-mn="← Өмнөх Модуль">← Previous Module</a>
+                <a href="module-4.html" class="btn-primary" data-en="Next Module →" data-mn="Дараагийн Модуль →">Next Module →</a>
             </div>
         </div>
     </main>
@@ -485,10 +515,10 @@
     <!-- Completion Modal -->
     <div id="completionModal" class="modal">
         <div class="modal-content">
-            <h2>🎉 Excellent Work!</h2>
-            <p>You've completed Module 3: Advanced Procedures!</p>
-            <p>You're now ready to handle all types of Qbees jobs professionally.</p>
-            <button id="continueBtn" class="btn-primary">Continue to Module 4 →</button>
+            <h2 data-en="🎉 Excellent Work!" data-mn="🎉 Маш Сайн Ажил!">🎉 Excellent Work!</h2>
+            <p data-en="You've completed Module 3: Advanced Procedures!" data-mn="Та Модуль 3-ыг дууслаа: Дэвшилтэт Горимууд!">You've completed Module 3: Advanced Procedures!</p>
+            <p data-en="You're now ready to handle all types of Qbees jobs professionally." data-mn="Та одоо Qbees-ийн бүх төрлийн ажлыг мэргэжлийн түвшинд гүйцэтгэхэд бэлэн боллоо.">You're now ready to handle all types of Qbees jobs professionally.</p>
+            <button id="continueBtn" class="btn-primary" data-en="Continue to Module 4 →" data-mn="Модуль 4 руу Үргэлжлүүлэх →">Continue to Module 4 →</button>
         </div>
     </div>
 

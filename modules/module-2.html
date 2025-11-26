@@ -98,6 +98,14 @@
     </style>
 </head>
 <body>
+    <!-- Language Toggle -->
+    <div class="language-toggle">
+        <button id="langBtn" class="lang-btn">
+            <span class="lang-en">🇬🇧 EN</span>
+            <span class="lang-mn" style="display: none;">🇲🇳 МН</span>
+        </button>
+    </div>
+
     <!-- Header -->
     <header class="header">
         <div class="container">
@@ -131,110 +139,110 @@
 
         <div class="module-content">
             <div class="content-section">
-                <h2>🏠 At the Property</h2>
-                <p>When you arrive at the property, follow these steps carefully to ensure a professional clean.</p>
+                <h2 data-en="🏠 At the Property" data-mn="🏠 Байшин дээр">🏠 At the Property</h2>
+                <p data-en="When you arrive at the property, follow these steps carefully to ensure a professional clean." data-mn="Байшин дээр ирэхдээ мэргэжлийн цэвэрлэгээ хийхийн тулд эдгээр алхмуудыг анхааралтай дагаарай.">When you arrive at the property, follow these steps carefully to ensure a professional clean.</p>
 
                 <div class="checklist-section">
-                    <h3>Arrival Checklist</h3>
+                    <h3 data-en="Arrival Checklist" data-mn="Ирэх Үеийн Жагсаалт">Arrival Checklist</h3>
                     <div class="checklist-item">
                         <input type="checkbox" id="arrival-1" class="progress-checkbox">
                         <label for="arrival-1">
-                            <strong>Finding the Entrance</strong><br>
-                            If you can't find the property entrance, open the Breezeway App and look for an onboarding video to guide you.
+                            <strong data-en="Finding the Entrance" data-mn="Орц Олох">Finding the Entrance</strong><br>
+                            <span data-en="If you can't find the property entrance, open the Breezeway App and look for an onboarding video to guide you." data-mn="Хэрэв та байшингийн орцыг олж чадахгүй бол Breezeway App-ыг нээж, зааварчилгаа видеог хайна уу.">If you can't find the property entrance, open the Breezeway App and look for an onboarding video to guide you.</span>
                         </label>
                     </div>
 
                     <div class="checklist-item">
                         <input type="checkbox" id="arrival-2" class="progress-checkbox">
                         <label for="arrival-2">
-                            <strong>Check Comments and Instructions</strong><br>
-                            Open Breezeway and check the comments section for any special instructions from the team.
+                            <strong data-en="Check Comments and Instructions" data-mn="Тайлбар ба Зааварчилгааг Шалгах">Check Comments and Instructions</strong><br>
+                            <span data-en="Open Breezeway and check the comments section for any special instructions from the team." data-mn="Breezeway-г нээж, багийн тусгай зааварчилгааг тайлбар хэсгээс шалгана уу.">Open Breezeway and check the comments section for any special instructions from the team.</span>
                         </label>
                     </div>
 
                     <div class="checklist-item">
                         <input type="checkbox" id="arrival-3" class="progress-checkbox">
                         <label for="arrival-3">
-                            <strong>Extra Time Needed?</strong><br>
-                            If you see the property needs more cleaning time than planned, take timestamped photos immediately and send these to the support team in Slack.
+                            <strong data-en="Extra Time Needed?" data-mn="Нэмэлт Цаг Хэрэгтэй юу?">Extra Time Needed?</strong><br>
+                            <span data-en="If you see the property needs more cleaning time than planned, take timestamped photos immediately and send these to the support team in Slack." data-mn="Хэрэв байшинд төлөвлөснөөс илүү цэвэрлэгээний цаг хэрэгтэй бол шууд цаг тэмдэглэсэн зураг авч Slack дээр тусламжийн багт илгээнэ үү.">If you see the property needs more cleaning time than planned, take timestamped photos immediately and send these to the support team in Slack.</span>
                         </label>
                     </div>
                 </div>
             </div>
 
             <div class="content-section">
-                <h2>🔍 Inspection Before Cleaning</h2>
-                <p>Do these checks BEFORE you start cleaning:</p>
+                <h2 data-en="🔍 Inspection Before Cleaning" data-mn="🔍 Цэвэрлэгээний Өмнөх Шалгалт">🔍 Inspection Before Cleaning</h2>
+                <p data-en="Do these checks BEFORE you start cleaning:" data-mn="Цэвэрлэж эхлэхээсээ ӨМНӨ эдгээр шалгалтуудыг хийнэ үү:">Do these checks BEFORE you start cleaning:</p>
 
                 <div class="checklist-section">
                     <div class="checklist-item">
                         <input type="checkbox" id="inspection-1" class="progress-checkbox">
                         <label for="inspection-1">
-                            <strong>Inspect the Property</strong><br>
-                            Carefully look around the property for any damage, stains, or items left by guests. Take clear photos using the Timestamp app.
+                            <strong data-en="Inspect the Property" data-mn="Байшинг Шалгах">Inspect the Property</strong><br>
+                            <span data-en="Carefully look around the property for any damage, stains, or items left by guests. Take clear photos using the Timestamp app." data-mn="Байшинг анхааралтай шалгаж, эвдрэл, толбо эсвэл зочдын орхисон зүйлсийг хайна уу. Timestamp апп ашиглан тод зураг авна уу.">Carefully look around the property for any damage, stains, or items left by guests. Take clear photos using the Timestamp app.</span>
                         </label>
                     </div>
 
                     <div class="checklist-item">
                         <input type="checkbox" id="inspection-2" class="progress-checkbox">
                         <label for="inspection-2">
-                            <strong>Report Issues in Breezeway</strong><br>
-                            Upload your timestamped photos and write a short note to explain what you found.
+                            <strong data-en="Report Issues in Breezeway" data-mn="Breezeway-д Асуудлыг Мэдэгдэх">Report Issues in Breezeway</strong><br>
+                            <span data-en="Upload your timestamped photos and write a short note to explain what you found." data-mn="Цаг тэмдэглэсэн зургуудаа байршуулж, олсон зүйлээ товч тайлбарлаж бичнэ үү.">Upload your timestamped photos and write a short note to explain what you found.</span>
                         </label>
                     </div>
 
                     <div class="checklist-item">
                         <input type="checkbox" id="inspection-3" class="progress-checkbox">
                         <label for="inspection-3">
-                            <strong>Check Guest Keys</strong><br>
-                            Check instructions in Breezeway about the guest keys (Should keys go back to the base or into a lockbox?). Take a photo of any key or fob you find inside the property.
+                            <strong data-en="Check Guest Keys" data-mn="Зочны Түлхүүрийг Шалгах">Check Guest Keys</strong><br>
+                            <span data-en="Check instructions in Breezeway about the guest keys (Should keys go back to the base or into a lockbox?). Take a photo of any key or fob you find inside the property." data-mn="Зочны түлхүүрийн талаар Breezeway дахь зааварчилгааг шалгана уу (Түлхүүрүүдийг бааз руу эсвэл цоожны хайрцагт буцаах уу?). Байшин дотор олсон аливаа түлхүүр эсвэл фобийн зургийг авна уу.">Check instructions in Breezeway about the guest keys (Should keys go back to the base or into a lockbox?). Take a photo of any key or fob you find inside the property.</span>
                         </label>
                     </div>
 
                     <div class="checklist-item">
                         <input type="checkbox" id="inspection-4" class="progress-checkbox">
                         <label for="inspection-4">
-                            <strong>Check the Vacuum</strong><br>
-                            Check if the vacuum needs charging so it's ready later.
+                            <strong data-en="Check the Vacuum" data-mn="Тоос Сорогчийг Шалгах">Check the Vacuum</strong><br>
+                            <span data-en="Check if the vacuum needs charging so it's ready later." data-mn="Тоос сорогчийг цэнэглэх шаардлагатай эсэхийг шалгаж, дараа нь бэлэн байлгана уу.">Check if the vacuum needs charging so it's ready later.</span>
                         </label>
                     </div>
                 </div>
             </div>
 
             <div class="tip-box">
-                <h3>🧼 Quick Cleaning Tip!</h3>
-                <p><strong>Before you start making the beds:</strong></p>
+                <h3 data-en="🧼 Quick Cleaning Tip!" data-mn="🧼 Цэвэрлэгээний Хурдан Зөвлөгөө!">🧼 Quick Cleaning Tip!</h3>
+                <p><strong data-en="Before you start making the beds:" data-mn="Ор засаж эхлэхээсээ өмнө:">Before you start making the beds:</strong></p>
                 <ul>
-                    <li>Spray <strong>Lencia</strong> (mould cleaner) in the shower</li>
-                    <li>Spray <strong>Taski</strong> (cream cleanser) in the toilet bowl</li>
-                    <li>Check the <strong>Oven</strong> if it needs a deep clean</li>
-                    <li>Check the <strong>dishwasher</strong></li>
+                    <li data-en="Spray Lencia (mould cleaner) in the shower" data-mn="Шүршүүрт Lencia (хөгцний цэвэрлэгч) шүршнэ үү">Spray <strong>Lencia</strong> (mould cleaner) in the shower</li>
+                    <li data-en="Spray Taski (cream cleanser) in the toilet bowl" data-mn="Жорлонгийн аягад Taski (цөцгий цэвэрлэгч) шүршнэ үү">Spray <strong>Taski</strong> (cream cleanser) in the toilet bowl</li>
+                    <li data-en="Check the Oven if it needs a deep clean" data-mn="Зууханд гүн цэвэрлэгээ хэрэгтэй эсэхийг шалгана уу">Check the <strong>Oven</strong> if it needs a deep clean</li>
+                    <li data-en="Check the dishwasher" data-mn="Аяга угаагчийг шалгана уу">Check the <strong>dishwasher</strong></li>
                 </ul>
-                <p>Let these chemicals sit and work while you're changing linens—this will make cleaning easier and save time!</p>
+                <p data-en="Let these chemicals sit and work while you're changing linens—this will make cleaning easier and save time!" data-mn="Та даавуу солих хооронд эдгээр химийн бодисыг сууж ажиллуулаарай—энэ нь цэвэрлэгээг хялбарчлаж, цаг хэмнэнэ!">Let these chemicals sit and work while you're changing linens—this will make cleaning easier and save time!</p>
             </div>
 
             <div class="content-section">
-                <h2>🧹 Normal Clean vs Deep Clean</h2>
-                <p>Check the Breezeway job to see if it's a Normal Clean or Deep Clean:</p>
+                <h2 data-en="🧹 Normal Clean vs Deep Clean" data-mn="🧹 Энгийн Цэвэрлэгээ vs Гүн Цэвэрлэгээ">🧹 Normal Clean vs Deep Clean</h2>
+                <p data-en="Check the Breezeway job to see if it's a Normal Clean or Deep Clean:" data-mn="Энгийн Цэвэрлэгээ эсвэл Гүн Цэвэрлэгээ эсэхийг Breezeway ажлаас шалгана уу:">Check the Breezeway job to see if it's a Normal Clean or Deep Clean:</p>
                 <ul>
-                    <li><strong>Normal Clean:</strong> Complete tasks marked (✓)</li>
-                    <li><strong>Deep Clean:</strong> Complete all (✓) tasks PLUS the extra tasks marked with <span class="deep-clean-badge">DEEP CLEAN ONLY</span></li>
+                    <li><strong data-en="Normal Clean:" data-mn="Энгийн Цэвэрлэгээ:">Normal Clean:</strong> <span data-en="Complete tasks marked (✓)" data-mn="(✓) тэмдэглэсэн даалгавруудыг гүйцээнэ">Complete tasks marked (✓)</span></li>
+                    <li><strong data-en="Deep Clean:" data-mn="Гүн Цэвэрлэгээ:">Deep Clean:</strong> <span data-en="Complete all (✓) tasks PLUS the extra tasks marked with" data-mn="Бүх (✓) даалгавруудыг гүйцээгээд НЭМЖ">Complete all (✓) tasks PLUS the extra tasks marked with</span> <span class="deep-clean-badge" data-en="DEEP CLEAN ONLY" data-mn="ЗӨВХӨН ГҮН ЦЭВЭРЛЭГЭЭ">DEEP CLEAN ONLY</span></li>
                 </ul>
             </div>
 
             <div class="content-section">
-                <h2>🚿 Room-by-Room Cleaning Guide</h2>
+                <h2 data-en="🚿 Room-by-Room Cleaning Guide" data-mn="🚿 Өрөө Бүрийн Цэвэрлэгээний Заавар">🚿 Room-by-Room Cleaning Guide</h2>
 
                 <div class="room-section">
-                    <h3>Bathroom</h3>
+                    <h3 data-en="Bathroom" data-mn="Угаалгын Өрөө">Bathroom</h3>
                     <div class="cleaning-table">
                         <table>
                             <thead>
                                 <tr>
-                                    <th>Task</th>
-                                    <th>Normal</th>
-                                    <th>Deep</th>
-                                    <th>Chemicals & Tools</th>
+                                    <th data-en="Task" data-mn="Даалгавар">Task</th>
+                                    <th data-en="Normal" data-mn="Энгийн">Normal</th>
+                                    <th data-en="Deep" data-mn="Гүн">Deep</th>
+                                    <th data-en="Chemicals & Tools" data-mn="Химийн бодис & Багаж">Chemicals & Tools</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -334,15 +342,15 @@
                 </div>
 
                 <div class="room-section">
-                    <h3>Kitchen</h3>
+                    <h3 data-en="Kitchen" data-mn="Гал Тогоо">Kitchen</h3>
                     <div class="cleaning-table">
                         <table>
                             <thead>
                                 <tr>
-                                    <th>Task</th>
-                                    <th>Normal</th>
-                                    <th>Deep</th>
-                                    <th>Chemicals & Tools</th>
+                                    <th data-en="Task" data-mn="Даалгавар">Task</th>
+                                    <th data-en="Normal" data-mn="Энгийн">Normal</th>
+                                    <th data-en="Deep" data-mn="Гүн">Deep</th>
+                                    <th data-en="Chemicals & Tools" data-mn="Химийн бодис & Багаж">Chemicals & Tools</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -430,15 +438,15 @@
                 </div>
 
                 <div class="room-section">
-                    <h3>Bedroom</h3>
+                    <h3 data-en="Bedroom" data-mn="Унтлагын Өрөө">Bedroom</h3>
                     <div class="cleaning-table">
                         <table>
                             <thead>
                                 <tr>
-                                    <th>Task</th>
-                                    <th>Normal</th>
-                                    <th>Deep</th>
-                                    <th>Chemicals & Tools</th>
+                                    <th data-en="Task" data-mn="Даалгавар">Task</th>
+                                    <th data-en="Normal" data-mn="Энгийн">Normal</th>
+                                    <th data-en="Deep" data-mn="Гүн">Deep</th>
+                                    <th data-en="Chemicals & Tools" data-mn="Химийн бодис & Багаж">Chemicals & Tools</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -491,70 +499,70 @@
             </div>
 
             <div class="content-section">
-                <h2>✅ Before Completing Your Job</h2>
-                <p>Do these final checks before leaving the property:</p>
+                <h2 data-en="✅ Before Completing Your Job" data-mn="✅ Ажлаа Дуусгахын Өмнө">✅ Before Completing Your Job</h2>
+                <p data-en="Do these final checks before leaving the property:" data-mn="Байшингаас гарахын өмнө эдгээр эцсийн шалгалтуудыг хийнэ үү:">Do these final checks before leaving the property:</p>
 
                 <div class="checklist-section">
                     <div class="checklist-item">
                         <input type="checkbox" id="final-1" class="progress-checkbox">
                         <label for="final-1">
-                            <strong>Style Check</strong><br>
-                            Make sure the property looks exactly like the Airbnb listing photos (check Breezeway app).
+                            <strong data-en="Style Check" data-mn="Загвар Шалгалт">Style Check</strong><br>
+                            <span data-en="Make sure the property looks exactly like the Airbnb listing photos (check Breezeway app)." data-mn="Байшин Airbnb жагсаалтын зурагтай яг адилхан харагдаж байгаа эсэхийг шалгана уу (Breezeway аппыг шалгана уу).">Make sure the property looks exactly like the Airbnb listing photos (check Breezeway app).</span>
                         </label>
                     </div>
 
                     <div class="checklist-item">
                         <input type="checkbox" id="final-2" class="progress-checkbox">
                         <label for="final-2">
-                            <strong>Notes & Instructions</strong><br>
-                            Double-check all job notes and special instructions. If something isn't done or is unclear, message support on Slack immediately.
+                            <strong data-en="Notes & Instructions" data-mn="Тэмдэглэл & Зааварчилгаа">Notes & Instructions</strong><br>
+                            <span data-en="Double-check all job notes and special instructions. If something isn't done or is unclear, message support on Slack immediately." data-mn="Бүх ажлын тэмдэглэл болон тусгай зааварчилгааг дахин шалгана уу. Хэрэв ямар нэг зүйл хийгдээгүй эсвэл тодорхойгүй бол Slack дээр тусламжийн багт шууд мессеж бичнэ үү.">Double-check all job notes and special instructions. If something isn't done or is unclear, message support on Slack immediately.</span>
                         </label>
                     </div>
 
                     <div class="checklist-item">
                         <input type="checkbox" id="final-3" class="progress-checkbox">
                         <label for="final-3">
-                            <strong>Turn Off Appliances & Lights</strong><br>
-                            Double-check all lights and appliances are turned off before leaving.
+                            <strong data-en="Turn Off Appliances & Lights" data-mn="Цахилгаан Хэрэгсэл & Гэрлийг Унтраах">Turn Off Appliances & Lights</strong><br>
+                            <span data-en="Double-check all lights and appliances are turned off before leaving." data-mn="Гарахын өмнө бүх гэрэл болон цахилгаан хэрэгслүүд унтраасан эсэхийг дахин шалгана уу.">Double-check all lights and appliances are turned off before leaving.</span>
                         </label>
                     </div>
 
                     <div class="checklist-item">
                         <input type="checkbox" id="final-4" class="progress-checkbox">
                         <label for="final-4">
-                            <strong>Photos & Status Update</strong><br>
-                            Take clear photos using the Timestamp app or directly in the Breezeway app. Update your job status in Breezeway to confirm you've finished.
+                            <strong data-en="Photos & Status Update" data-mn="Зураг & Төлөв Шинэчлэх">Photos & Status Update</strong><br>
+                            <span data-en="Take clear photos using the Timestamp app or directly in the Breezeway app. Update your job status in Breezeway to confirm you've finished." data-mn="Timestamp апп эсвэл шууд Breezeway апп ашиглан тод зураг авна уу. Дууссанаа баталгаажуулахын тулд Breezeway дээр ажлын төлвөө шинэчилнэ үү.">Take clear photos using the Timestamp app or directly in the Breezeway app. Update your job status in Breezeway to confirm you've finished.</span>
                         </label>
                     </div>
                 </div>
             </div>
 
             <div class="content-section">
-                <h2>🏠 After the Cleaning (Back to Base)</h2>
-                <p>After leaving the property, return to Qbees Base (411/38 York St, South Melbourne):</p>
+                <h2 data-en="🏠 After the Cleaning (Back to Base)" data-mn="🏠 Цэвэрлэгээний Дараа (Бааз руу Буцах)">🏠 After the Cleaning (Back to Base)</h2>
+                <p data-en="After leaving the property, return to Qbees Base (411/38 York St, South Melbourne):" data-mn="Байшингаас гарсны дараа Qbees Бааз руу буцна уу (411/38 York St, South Melbourne):">After leaving the property, return to Qbees Base (411/38 York St, South Melbourne):</p>
 
                 <div class="checklist-section">
                     <div class="checklist-item">
                         <input type="checkbox" id="base-1" class="progress-checkbox">
                         <label for="base-1">
-                            <strong>Extra Consumables & Linens</strong><br>
-                            Return extra or unused consumables and linens to the correct designated box at the base.
+                            <strong data-en="Extra Consumables & Linens" data-mn="Нэмэлт Хэрэглээний Зүйлс & Даавуу">Extra Consumables & Linens</strong><br>
+                            <span data-en="Return extra or unused consumables and linens to the correct designated box at the base." data-mn="Нэмэлт эсвэл хэрэглээгүй хэрэглээний зүйлс болон даавууг баазад зориулагдсан хайрцагт буцаана уу.">Return extra or unused consumables and linens to the correct designated box at the base.</span>
                         </label>
                     </div>
 
                     <div class="checklist-item">
                         <input type="checkbox" id="base-2" class="progress-checkbox">
                         <label for="base-2">
-                            <strong>Dirty Linens & Items</strong><br>
-                            Put all dirty linens from the property into the correct dirty base area at the base in the trolley.
+                            <strong data-en="Dirty Linens & Items" data-mn="Бохир Даавуу & Зүйлс">Dirty Linens & Items</strong><br>
+                            <span data-en="Put all dirty linens from the property into the correct dirty base area at the base in the trolley." data-mn="Байшингийн бүх бохир даавууг баазад зориулагдсан бохир даавууны тэрэгт хийнэ үү.">Put all dirty linens from the property into the correct dirty base area at the base in the trolley.</span>
                         </label>
                     </div>
 
                     <div class="checklist-item">
                         <input type="checkbox" id="base-3" class="progress-checkbox">
                         <label for="base-3">
-                            <strong>Returning Keys</strong><br>
-                            Hang the property key on the correct key panel. Make sure the key panel light turns green.
+                            <strong data-en="Returning Keys" data-mn="Түлхүүр Буцаах">Returning Keys</strong><br>
+                            <span data-en="Hang the property key on the correct key panel. Make sure the key panel light turns green." data-mn="Байшингийн түлхүүрийг зөв түлхүүрийн самбар дээр өлгөнө үү. Түлхүүрийн самбарын гэрэл ногоон болсон эсэхийг шалгаарай.">Hang the property key on the correct key panel. Make sure the key panel light turns green.</span>
                         </label>
                     </div>
                 </div>
@@ -562,8 +570,8 @@
 
             <!-- Navigation Buttons -->
             <div class="nav-buttons">
-                <a href="../index.html" class="btn-secondary">← Back to Dashboard</a>
-                <a href="module-3.html" class="btn-primary">Next Module →</a>
+                <a href="../index.html" class="btn-secondary" data-en="← Back to Dashboard" data-mn="← Хянах Самбар руу">← Back to Dashboard</a>
+                <a href="module-3.html" class="btn-primary" data-en="Next Module →" data-mn="Дараагийн Модуль →">Next Module →</a>
             </div>
         </div>
     </main>
@@ -571,10 +579,10 @@
     <!-- Completion Modal -->
     <div id="completionModal" class="modal">
         <div class="modal-content">
-            <h2>🎉 Congratulations!</h2>
-            <p>You've completed Module 2: Core Cleaning Skills!</p>
-            <p>You now know how to perform professional Airbnb cleans from arrival to completion.</p>
-            <button id="continueBtn" class="btn-primary">Continue to Module 3 →</button>
+            <h2 data-en="🎉 Congratulations!" data-mn="🎉 Баяр хүргэе!">🎉 Congratulations!</h2>
+            <p data-en="You've completed Module 2: Core Cleaning Skills!" data-mn="Та Модуль 2-ыг дууслаа: Үндсэн Цэвэрлэгээний Ур Чадвар!">You've completed Module 2: Core Cleaning Skills!</p>
+            <p data-en="You now know how to perform professional Airbnb cleans from arrival to completion." data-mn="Та одоо мэргэжлийн Airbnb цэвэрлэгээг ирэлтээс эхлээд дуусах хүртэл хэрхэн хийхийг мэдэж байна.">You now know how to perform professional Airbnb cleans from arrival to completion.</p>
+            <button id="continueBtn" class="btn-primary" data-en="Continue to Module 3 →" data-mn="Модуль 3 руу Үргэлжлүүлэх →">Continue to Module 3 →</button>
         </div>
     </div>
 
